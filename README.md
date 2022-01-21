@@ -73,33 +73,33 @@ para os produtos e atualizar no codigo
 - [] armazenamento do carrinho no servidor
 - [x] Fazer o deploy do strapi atual
 - [x] colocar como esta no strapi actual
-- [] comecar a subir conteudo
-- [] fazer atualizacao no codigo do projecto fotos e outros
-- [] actualizar requisicoes
+- [ ] comecar a subir conteudo
+- [ ] fazer atualizacao no codigo do projecto fotos e outros
+- [ ] actualizar requisicoes
 
 
 ### Minhas compras
-- [] colocar socket io no strapi
+- [ ] colocar socket io no strapi
 - [x] colocar uma tabela de compras ali
-- [] Funcionalidade de pedidos
-- [] fazer um content type de compras no strapi
-- [] configurar socket io
+- [ ] Funcionalidade de pedidos
+- [ ] fazer um content type de compras no strapi
+- [ ] configurar socket io
 
 ### pagina Login / Revisar / no strapi tambem
 
 - [x] login
 - [x] registar
-- [] perdeu senha
+- [ ] perdeu senha
 - email de confiramcao atraves do strap
-- [] se o cliente saiu da app, entra dia seguinte eu tenho de primeiro, colocar no contexto.
-- [] validar o token, para ver se o token e valido ainda, e depois apanhar a informacao
+- [ ] se o cliente saiu da app, entra dia seguinte eu tenho de primeiro, colocar no contexto.
+- [ ] validar o token, para ver se o token e valido ainda, e depois apanhar a informacao
 
 
 ### Pagamentos
-- [] simular uma compra
-- [] mpesa plugin
-- [] funcao de gerar fatura
-- [] baixar fatura
+- [ ] simular uma compra
+- [ ] mpesa plugin
+- [ ] funcao de gerar fatura
+- [ ] baixar fatura
 
 ```
 my-app/
