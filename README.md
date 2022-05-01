@@ -4,7 +4,7 @@
 - [x] preencher os dados e validar todos os campos
 - [x] colocar campo de pais
 - [x] colocar campo de provincias ou cidades
-- [x]colocar um loading ao modificar e mudar para pagina acount
+- [x] colocar um loading ao modificar e mudar para pagina acount
 - [x] fazer a estilizacao da pagina account
 - [x] colocar rotas
 - [x] componentes inputs selecionaveis
@@ -15,8 +15,8 @@
 - [x] fazer o contexto do carrinho
 - [x] assistir a aula de usereducer
 - [x] fazer um contexto do carrinho e colocar o usereducer
-- [ ] adicionar ao carrinho
-- [ ] colocar um objecto no carrrinho  {id, nome,descricao, urldafoto, quantidade, preco}  
+- [x] adicionar ao carrinho
+- [x] colocar um objecto no carrrinho  {id, nome,descricao, urldafoto, quantidade, preco}  
        preco quantidade;
      
 
@@ -101,53 +101,10 @@ para os produtos e atualizar no codigo
 - [ ] funcao de gerar fatura
 - [ ] baixar fatura
 
-```
-my-app/
-  README.md
-  node_modules/
-  package.json
-  public/
-    index.html
-    favicon.ico
-  src/
-    App.css
-    App.js
-    App.test.js
-    index.css
-    index.js
-    logo.svg
-```
 
 
-Create React App is divided into two packages:
-
-* `create-react-app` is a global command-line utility that you use to create new projects.
-* `react-scripts` is a development dependency in the generated projects (including this one).
-
-
-## Available Scripts
-
-In the project directory, you can run:
 
 ### `npm start`
+Para rodar
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](#running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](#deployment) for more information.
+```npm start```
