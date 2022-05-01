@@ -107,4 +107,3 @@ para os produtos e atualizar no codigo
 ### `npm start`
 Para rodar
 
-```npm start```
