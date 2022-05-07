@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserStorage } from './Context/UserContext';
 import { CartStorage } from './Context/CartContext';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
@@ -19,7 +20,7 @@ import Faq from './pages/Faq/Faq';
 import User from './pages/User/User';
 import { GlobalFuntions } from './Context/GlobalFuntions';
 
-import 'react-toastify/dist/ReactToastify.css';
+
 import Checkout from './pages/Checkout/Checkout';
 
 function App() {

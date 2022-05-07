@@ -1,23 +1,16 @@
-import { Container, Title } from "../../styles/styles";
-import IntroOnPage from "../../components/IntroOnPage/IntroOnPage";
-import contact from "../../Assets/icon-horario.svg";
-import IconHour from "../../Assets/Group.svg";
-import { BsTelephonePlusFill } from "react-icons/bs";
-import {
-  BtnWhatsap,
-  Child,
-  ChildWhatsapp,
-  Contato,
-  Grid,
-} from "./styles";
+import { Container, Title } from '../../styles/styles';
+import IntroOnPage from '../../components/IntroOnPage/IntroOnPage';
+
+import { BsTelephonePlusFill } from 'react-icons/bs';
+import { BtnWhatsap, Child, ChildWhatsapp, Contato, Grid } from './styles';
 
 const Contact = () => (
   <Contato>
-    <IntroOnPage text="Entre em contato conosco" />
+    <IntroOnPage text='Entre em contato conosco' />
     <Container>
       <Grid>
         <Child>
-          <img src={contact} alt="imagem" />
+          <img src='/icon-horario.svg' alt='imagem' />
           <h3>HORARIOS</h3>
           <ul>
             <li>Segunda a Sexta das 11.00h às 19.00h</li>
@@ -26,7 +19,7 @@ const Contact = () => (
           </ul>
         </Child>
         <Child>
-          <img src={IconHour} alt="imagem" />
+          <img src='/Group.svg' alt='imagem' />
           <h3>CONTATO</h3>
           <ul>
             <li>
@@ -41,7 +34,7 @@ const Contact = () => (
       <ChildWhatsapp>
         <Title>ENTRE EM CONTATO PELO NOSSO WHATSAPP</Title>
         <div>
-          <BtnWhatsap href="https://www.google.com">
+          <BtnWhatsap href='https://www.google.com'>
             <BsTelephonePlusFill />
             WhatsApp
           </BtnWhatsap>

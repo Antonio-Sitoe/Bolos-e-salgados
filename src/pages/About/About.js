@@ -1,12 +1,14 @@
 import React from 'react';
 import IntroOnPage from '../../components/IntroOnPage/IntroOnPage';
-import { Container, Title } from '../../styles/styles';
 import Image from '../../components/Image/Image';
 import useFetch from '../../hooks/useFecth';
-import { GET_ABOUT_CONTENT } from '../../services/Api';
 import Loading from '../../components/Helper/Loading';
 import ErroMessage from '../../components/Helper/ErroMessage';
+import { Container, Title } from '../../styles/styles';
+import { GET_ABOUT_CONTENT } from '../../services/Api';
 import { AboutStyle, Content } from './styles';
+
+
 const About = () => {
   const { data, request, error } = useFetch();
   React.useEffect(() => {

@@ -1,20 +1,21 @@
 import React from 'react';
-import Image from '../Image/Image';
+import Image from 'next/image';
 import { Links } from '../../styles/styles';
 import { CardStyle } from './styles';
 
 const Card = ({ attributes }, key) => {
-  const pathname = window.location.pathname.includes('/product');
   return (
     <CardStyle key={key}>
-      <Image src={attributes.image.url} alt={attributes.name} />
+      <Image
+        src={attributes.image.url}
+        alt={attributes.name}
+        width='400'
+        height='200'
+      />
+
       <h3>{attributes.name}</h3>
-      <p>{attributes.price.formatted_with_code}</p>
-      <Links
-        to={pathname ? `/product/${attributes.id}` : `product/${attributes.id}`}
-      >
-        Comprar
-      </Links>
+      <p>{attributes.price}</p>
+      <Links to=''>Comprar</Links>
     </CardStyle>
   );
 };

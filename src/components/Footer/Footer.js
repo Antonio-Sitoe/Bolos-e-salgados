@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Container, Title } from '../../styles/styles';
 import { CopyRight, FirstSection, Wrapper } from './styles';
-
 
 const Footer = () => {
   return (
@@ -12,24 +11,32 @@ const Footer = () => {
             <ul>
               <li>
                 {' '}
-                <Link to='product'>Produto</Link>{' '}
+                <Link href='product'>
+                  <a>Produto</a>
+                </Link>{' '}
               </li>
               <li>
                 {' '}
-                <Link to='about'>Quem somos</Link>{' '}
+                <Link href='about'>Quem somos</Link>{' '}
               </li>
             </ul>
             <main>
-              <Link to=''>
-                <Title>Mila Delicious</Title>
+              <Link href=''>
+                <a href=''>
+                  <Title>Mila Delicious</Title>
+                </a>
               </Link>
             </main>
             <ul>
               <li>
-                <Link to='contact'>Contato</Link>
+                <Link href='contact'>
+                  <a href=''>Contato</a>
+                </Link>
               </li>
               <li>
-                <Link to='faq'>Como Encomendar</Link>
+                <Link href='faq'>
+                  <a href=''>Como Encomendar</a>
+                </Link>
               </li>
             </ul>
           </div>

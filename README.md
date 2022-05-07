@@ -1,5 +1,17 @@
 # LISTA DE TAREFAS (PAGINAS E FUNCIONALIDADES)
 
+### Refatoracao 
+[] Pagina inicial (Home)
+[] About
+[] cart
+[] checkout
+[x] contact
+[x] faq
+[] Login
+[] Page404
+[] Product
+[] user
+
 ### MiNHA CONTA
 - [x] preencher os dados e validar todos os campos
 - [x] colocar campo de pais

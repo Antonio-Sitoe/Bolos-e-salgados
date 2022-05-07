@@ -1,12 +1,12 @@
 import React from "react";
 import { Title } from "../../styles/styles";
 import { IntroOnPageStyle } from "./styles";
-import Background from "../../Assets/quemsoms.jpg";
+
 
 const IntroOnPage = ({ text, Bg }) => {
 
   return (
-    <IntroOnPageStyle bg={Bg ? Bg : Background}>
+    <IntroOnPageStyle bg={Bg ? Bg : '/quemsoms.jpg'}>
       <Title>{text}</Title>
     </IntroOnPageStyle>
   );

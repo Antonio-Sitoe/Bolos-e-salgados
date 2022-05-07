@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
 import { theme } from './theme';
 
@@ -154,7 +153,7 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 0 0.6rem;
 `;
-export const Links = styled(Link)`
+export const Links = styled.a`
   position: relative;
   border-radius: 4px;
   background: ${(props) =>
