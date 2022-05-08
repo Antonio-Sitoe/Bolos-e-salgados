@@ -24,6 +24,7 @@ export const Main = styled.main`
   padding: 6rem 0;
 `;
 export const ShowPhotos = styled.section``;
+
 export const ShowInformation = styled.section`
   margin: 0.6rem 0;
 

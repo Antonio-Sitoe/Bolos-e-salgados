@@ -1,14 +1,14 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Container } from '../../../styles/styles';
-import { Main, ProdutoStyle, ShowPhotos } from '../styles';
-import { GET_PRODUTS_FOR_ID } from '../../../services/Api';
+import { Container } from '../../styles/styles';
+import { Main, ProdutoStyle, ShowPhotos } from './styles';
+import { GET_PRODUTS_FOR_ID } from '../../services/Api';
 
-import useFecth from '../../../hooks/useFecth';
-import ErroMessage from '../../../components/Helper/ErroMessage';
-import Loading from '../../../components/Helper/Loading';
+import useFecth from '../../hooks/useFecth';
+import ErroMessage from '../../components/Helper/ErroMessage';
+import Loading from '../../components/Helper/Loading';
 import InFormation from './InFormation';
-import Slide from '../../../components/Slide/Slide';
+import Slide from '../../components/Slide/Slide';
 
 const SinglePage = () => {
   const [showImage, setImage] = React.useState('');

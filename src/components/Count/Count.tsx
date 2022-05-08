@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Quantity } from '../../../components/Quantity/Quantity';
+import { Quantity } from '../Quantity/Quantity';
+
+
 const Main = styled.main`
   justify-content: space-between;
   display: flex;

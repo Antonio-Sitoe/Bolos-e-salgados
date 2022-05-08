@@ -43,19 +43,22 @@ const Header = () => {
             <Search />
             <ul ref={list}>
               <li>
-                <Link href=''>Pagina Inicial</Link>
+                <Link href='/'>Pagina Inicial</Link>
               </li>
               <li>
-                {' '}
-                <Link href='product'>Produtos</Link>{' '}
+                <Link href='/product'>Produtos</Link>
               </li>
               <li>
-                {' '}
-                <Link href='about'>Quem Somos</Link>{' '}
+                <Link href='/about'>Quem Somos</Link>
               </li>
               <li>
-                {' '}
-                <Link href='contact'>Contato</Link>
+                <Link href='/contact'>Contato</Link>
+              </li>
+              <li>
+                <Links href='/login'>Entrar | Criar</Links>
+              </li>
+              <li>
+                <Links href='/cart'><HiShoppingCart /></Links>
               </li>
               {/* <li>
                 {user ? (

@@ -2,15 +2,9 @@ import styled from 'styled-components';
 import Card from '../components/Card/Card';
 import Banner from '../components/Banner/banner';
 import Sumary from '../components/Sumary/Sumary';
-import useFecth from '../hooks/useFecth';
-
 import { Kit } from '../components/Pages/Home/Kit';
 import { Container, Links } from '../styles/styles';
 
-import { GET_ALL_PRODUCTS } from '../../services/Api';
-
-import Loading from '../../components/Helper/Loading';
-import ErroMessage from '../../components/Helper/ErroMessage';
 import CupCakeCard from '../components/Pages/Home/CupCakeCard';
 
 export const Main = styled.main`
@@ -31,7 +25,7 @@ export const DivConfir = styled.div`
 `;
 
 
-const content = [
+export const content = [
   {
     id: Math.floor(Math.random() * 100),
     name: 'Bolo de chocolate',
@@ -66,7 +60,8 @@ const content = [
   },
 ];
 
-const subtitles = [
+type Subtitles = Array<{ title: string, description: string }>
+export const subtitles: Subtitles = [
   {
     title: 'OS DOCES EM DESTAQUES',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -78,25 +73,17 @@ const subtitles = [
 ];
 
 const Home = () => {
-  const { data, error, loading, request } = useFecth();
 
-
-
-  // if (error) return <ErroMessage error={error} />;
-  // if (loading) return <Loading />;
-
-  // if (data)
   return (
     <>      <Banner />
       <Container>
-        {subtitles.map(({ title, description }) => {
+        {subtitles.map(({ title, description }, i) => {
           return (
-            <>
+            <div key={i}>
               <Sumary
-                title='OS DOCES EM DESTAQUES'
-                description={
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                }
+
+                title={title}
+                description={description}
               />
               <Main>
                 {content.map((item) => {
@@ -104,9 +91,9 @@ const Home = () => {
                 })}
               </Main>
               <DivConfir>
-                <Links href='product'>Confira Todos</Links>
+                <Links href='/product'>Confira Todos</Links>
               </DivConfir>
-            </>
+            </div>
           );
         })}
       </Container>
@@ -115,7 +102,6 @@ const Home = () => {
 
     </>
   );
-  return null;
 };
 
 export default Home;
