@@ -3,15 +3,15 @@ import Button from '../../components/Forms/Button';
 import Input, { Label } from '../../components/Forms/Input';
 import useForm from '../../hooks/useForm';
 import { UserContext } from '../../Context/UserContext';
-import { LoginGet } from '../Login/styles';
+
 import { USERDATA_UPDATE } from '../../services/Api';
 import ErrorServer from '../../components/Helper/ErrorServer';
 import useFecth from '../../hooks/useFecth';
+import { LoginGet } from '../login/styles';
 
 const UserAccountEdit = () => {
   const { user } = React.useContext(UserContext);
   const { request, loading, error } = useFecth();
-
 
   const nome = useForm('name', user.username);
   const email = useForm('email', user.email);
@@ -98,9 +98,7 @@ const UserAccountEdit = () => {
         value={cidade.value}
         onChange={cidade.onChange}
       >
-        <option  disabled>
-          Selecione a cidade
-        </option>
+        <option disabled>Selecione a cidade</option>
         <option value='Matola'>Matola</option>
         <option value='Maputo cidade'>Maputo cidade</option>
         <option value='Boane'>Boane</option>

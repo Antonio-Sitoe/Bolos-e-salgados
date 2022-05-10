@@ -1,5 +1,4 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react'
 import { Container } from '../../styles/styles';
 import { Main, ProdutoStyle, ShowPhotos } from './styles';
 import { GET_PRODUTS_FOR_ID } from '../../services/Api';
@@ -7,13 +6,13 @@ import { GET_PRODUTS_FOR_ID } from '../../services/Api';
 import useFecth from '../../hooks/useFecth';
 import ErroMessage from '../../components/Helper/ErroMessage';
 import Loading from '../../components/Helper/Loading';
-import InFormation from './InFormation';
+import InFormation from '../../components/InFormation/InFormation';
 import Slide from '../../components/Slide/Slide';
 
 const SinglePage = () => {
   const [showImage, setImage] = React.useState('');
   const { data, error, loading, request } = useFecth();
-  const { id } = useParams();
+  const id = 1;
 
   React.useEffect(() => {
     (async () => {

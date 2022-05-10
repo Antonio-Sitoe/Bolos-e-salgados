@@ -1,22 +1,22 @@
 import styled, { keyframes } from 'styled-components';
 import { AnimeIntro } from '../../styles/styles';
-import { theme } from '../../../styles/theme';
+import { theme } from '../../styles/theme';
 
 export const AboutStyle = styled.section`
-  margin: 3rem 0;
   animation: 0.3s ${AnimeIntro};
-  display: flex;
+  display: grid;
   gap: 2rem;
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1rem;
+  
 
   div {
-    max-width: 40rem;
     @media (max-width: 800px) {
       order: 1;
     }
   }
   img {
-    height: 20rem;
-    max-width: 40rem;
     @media (max-width: 800px) {
       order: 0;
     }
@@ -83,7 +83,12 @@ export const Answer = styled.div`
   gap: 0.6rem;
   border-radius: 4px 0 0 4px;
 `;
-export const AnswerChild = styled.div`
+
+interface Props {
+  active: Boolean
+}
+
+export const AnswerChild = styled.div<Props>`
   border-radius: 4px;
   padding: 0.8rem;
   cursor: pointer;

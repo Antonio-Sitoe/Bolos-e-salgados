@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
-import { animeLeft } from '../About/component/styles';
+import { AnimeLeft } from '../about/styles';
 
 export const UserPage = styled.main`
   margin: 6rem 0;
 `;
-
 export const UserIntro = styled.section`
   padding: 2rem 0;
   text-align: center;
@@ -64,9 +63,8 @@ export const UserContent = styled.section`
     padding: 0;
   }
 `;
-
 export const List = styled.section`
-  animation: ${animeLeft} 0.3s;
+  animation: ${AnimeLeft} 0.3s;
   ul {
     display: grid;
     gap: 1rem;
@@ -83,7 +81,6 @@ export const List = styled.section`
     }
   }
 `;
-
 export const Subtitle = styled.h2`
   font-weight: bold;
   font-size: 1rem;
@@ -99,9 +96,10 @@ export const Subtitle = styled.h2`
     background: ${theme.colors.blackHover};
   }
 `;
-
 export const Order = styled.main`
-  animation: ${animeLeft} 0.3s;
+  margin: 5rem auto;
+  padding: 5rem 0;
+  animation: ${AnimeLeft} 0.3s;
   div {
     display: flex;
     position: relative;

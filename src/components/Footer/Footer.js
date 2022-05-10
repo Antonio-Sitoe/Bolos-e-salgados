@@ -11,30 +11,30 @@ const Footer = () => {
             <ul>
               <li>
                 {' '}
-                <Link href='product'>
+                <Link href='/product'>
                   <a>Produto</a>
                 </Link>{' '}
               </li>
               <li>
                 {' '}
-                <Link href='about'>Quem somos</Link>{' '}
+                <Link href='/about'>Quem somos</Link>{' '}
               </li>
             </ul>
             <main>
-              <Link href=''>
-                <a href=''>
+              <Link href='/'>
+                <a>
                   <Title>Mila Delicious</Title>
                 </a>
               </Link>
             </main>
             <ul>
               <li>
-                <Link href='contact'>
+                <Link href='/contact'>
                   <a href=''>Contato</a>
                 </Link>
               </li>
               <li>
-                <Link href='faq'>
+                <Link href='/faq'>
                   <a href=''>Como Encomendar</a>
                 </Link>
               </li>

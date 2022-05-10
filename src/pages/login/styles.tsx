@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
-import { animeLeft } from '../About/component/styles';
+import { animeLeft } from '../about/styles';
 
 export const LoginGet = styled.form`
   display: grid;
+  
   gap: 0.6rem;
   max-width: 600px;
+  margin: 0 auto;
+  padding: 5rem 0;
   width: 100%;
   animation: ${animeLeft} 0.3s;
 

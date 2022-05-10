@@ -79,6 +79,7 @@ export const UserStorage = ({ children }) => {
     }
     setLoading(false);
   };
+  
   React.useEffect(() => {
     const token = window.localStorage.getItem('token');
     if (token) {

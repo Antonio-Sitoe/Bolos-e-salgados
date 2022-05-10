@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'next';
 import { Orders } from './styles';
 
-const OrdersItems = ({ cart,total }) => {
-
+const OrdersItems = ({ cart, total }) => {
   if (cart.length)
     return (
       <>
@@ -27,7 +26,7 @@ const OrdersItems = ({ cart,total }) => {
               Total <span>{total},MT</span>
             </h2>
             <p>Incluindo taxas de entregas de produtos</p>
-            <Link to='/checkout'>Finalizar a compra</Link>
+            <Link href='/checkout'>Finalizar a compra</Link>
           </div>
         </Orders>
       </>

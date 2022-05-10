@@ -1,10 +1,13 @@
 import React from "react";
-import Button from "../../components/Forms/Button";
-import Input from "../../components/Forms/Input";
-import { Title } from "../../styles/styles";
-import { LoginGet as Login } from "./styles";
+import Button from "../../../components/Forms/Button";
+import Input from "../../../components/Forms/Input";
+import { Title } from "../../../styles/styles";
+import { LoginGet as Login } from "../styles";
 import { BiKey } from "react-icons/bi";
-import { FORGOTTEN_PASSWORD } from "../../services/Api";
+import { FORGOTTEN_PASSWORD } from "../../../services/Api";
+
+
+
 const LoginPassoword = () => {
   const handleSubmit = (e) => {
     e.preventDefault();

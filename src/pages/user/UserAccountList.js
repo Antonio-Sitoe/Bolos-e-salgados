@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { UserContext } from '../../Context/UserContext';
 import { List } from './styles';
 
@@ -44,7 +44,7 @@ const UserAccountList = () => {
           </li>
         </ul>
         <div>
-          <Link to='edit'>Editar</Link>
+          <Link href='edit'>Editar</Link>
         </div>
         {haveNull && (
           <p>Certifique-se de preencher todos os dados de usuarios</p>

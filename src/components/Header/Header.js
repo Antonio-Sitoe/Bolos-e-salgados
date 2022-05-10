@@ -1,13 +1,10 @@
-import React from 'react';
-import Search from '../Search/Search';
 import Link from 'next/link';
-import { Container, Links } from '../../styles/styles';
-import { Header as HeaderStyle, MarginTops, Nav } from './styles';
+import React, { useEffect } from 'react';
+import { CgClose, CgMenu } from 'react-icons/cg';
 import { HiShoppingCart } from 'react-icons/hi';
-import { CgMenu, CgClose } from 'react-icons/cg';
-import { UserContext } from '../../Context/UserContext';
-import { CartContext } from '../../Context/CartContext';
-import { theme } from '../../styles/theme';
+import { Container, Links } from '../../styles/styles';
+import Search from '../Search/Search';
+import { Header as HeaderStyle, MarginTops, Nav } from './styles';
 
 const Header = () => {
   // const {
@@ -17,26 +14,16 @@ const Header = () => {
   const list = React.useRef();
   const [mobile, setMobile] = React.useState(false);
 
-  const openMenu = React.useCallback(
-    ({ target }) => {
-      if (list.current !== target) setMobile(!mobile);
-    },
-    [mobile]
-  );
+  const openMenu = ({ target }) => {
+    if (list.current !== target) setMobile(!mobile);
+  };
 
-  React.useEffect(() => {
-    if (mobile) {
-      document.addEventListener('click', openMenu);
-    }
-    return () => document.removeEventListener('click', openMenu);
-  }, [mobile, openMenu]);
-
-  return (
+   return (
     <>
       <MarginTops />
       <HeaderStyle>
         <Container>
-          <Nav mobile={mobile ? '' : 'none'}>
+          <Nav mobile={mobile ? '' : 'none'} onClick={openMenu}>
             <Link href='/'>
               <img src='/logo.svg' alt='logo do site' />
             </Link>
@@ -58,20 +45,22 @@ const Header = () => {
                 <Links href='/login'>Entrar | Criar</Links>
               </li>
               <li>
-                <Links href='/cart'><HiShoppingCart /></Links>
+                <Links href='/cart'>
+                  <HiShoppingCart />
+                </Links>
               </li>
               {/* <li>
                 {user ? (
-                  <Links to='acount' user={user.username}>
+                  <Links href='acount' user={user.username}>
                     {user.username}
                   </Links>
                 ) : (
-                  <Links to='login'>Entrar | Criar</Links>
+                  <Links href='login'>Entrar | Criar</Links>
                 )}
               </li> */}
               {/* <li>
                 <Links
-                  to='cart'
+                  href='cart'
                   user={cart.length}
                   point={cart.length ? theme.colors.buyBtn : 'none'}
                 >

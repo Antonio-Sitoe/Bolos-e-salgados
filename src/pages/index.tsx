@@ -13,7 +13,6 @@ export const Main = styled.main`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 `;
-
 export const DivConfir = styled.div`
   margin: 6rem 0;
   a {
@@ -23,8 +22,6 @@ export const DivConfir = styled.div`
     border-radius: 3rem;
   }
 `;
-
-
 export const content = [
   {
     id: Math.floor(Math.random() * 100),
@@ -99,7 +96,6 @@ const Home = () => {
       </Container>
       <Kit />
       <CupCakeCard />
-
     </>
   );
 };

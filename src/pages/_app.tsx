@@ -4,18 +4,27 @@ import { theme } from '../styles/theme'
 import Footer from '../components/Footer/Footer'
 import Social from '../components/Social/Social'
 import Header from '../components/Header/Header'
+import { UserStorage } from '../Context/UserContext'
+import { CartStorage } from '../Context/CartContext'
+import { GlobalFuntions } from '../Context/GlobalFuntions'
 
 
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <GlobalStyles />
-      <Header/>
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-        <Social />
-        <Footer />
+        <UserStorage>
+          <CartStorage>
+            <GlobalFuntions>
+              <GlobalStyles />
+              <Header />
+              <Component {...pageProps} />
+              <Social />
+              <Footer />
+            </GlobalFuntions>
+          </CartStorage>
+        </UserStorage>
       </ThemeProvider>
     </>
   )

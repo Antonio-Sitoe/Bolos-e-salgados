@@ -9,7 +9,7 @@ const ButtonStyle = styled.button`
   width: 100%;
   max-width: 297.08px;
   height: 49px;
-  background: ${theme.colors.black};
+  background: ${theme.colors.base};
   border-radius: 4px;
   color: ${theme.colors.white};
   border: none;

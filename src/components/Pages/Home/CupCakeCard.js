@@ -1,6 +1,6 @@
-import { Card, CupCakeStyle, MainCard } from './styles';
-import { Title, Container, Links } from '../../../styles/styles';
 import Image from 'next/image';
+import { Container, Links, Title } from '../../../styles/styles';
+import { Card, CupCakeStyle, MainCard } from './styles';
 
 const cupcakes = [
   {
@@ -23,11 +23,16 @@ const CupCakeCard = () => {
           {cupcakes.map((item) => {
             return (
               <Card key={item.id}>
-                <Image alt={item.name} src='/card.svg' width={200} height={250} />
+                <Image
+                  alt={item.name}
+                  src='/card.svg'
+                  width={200}
+                  height={250}
+                />
                 <main>
                   <h1>{item.name}</h1>
                   <h4>{item.price}</h4>
-                  <Links to={`product/${item.id}`}>Comprar</Links>
+                  <Links href='/'>Comprar</Links>
                 </main>
               </Card>
             );

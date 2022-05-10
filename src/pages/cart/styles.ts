@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
-import { animeLeft } from '../About/component/styles';
+import { animeLeft } from '../about/styles';
 
 export const CartStyle = styled.main`
   animation: ${animeLeft} 0.3s;

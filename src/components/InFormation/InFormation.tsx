@@ -1,20 +1,54 @@
 import React from 'react';
-import Button from '../../../components/Forms/Button';
-import Count from './Count';
-import { useNavigate, useParams } from 'react-router-dom';
-import { CartContext } from '../../../Context/CartContext';
-import { Title } from '../../../styles/styles';
-import { ShowInformation } from '../styles';
-import { toast } from 'react-toastify';
-import { CREATE_CART, ADD_CART } from '../../../services/Api';
-import useFecth from '../../../hooks/useFecth';
+import Button from '../../components/Forms/Button';
+import Count from '../Count/Count';
 
+import { CartContext } from '../../Context/CartContext';
+import { Title } from '../../styles/styles';
+
+import { toast } from 'react-toastify';
+import { CREATE_CART, ADD_CART } from '../../services/Api';
+import useFecth from '../../hooks/useFecth';
+import { useRouter } from 'next/router';
+import styled from 'styled-components';
+
+const ShowInformation = styled.section`
+  margin: 0.6rem 0;
+
+  padding: 0 3rem;
+  @media (max-width: 800px) {
+    padding: 0;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  button {
+    margin: 1rem 0;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  h2,
+  h3 {
+    font-size: 1.5rem;
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  h3 {
+    text-transform: uppercase;
+  }
+`;
 const InFormation = ({ data, showImage }) => {
   const { id } = useParams();
   const [count, setCount] = React.useState(1);
   const { dispatch } = React.useContext(CartContext);
   const [loading, setLoading] = React.useState(false);
-  const navigate = useNavigate();
+  const navigate = useRouter();
   const { request } = useFecth();
 
   async function handleSubmit() {
@@ -40,7 +74,7 @@ const InFormation = ({ data, showImage }) => {
       }, 3000);
     });
     setLoading(false);
-    navigate('/cart');
+    navigate.push('/cart');
   }
   async function handleCart() {
     const { url, options } = CREATE_CART();

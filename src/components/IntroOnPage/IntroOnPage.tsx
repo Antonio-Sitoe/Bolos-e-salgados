@@ -1,7 +1,11 @@
 import styled from 'styled-components';
+import { Title } from "../../styles/styles";
 import { AnimeIntro } from '../../styles/styles';
 
-export const IntroOnPageStyle = styled.section`
+interface IntroOnPageStyleProps {
+  bg: string
+}
+const IntroOnPageStyle = styled.section<IntroOnPageStyleProps>`
   background: url(${(props) => props.bg}) no-repeat;
   background-position: center center;
   background-size: cover;
@@ -27,3 +31,12 @@ export const IntroOnPageStyle = styled.section`
     }
   }
 `;
+const IntroOnPage = ({ text, Bg }) => {
+  return (
+    <IntroOnPageStyle bg={Bg ? Bg : '/quemsoms.jpg'}>
+      <Title>{text}</Title>
+    </IntroOnPageStyle>
+  );
+};
+
+export default IntroOnPage;
