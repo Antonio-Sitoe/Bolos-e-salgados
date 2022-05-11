@@ -145,7 +145,7 @@ ul {
   }
     p {
         line-height: 1.5;
-        font-size: .9rem;
+        font-size: 1rem;
       }
 `;
 export const Container = styled.div`

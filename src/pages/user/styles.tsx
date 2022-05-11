@@ -97,9 +97,8 @@ export const Subtitle = styled.h2`
   }
 `;
 export const Order = styled.main`
-  margin: 5rem auto;
-  padding: 5rem 0;
   animation: ${AnimeLeft} 0.3s;
+    padding: 0 3rem;
   div {
     display: flex;
     position: relative;

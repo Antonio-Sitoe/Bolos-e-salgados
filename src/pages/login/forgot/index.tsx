@@ -5,6 +5,7 @@ import { Title } from "../../../styles/styles";
 import { LoginGet as Login } from "../styles";
 import { BiKey } from "react-icons/bi";
 import { FORGOTTEN_PASSWORD } from "../../../services/Api";
+import LoginLayault from "../components/LoginLayault";
 
 
 
@@ -26,17 +27,19 @@ const LoginPassoword = () => {
       });
   };
   return (
-    <Login onSubmit={handleSubmit}>
-      <Title>Recuperar senha</Title>
-      <p>
-        Para recuperar a sua senha, digite o seu email no campo abaixo ! apos
-        clicar em enviar ira receber um e-mail dentro de instantes
-      </p>
-      <Input placeholder="Digite o seu Email" />
-      <Button>
-        <BiKey /> Enviar
-      </Button>
-    </Login>
+    <LoginLayault>
+      <Login onSubmit={handleSubmit}>
+        <Title>Recuperar senha</Title>
+        <p>
+          Para recuperar a sua senha, digite o seu email no campo abaixo ! apos
+          clicar em enviar ira receber um e-mail dentro de instantes
+        </p>
+        <Input placeholder="Digite o seu Email" />
+        <Button>
+          <BiKey /> Enviar
+        </Button>
+      </Login>
+    </LoginLayault>
   );
 };
 

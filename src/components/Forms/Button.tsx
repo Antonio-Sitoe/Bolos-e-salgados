@@ -2,7 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 
-const ButtonStyle = styled.button`
+
+interface ButtonProps {
+  loading?: Boolean
+  children: string
+}
+
+interface ButtonStyleProps {
+  disabled?: Boolean
+}
+const ButtonStyle = styled.button<ButtonStyleProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +39,9 @@ const ButtonStyle = styled.button`
   }
 `;
 
-const Button = ({ children, loading, ...rest }) => (
+
+
+const Button = ({ children, loading, ...rest }: ButtonProps) => (
   <ButtonStyle {...rest} disabled={loading}>
     {children}
   </ButtonStyle>

@@ -1,23 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
-import { UserContext } from '../../Context/UserContext';
-import { List } from './styles';
+import { List } from '../styles';
 
-const UserAccountList = () => {
-  const { user } = React.useContext(UserContext);
-  const [haveNull, SetHaveNull] = React.useState(true);
-
-  const haveNullFunction = React.useCallback(() => {
-    for (let i in user) {
-      if (i !== 'empresa') {
-        if (user[i] === null) SetHaveNull(false);
-      }
-    }
-  }, [user]);
-
-  React.useEffect(() => {
-    haveNullFunction();
-  }, [haveNullFunction]);
+const UserDataList = () => {
+  const [haveUserData, setUserData] = React.useState(false)
+  const user = {
+    username: 'antonio Sitoe',
+    email: 'antoniositoehl@gmail.com',
+    empresa: 'Polana construcoes',
+    endereco: 'Fernao magalhaies',
+    cidade: 'Maputo cidade'
+  }
 
   if (user)
     return (
@@ -36,17 +29,13 @@ const UserAccountList = () => {
             <strong>Endereco :</strong> {user.endereco || '---'}
           </li>
           <li>
-            <strong>Ponto de referencia:</strong> {user.referencia || '---'}
-          </li>
-          <li>
             <strong>Cidade e regiao:</strong> {user.cidade || '---'}
-            {console.log(user.pais)}
           </li>
         </ul>
         <div>
-          <Link href='edit'>Editar</Link>
+          <Link href='user/edit'>Editar</Link>
         </div>
-        {haveNull && (
+        {haveUserData && (
           <p>Certifique-se de preencher todos os dados de usuarios</p>
         )}
       </List>
@@ -54,4 +43,4 @@ const UserAccountList = () => {
   return <p>Preencha teus dados</p>;
 };
 
-export default UserAccountList;
+export default UserDataList;

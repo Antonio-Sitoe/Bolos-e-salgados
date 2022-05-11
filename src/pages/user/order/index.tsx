@@ -1,6 +1,4 @@
-import Link from 'next/link';
-import React from 'react';
-import { Container, Links } from '../../../styles/styles';
+import UserLayout from '../components/UserLayout';
 import { Order, Subtitle } from '../styles';
 // import { UserContext } from '../../Context/UserContext';
 // import { Link } from 'react-router-dom';
@@ -10,7 +8,7 @@ const UserOrders = () => {
   // const { user } = React.useContext(UserContext);
 
   return (
-    <Container>
+    <UserLayout>
       <Order>
         <Subtitle>Pedidos recentes</Subtitle>
         <div>
@@ -51,11 +49,10 @@ const UserOrders = () => {
               </tr>
             </tbody>
           </table>
-
-
         </div>
       </Order>
-    </Container>
+    </UserLayout>
+
   );
 };
 

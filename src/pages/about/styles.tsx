@@ -17,6 +17,8 @@ export const AboutStyle = styled.section`
     }
   }
   img {
+    max-width: 10rem;
+    /* margin: 1rem auto;  */
     @media (max-width: 800px) {
       order: 0;
     }

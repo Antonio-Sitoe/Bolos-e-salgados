@@ -18,12 +18,18 @@ const Header = () => {
     if (list.current !== target) setMobile(!mobile);
   };
 
-   return (
+  function handle({ target }) {
+    if (mobile === true && list.current !== target) {
+      setMobile(false);
+    }
+  }
+
+  return (
     <>
       <MarginTops />
-      <HeaderStyle>
+      <HeaderStyle mobile={mobile} onClick={handle}>
         <Container>
-          <Nav mobile={mobile ? '' : 'none'} onClick={openMenu}>
+          <Nav mobile={mobile ? '' : 'none'}>
             <Link href='/'>
               <img src='/logo.svg' alt='logo do site' />
             </Link>

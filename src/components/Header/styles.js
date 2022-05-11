@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
-import { theme } from "../../styles/theme";
+import styled, { keyframes } from 'styled-components';
+import { theme } from '../../styles/theme';
 
 const Menu = keyframes`
 from {
@@ -32,6 +32,10 @@ export const Header = styled.header`
   top: 0;
   background: ${theme.colors.white};
   z-index: 10;
+  @media (max-width: 900px) {
+    height: ${(props) => (props.mobile ? '100vh' : '')};
+    background: ${(props) => (props.mobile ? 'rgba(0, 0, 0, 0.5)' : 'white')};
+  }
 `;
 export const Nav = styled.nav`
   display: flex;

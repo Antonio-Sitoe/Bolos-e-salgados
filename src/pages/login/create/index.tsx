@@ -10,6 +10,7 @@ import { UserContext } from '../../../Context/UserContext';
 import useForm from '../../../hooks/useForm';
 
 import { useRouter } from 'next/router'
+import LoginLayault from '../components/LoginLayault';
 
 const LoginCreate = () => {
   const { error, userRegister, loading, setError } =
@@ -35,41 +36,43 @@ const LoginCreate = () => {
     }
   };
   return (
-    <Login onSubmit={handleSubmit}>
-      <Title>Crie sua conta</Title>
-      <ErrorServer error={error} />
-      <Input
-        name='nome'
-        label='Nome'
-        placeholder='Digite o seu nome'
-        {...name}
-      />
-      <Input
-        name='Email'
-        label='Email'
-        placeholder='Digite o seu Email'
-        {...email}
-      />
-      <Input
-        label='Senha'
-        name='senha'
-        type='password'
-        placeholder='Digite o sua senha'
-        {...password}
-      />
-      <Input
-        name='confirme'
-        label='Confirme a senha'
-        type='password'
-        placeholder='Confirme a sua senha'
-        {...passConfirm}
-      />
+    <LoginLayault>
+      <Login onSubmit={handleSubmit}>
+        <Title>Crie sua conta</Title>
+        <ErrorServer error={error} />
+        <Input
+          name='nome'
+          label='Nome'
+          placeholder='Digite o seu nome'
+          {...name}
+        />
+        <Input
+          name='Email'
+          label='Email'
+          placeholder='Digite o seu Email'
+          {...email}
+        />
+        <Input
+          label='Senha'
+          name='senha'
+          type='password'
+          placeholder='Digite o sua senha'
+          {...password}
+        />
+        <Input
+          name='confirme'
+          label='Confirme a senha'
+          type='password'
+          placeholder='Confirme a sua senha'
+          {...passConfirm}
+        />
 
-      <Button disabled={loading}>
-        <BiUser />
-        Criar conta
-      </Button>
-    </Login>
+        <Button disabled={loading}>
+          <BiUser />
+          Criar conta
+        </Button>
+      </Login>
+    </LoginLayault>
   );
 };
 
