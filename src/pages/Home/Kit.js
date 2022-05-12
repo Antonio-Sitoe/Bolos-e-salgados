@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Title } from '../../../styles/styles';
+import { Container, Title } from '../../styles/styles';
 import { KitsForParty } from './styles';
 import Image from 'next/image';
 import { toast } from 'react-toastify';

@@ -11,4 +11,7 @@ export const theme = {
     tomato: '#EC2626',
     buyBtn: '#ff385c',
   },
+  fonts:{
+    OleoScript:`'Oleo Script Swash Caps', cursive`
+  }
 };

@@ -11,7 +11,6 @@ const Skeleton = keyframes`
 
 export const ImageWrapper = styled.div`
   display: grid;
-
   div {
     grid-area: 1/1;
     height: 100%;

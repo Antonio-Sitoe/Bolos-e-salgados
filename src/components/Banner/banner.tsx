@@ -1,8 +1,6 @@
 import { AnimeIntro, Container, Links, Title } from '../../styles/styles';
 import { BsFillTelephoneFill } from 'react-icons/bs';
-
-
-import Image from '../Image/Image';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 import Link from 'next/link';
@@ -10,19 +8,9 @@ import Link from 'next/link';
 export const BannerStyle = styled.div`
   display: grid;
   animation: 0.3s ${AnimeIntro};
-  img {
-    grid-area: 1/1;
-    @media (max-width: 500px) {
-      height: 20rem;
-    }
 
-    @media (min-width: 1200px) {
-      height: 35rem;
-    }
-  }
-  div {
-    grid-area: 1/1;
     main {
+      grid-area: 1/1;
       width: 100%;
       height: 100%;
       display: flex;
@@ -34,8 +22,11 @@ export const BannerStyle = styled.div`
         max-width: 600px;
         margin: 2rem;
         line-height: 1;
-        text-transform: uppercase;
         text-align: center;
+        font-size: 2rem;
+        font-family: 'Lobster', cursive;
+
+        /* font-family: ${theme.fonts.OleoScript}; */
       }
       a {
         padding: 1rem;
@@ -45,25 +36,39 @@ export const BannerStyle = styled.div`
         }
       }
     }
-  }
 `;
+
+export const BannerBackgroundImage = styled.div`
+   grid-area: 1/1;
+   background: url('/banner.jpg') no-repeat center center;
+   background-size:cover ;
+      height: 20rem;
+    @media (max-width: 500px) {
+      height: 15rem;
+    }
+
+    @media (min-width: 1200px) {
+      height: 35rem;
+    }
+`
 
 
 const Banner = () => {
   return (
     <BannerStyle>
-      <Image src="/banner.jpg" alt='background image'/>
-      <Container>
-        <main>
-          <Title>Os melhores bolos você encontra aqui.</Title>
-          <Link href="produt">
-            <Links>
-              <BsFillTelephoneFill />
-              Encomendar
-            </Links>
-          </Link>
-        </main>
-      </Container>
+      <BannerBackgroundImage />
+      {/* <Image src="/banner.jpg" alt='background image' width={1200} height={600} /> */}
+
+      <main>
+        <h1>Os melhores bolos você encontra aqui.</h1>
+        <Link href="produt">
+          <Links>
+            <BsFillTelephoneFill />
+            Encomendar
+          </Links>
+        </Link>
+      </main>
+
     </BannerStyle>
   );
 };

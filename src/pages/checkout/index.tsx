@@ -7,7 +7,8 @@ import Data from './components/Data/Data';
 import Payments from './components/Payments/Payments';
 import { UserContext } from '../../Context/UserContext';
 import { CartContext } from '../../Context/CartContext';
-import { Orders } from '../Cart/styles';
+import { Orders } from '../cart/styles';
+
 const Checkout = () => {
   const { isAuthenticate, user } = React.useContext(UserContext);
   const [open, setOpen] = React.useState({ isData: false, isPayments: false });
@@ -19,7 +20,7 @@ const Checkout = () => {
 
   return (
     <CheckoutStyle>
-      <IntroOnPage text='Confira os dados antes de efetuar a compra' />
+      <IntroOnPage text='Confira os dados antes de efetuar a compra' Bg="" />
       <Container>
         <Main>
           <div>

@@ -7,9 +7,6 @@ export const CardStyle = styled.div`
   gap: 1rem;
   border-radius: 4px;
 
-  img {
-    height: 11rem;
-  }
   h3 {
     text-align: center;
     text-transform: uppercase;

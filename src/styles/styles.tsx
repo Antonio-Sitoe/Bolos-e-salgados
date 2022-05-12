@@ -147,13 +147,20 @@ ul {
         line-height: 1.5;
         font-size: 1rem;
       }
+
+    
 `;
 export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 0.6rem;
 `;
-export const Links = styled.a`
+
+interface ILinksProps {
+  user?: Boolean
+  point?: string
+}
+export const Links = styled.a<ILinksProps>`
   position: relative;
   border-radius: 4px;
   background: ${(props) =>
@@ -188,6 +195,9 @@ export const Title = styled.h1`
   font-weight: bold;
   font-family: 'Lato', sans-serif;
   text-transform: uppercase;
+  @media (max-width:500px){
+   font-size: 1rem;
+ }
 `;
 
 export const AnimeIntro = keyframes`

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Container, Links, Title } from '../../../styles/styles';
+import { Container, Links, Title } from '../../styles/styles';
 import { Card, CupCakeStyle, MainCard } from './styles';
 
 const cupcakes = [

@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import Card from '../components/Card/Card';
 import Banner from '../components/Banner/banner';
 import Sumary from '../components/Sumary/Sumary';
-import { Kit } from '../components/Pages/Home/Kit';
+import { Kit } from './Home/Kit';
 import { Container, Links } from '../styles/styles';
 
-import CupCakeCard from '../components/Pages/Home/CupCakeCard';
+import CupCakeCard from './Home/CupCakeCard';
 
 export const Main = styled.main`
   margin: 3rem 0;
@@ -72,13 +72,13 @@ export const subtitles: Subtitles = [
 const Home = () => {
 
   return (
-    <>      <Banner />
+    <> 
+    <Banner />
       <Container>
         {subtitles.map(({ title, description }, i) => {
           return (
             <div key={i}>
               <Sumary
-
                 title={title}
                 description={description}
               />

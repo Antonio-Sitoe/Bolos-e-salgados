@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { AnimeIntro } from '../../../styles/styles';
-import { theme } from '../../../styles/theme';
+import { AnimeIntro } from '../../styles/styles';
+import { theme } from '../../styles/theme';
 
 export const KitsForParty = styled.section`
   background: url('/kitBg.svg') no-repeat;

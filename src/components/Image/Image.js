@@ -9,7 +9,7 @@ const Image = ({ src, alt, ...rest }) => {
   }
   return (
     <ImageWrapper>
-      {/* {skeleton && <div />} */}
+      {skeleton && <div />}
       <img {...rest} onLoad={handleLoad} src={src} alt={alt} />
     </ImageWrapper>
   );
