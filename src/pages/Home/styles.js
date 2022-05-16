@@ -13,7 +13,7 @@ export const KitsForParty = styled.section`
   justify-content: center;
   animation: 0.3s ${AnimeIntro};
 
-  > div {
+  main {
     width: 100%;
     padding: 1rem;
     display: grid;
@@ -47,15 +47,14 @@ export const KitsForParty = styled.section`
         }
       }
 
-      button {
-        background: #a86b3c;
-        opacity: 0.5;
+      a {
         border: none;
         border-radius: 1rem;
-        padding: 0.6rem 3rem;
-        color: whitesmoke;
+        padding: 1rem;
         cursor: pointer;
-        z-index: 1;
+        &:hover {
+          background: ${theme.colors.blackHover};
+        }
       }
 
       @media (max-width: 600px) {
@@ -82,67 +81,18 @@ export const KitsForParty = styled.section`
   }
 `;
 
-export const CupCakeStyle = styled.section`
-  margin: 6rem 0;
-  animation: 0.3s ${AnimeIntro};
-  h1 {
-    text-align: center;
-  }
-`;
-
-export const MainCard = styled.div`
-  margin: 2rem 0 6rem 0;
-  animation: 0.3s ${AnimeIntro};
+export const Main = styled.main`
+  margin: 3rem 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  @media (max-width: 800px) {
-    gap: 1rem;
-  }
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-export const Card = styled.div`
-  animation: 0.3s ${AnimeIntro};
-  background: ${theme.colors.baseSmooth};
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-  border-radius: 4px;
-
-  main {
-    display: grid;
-    text-align: center;
-    padding: 1.5rem;
-    grid-template-rows: 1fr 1fr 2.5rem;
-
-    
-
-    h1 {
-      text-transform: uppercase;
-      line-height: 1.5;
-    }
-    h4 {
-      font-size: 1rem;
-      font-weight: bold;
-    }
-    a {
-      &:hover {
-        background: #252525 !important;
-        color: whitesmoke;
-      }
-    }
-    @media (max-width: 800px) {
-      padding: 1rem;
-    }
-    @media (max-width: 600px) {
-      gap: 1rem;
-    }
-  }
-  @media (max-width: 400px) {
-    grid-template-columns: 1fr;
+`;
+export const DivConfir = styled.div`
+  margin: 6rem 0;
+  a {
+    max-width: 20rem;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 3rem;
   }
 `;

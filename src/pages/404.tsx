@@ -1,6 +1,7 @@
 import React from 'react'
+import ErroMessage from '../components/Helper/ErroMessage'
 
 
 export default function Custom404() {
-  return <h1>404 - Page Not Found</h1>
+  return <ErroMessage error="Erro 404 - Pagina nao existente" />
 }

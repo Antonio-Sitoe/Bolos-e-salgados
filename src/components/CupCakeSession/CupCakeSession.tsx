@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from '../../components/Image/Image';
 import { Container, Links, Title } from '../../styles/styles';
 import { Card, CupCakeStyle, MainCard } from './styles';
 
@@ -14,7 +14,7 @@ const cupcakes = [
     price: 1500,
   },
 ];
-const CupCakeCard = () => {
+const CupCakeSession = () => {
   return (
     <Container>
       <CupCakeStyle>
@@ -23,12 +23,7 @@ const CupCakeCard = () => {
           {cupcakes.map((item) => {
             return (
               <Card key={item.id}>
-                <Image
-                  alt={item.name}
-                  src='/card.svg'
-                  width={200}
-                  height={250}
-                />
+                <Image alt={item.name} src='/cupcakes.svg' />
                 <main>
                   <h1>{item.name}</h1>
                   <h4>{item.price}</h4>
@@ -42,4 +37,4 @@ const CupCakeCard = () => {
     </Container>
   );
 };
-export default CupCakeCard;
+export default CupCakeSession;

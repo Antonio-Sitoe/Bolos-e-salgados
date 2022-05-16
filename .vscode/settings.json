@@ -1,11 +1,26 @@
 {
-  "git.enabled": false,
   "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
     "node_modules": true,
-    ".vscode": true,
     ".gitignore": true,
+    ".vscode": true,
+    "public": true,
+    "tsconfig.node.json": true,
+    "vite.config.ts": true,
     "package.json": true,
-    "package-lock.json": true,
-
+    "index.html": true,
+    "next.config.js": true,
+    "next-env.d.ts": true,
+    "src/styles": true,
+    "src/pages/_document.tsx": true,
+    "src/pages/_app.tsx": true,
+    ".next": true,
+    ".eslintrc.json": true,
+    "yarn.lock": true,
+    "tsconfig.json": true
   }
 }

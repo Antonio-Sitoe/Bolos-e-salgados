@@ -12,8 +12,14 @@
 [] Corrigir o css 
 [] corigir erros de typescript
 
-[] Ajustes no css das paginas 
+[] Ajustes nas paginas (content)
     [] Home
+        [x] banner
+        [] produtos
+        [x] kit
+        [] cupcake
+    [] Tratamento de erros no getStaticProps
+
 
 
     

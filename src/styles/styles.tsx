@@ -162,6 +162,7 @@ interface ILinksProps {
 }
 export const Links = styled.a<ILinksProps>`
   position: relative;
+  cursor: pointer;
   border-radius: 4px;
   background: ${(props) =>
     props.user ? theme.colors.baseSmooth : theme.colors.base};

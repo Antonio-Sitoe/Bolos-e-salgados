@@ -12,6 +12,6 @@ export const theme = {
     buyBtn: '#ff385c',
   },
   fonts:{
-    OleoScript:`'Oleo Script Swash Caps', cursive`
+    Lobster:`'Lobster', cursive`
   }
 };
