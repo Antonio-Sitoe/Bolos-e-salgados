@@ -22,6 +22,9 @@ export const KitsForParty = styled.section`
 
     div {
       width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       img {
         max-width: 300px;
         margin: 0 auto;

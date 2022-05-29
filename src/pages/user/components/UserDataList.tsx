@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { List } from '../styles';
+import { Links } from '../../../styles/styles';
 
 const UserDataList = () => {
   const [haveUserData, setUserData] = React.useState(false)
@@ -17,23 +18,39 @@ const UserDataList = () => {
       <List>
         <ul>
           <li>
-            <strong>Nome do usuario:</strong> {user.username}
+            <p>
+
+              <strong>Nome do usuario:</strong> {user.username}
+            </p>
           </li>
           <li>
-            <strong>Email:</strong> {user.email || '---'}
+            <p>
+
+              <strong>Email:</strong> {user.email || '---'}
+            </p>
           </li>
           <li>
-            <strong>Empresa (opcional):</strong> {user.empresa || '---'}
+            <p>
+              <strong>Empresa (opcional):</strong> {user.empresa || '---'}
+            </p>
           </li>
           <li>
-            <strong>Endereco :</strong> {user.endereco || '---'}
+            <p>
+              <strong>Endereco :</strong> {user.endereco || '---'}
+            </p>
           </li>
           <li>
-            <strong>Cidade e regiao:</strong> {user.cidade || '---'}
+            <p>
+              <strong>Cidade e regiao:</strong> {user.cidade || '---'}
+            </p>
           </li>
         </ul>
         <div>
-          <Link href='user/edit'>Editar</Link>
+          <Link href='user/edit'>
+            <Links>
+              Editar
+            </Links>
+          </Link>
         </div>
         {haveUserData && (
           <p>Certifique-se de preencher todos os dados de usuarios</p>

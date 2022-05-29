@@ -33,7 +33,6 @@ export const CartStorage = ({ children }) => {
   }, []);
 
 
-
   const value = { state, dispatch, total, setTotal };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

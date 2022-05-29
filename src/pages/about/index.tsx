@@ -19,8 +19,6 @@ const About = () => (
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima soluta magni reiciendis? Sit aliquam, veritatis fuga magni repellendus aut iusto nobis tempore, nemo delectus alias, tenetur a voluptate? Molestiae, animi?
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima soluta magni reiciendis? Sit aliquam, veritatis fuga magni repellendus aut iusto nobis tempore, nemo delectus alias, tenetur a voluptate? Molestiae, animi?
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima soluta magni reiciendis? Sit aliquam, veritatis fuga magni repellendus aut iusto nobis tempore, nemo delectus alias, tenetur a voluptate? Molestiae, animi?</p>
-
-
       </Content>
     </AboutStyle>
   </>

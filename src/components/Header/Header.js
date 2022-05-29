@@ -48,12 +48,16 @@ const Header = () => {
                 <Link href='/contact'>Contato</Link>
               </li>
               <li>
-                <Links href='/login'>Entrar | Criar</Links>
+                <Link href='/login'>
+                  <Links>Entrar | Criar</Links>
+                </Link>
               </li>
               <li>
-                <Links href='/cart'>
-                  <HiShoppingCart />
-                </Links>
+                <Link href='/cart'>
+                  <Links>
+                    <HiShoppingCart />
+                  </Links>
+                </Link>
               </li>
               {/* <li>
                 {user ? (

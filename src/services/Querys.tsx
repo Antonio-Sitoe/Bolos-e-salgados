@@ -25,3 +25,19 @@ export const HOME_QUERY = gql`
 }
 `
 
+export const PRODUTS_QUERY = gql`{
+  products {
+    id
+    images {
+      url
+    }
+    name
+    price
+    slug
+    orderItems {
+      id
+      quantity
+      total
+    }
+  }
+}`

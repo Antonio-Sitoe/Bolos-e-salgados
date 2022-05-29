@@ -73,11 +73,10 @@ export const List = styled.section`
   div {
     margin: 2rem 0;
     a {
-      background: ${theme.colors.grey};
       text-align: center;
-      padding: 0.6rem 1rem;
+      max-width: 10rem;
+      padding: 1rem;
       border-radius: 4px;
-      border: 3px solid #e0dfdf;
     }
   }
 `;

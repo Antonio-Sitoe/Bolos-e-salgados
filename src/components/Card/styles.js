@@ -3,9 +3,13 @@ import { theme } from '../../styles/theme';
 
 export const CardStyle = styled.div`
   background: ${theme.colors.baseSmooth};
+  border-radius: 4px;
   display: grid;
   gap: 1rem;
-  border-radius: 4px;
+
+  img {
+    width: 100%;
+  }
 
   h3 {
     text-align: center;
@@ -22,7 +26,7 @@ export const CardStyle = styled.div`
     padding: 0.8rem 0;
     width: 100%;
     max-width: 10rem;
-    margin: 1rem auto;
+    margin: 0 auto 1rem auto;
 
     &:hover {
       background: #252525 !important;

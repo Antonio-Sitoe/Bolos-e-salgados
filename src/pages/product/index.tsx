@@ -1,7 +1,7 @@
 import { Main, ProdutoStyle } from './styles'
 import IntroOnPage from '../../components/IntroOnPage/IntroOnPage'
 import { Container } from '../../styles/styles';
-import { content, subtitles } from '../Home/ FeaturedProductSession'
+import { content, subtitles } from '../home/FeaturedProductSession'
 import Card from '../../components/Card/Card';
 import Sumary from '../../components/Sumary/Sumary';
 import CupCakeSession from '../../components/CupCakeSession/CupCakeSession';

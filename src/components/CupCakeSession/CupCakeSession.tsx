@@ -1,4 +1,4 @@
-import Image from '../../components/Image/Image';
+import Image from 'next/image';
 import { Container, Links, Title } from '../../styles/styles';
 import { Card, CupCakeStyle, MainCard } from './styles';
 
@@ -23,7 +23,7 @@ const CupCakeSession = () => {
           {cupcakes.map((item) => {
             return (
               <Card key={item.id}>
-                <Image alt={item.name} src='/cupcakes.svg' />
+                <Image alt={item.name} src='/cupcakes.svg' height={280} width={320} />
                 <main>
                   <h1>{item.name}</h1>
                   <h4>{item.price}</h4>

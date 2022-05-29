@@ -6,12 +6,10 @@ import { theme } from '../../styles/theme';
 interface ButtonProps {
   loading?: Boolean
   children: string
+  onClick: () => void
 }
 
-interface ButtonStyleProps {
-  disabled?: Boolean
-}
-const ButtonStyle = styled.button<ButtonStyleProps>`
+const ButtonStyle = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +40,7 @@ const ButtonStyle = styled.button<ButtonStyleProps>`
 
 
 const Button = ({ children, loading, ...rest }: ButtonProps) => (
-  <ButtonStyle {...rest} disabled={loading}>
+  <ButtonStyle {...rest}>
     {children}
   </ButtonStyle>
 );
