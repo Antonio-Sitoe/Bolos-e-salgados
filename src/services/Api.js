@@ -1,5 +1,14 @@
-const url = process.env.REACT_APP_URL;
+const url = `http://localhost:1337/api`;
 const API_KEY = process.env.REACT_APP_CHEC_PUBLIC_KEY;
+
+export function GET_HOME_CONTENT() {
+  return {
+    url: `${url}/home?populate=*`,
+    options: {
+      method: 'GET',
+    },
+  };
+}
 
 export function GET_ALL_PRODUCTS() {
   return {

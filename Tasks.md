@@ -8,9 +8,9 @@
 # LISTA DE TAREFAS (PAGINAS E FUNCIONALIDADES)
 [] Ajustes nas paginas (content)
 ## 1.  [] Home Page()
-          [x] banner
-            [] produtos
-           [x] kit
+          [] banner
+          [] produtos
+           [] kit
           [] cupcake
             [] Ajustar as imagens dos produtos
             [] Fazer query dos produtos

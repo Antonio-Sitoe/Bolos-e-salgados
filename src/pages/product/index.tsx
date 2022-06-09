@@ -16,7 +16,6 @@ function product() {
           return (
             <div key={i}>
               <Sumary
-
                 title={title}
                 description={description}
               />

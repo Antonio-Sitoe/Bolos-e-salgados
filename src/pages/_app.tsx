@@ -7,24 +7,33 @@ import { CartStorage } from '../Context/CartContext'
 import { GlobalStyles } from '../styles/styles'
 import { ThemeProvider } from 'styled-components'
 import { ToastContainer } from 'react-toastify';
+import {
+
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
+
 import 'react-toastify/dist/ReactToastify.css';
 
-
+// Create a client
+const queryClient = new QueryClient()
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <UserStorage>
+        <QueryClientProvider client={queryClient}>
+          <UserStorage>
             <CartStorage>
-                <GlobalStyles />
-                <Header />
-                <Component {...pageProps} />
-                <Social />
-                <Footer />
+              <GlobalStyles />
+              <Header />
+              <Component {...pageProps} />
+              <Social />
+              <Footer />
               <ToastContainer />
             </CartStorage>
-        </UserStorage>
+          </UserStorage>
+        </QueryClientProvider>
       </ThemeProvider>
     </>
   )

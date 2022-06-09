@@ -1,9 +1,8 @@
 export interface HomeProps {
   error: Boolean
-  banner_image: {
-    id: string
-    bannerTitle: string
-    bannerImage: { url: string }
+  banner: {
+    banner_title: string,
+    Banner_img: string
   }
   kit: {
     kitTitle: string

@@ -6,9 +6,9 @@ import { BannerBackgroundImage, BannerStyle } from './style';
 const Banner = ({ bannerProprietes }) =>
 (
   <BannerStyle>
-    <BannerBackgroundImage backgroundUrl={bannerProprietes.bannerImage.url} />
+    <BannerBackgroundImage backgroundUrl={bannerProprietes.Banner_img} />
     <main>
-      <h1>{bannerProprietes.bannerTitle}</h1>
+      <h1>{bannerProprietes.banner_title}</h1>
       <Link href="/product" passHref>
         <Links>
           <BsFillTelephoneFill />
