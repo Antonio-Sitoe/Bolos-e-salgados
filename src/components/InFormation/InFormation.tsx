@@ -70,7 +70,7 @@ const InFormation = ({ data, showImage }) => {
     });
     await new Promise((resolve) => {
       return setTimeout(() => {
-        resolve();
+        resolve('');
       }, 3000);
     });
     setLoading(false);
@@ -79,7 +79,6 @@ const InFormation = ({ data, showImage }) => {
   async function handleCart() {
     const { url, options } = CREATE_CART();
     const { json, response } = await request(url, options);
-    console.log(json)
     if (response.ok) {
       window.localStorage.setItem('carts', JSON.stringify(json.id));
       const addCart = ADD_CART(json.id, {
@@ -87,7 +86,6 @@ const InFormation = ({ data, showImage }) => {
         quantity: count,
       });
       const responseAdd = await request(addCart.url, addCart.options);
-      console.log(responseAdd.json);
     }
   }
 

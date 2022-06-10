@@ -17,7 +17,6 @@ const LoginPassoword = () => {
     });
     fetch(url, options)
       .then((response) => {
-        console.log(response);
         return response.json();
       })
       .then((json) => console.log(json))

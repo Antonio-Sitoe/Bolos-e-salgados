@@ -1,69 +1,25 @@
+import React from 'react';
 import { Main } from './styles';
 import Card from '../../components/Card/Card';
 import Sumary from '../../components/Sumary/Sumary';
 import { Container, Links } from '../../styles/styles';
 import { DivConfir } from './styles';
 
-export const content = [
-  {
-    id: Math.floor(Math.random() * 100),
-    name: 'Bolo de chocolate',
-    price: 1500,
-    image: {
-      url: '/card.svg',
-    },
-  },
-  {
-    id: Math.floor(Math.random() * 100),
-    name: 'Bolo de chocolate',
-    price: 1500,
-    image: {
-      url: '/card.svg',
-    },
-  },
-  {
-    id: Math.floor(Math.random() * 100),
-    name: 'Bolo de chocolate',
-    price: 1500,
-    image: {
-      url: '/card.svg',
-    },
-  },
-  {
-    id: Math.floor(Math.random() * 100),
-    name: 'Bolo de chocolate',
-    price: 1500,
-    image: {
-      url: '/card.svg',
-    },
-  },
-];
 
-type Subtitles = Array<{ title: string, description: string }>
-export const subtitles: Subtitles = [
-  {
-    title: 'OS DOCES EM DESTAQUES',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    title: 'SALGADOS EM DESTAQUE',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-];
-
-const FeaturedProductSession = () => {
+const FeaturedProductSession = ({ featured }) => {
   return (
     <Container>
-      {subtitles.map(({ title, description }, i) => {
+      {featured.featuredData.map(({ title, description, id }, i) => {
+        const arr = ['doces', 'salgados']
         return (
-          <div key={i}>
+          <div key={id}>
             <Sumary
               title={title}
               description={description}
             />
             <Main>
-              {content.map((item) => {
-                return <Card key={item.id} attributes={item} />;
+              {featured.productData[arr[i]].map(({ attributes, id }) => {
+                return <Card key={id} attributes={attributes} />;
               })}
             </Main>
             <DivConfir>

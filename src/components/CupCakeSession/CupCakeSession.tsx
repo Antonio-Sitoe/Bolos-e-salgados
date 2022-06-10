@@ -2,31 +2,19 @@ import Image from 'next/image';
 import { Container, Links, Title } from '../../styles/styles';
 import { Card, CupCakeStyle, MainCard } from './styles';
 
-const cupcakes = [
-  {
-    id: Math.random() * 50,
-    name: 'Bolo de chocolate',
-    price: 1500,
-  },
-  {
-    id: Math.random() * 50,
-    name: 'Bolo de chocolate',
-    price: 1500,
-  },
-];
-const CupCakeSession = () => {
+const CupCakeSession = ({ cupCakeData }) => {
   return (
     <Container>
       <CupCakeStyle>
         <Title>CupCAKES PARA a sua festa</Title>
         <MainCard>
-          {cupcakes.map((item) => {
+          {cupCakeData.map(({ id, attributes }) => {
             return (
-              <Card key={item.id}>
-                <Image alt={item.name} src='/cupcakes.svg' height={280} width={320} />
+              <Card key={id}>
+                <Image alt={attributes.name} src={attributes.image.data[0].attributes.url} height={280} width={320} />
                 <main>
-                  <h1>{item.name}</h1>
-                  <h4>{item.price}</h4>
+                  <h1>{attributes.name}</h1>
+                  <h4>{attributes.price}</h4>
                   <Links href='/'>Comprar</Links>
                 </main>
               </Card>
