@@ -22,7 +22,7 @@ const PartykitSession = ({ kit }: { kit: Ikit }) => (
       <section>
         <Title>{kit.title}</Title>
         <p>{kit.description}</p>
-        <Button loading={false} onClick={notify}>Ver maisVer mais</Button>
+        <Button loading={false} onClick={notify}>Ver mais</Button>
       </section>
     </main>
   </KitsForParty>

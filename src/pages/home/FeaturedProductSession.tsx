@@ -19,7 +19,7 @@ const FeaturedProductSession = ({ featured }) => {
             />
             <Main>
               {featured.productData[arr[i]].map(({ attributes, id }) => {
-                return <Card key={id} attributes={attributes} />;
+                return <Card key={id} attributes={attributes} id={id} />;
               })}
             </Main>
             <DivConfir>

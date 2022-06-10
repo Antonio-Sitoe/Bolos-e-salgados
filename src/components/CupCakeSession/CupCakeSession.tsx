@@ -15,7 +15,7 @@ const CupCakeSession = ({ cupCakeData }) => {
                 <main>
                   <h1>{attributes.name}</h1>
                   <h4>{attributes.price}</h4>
-                  <Links href='/'>Comprar</Links>
+                  <Links href={`product/${id}`}>Comprar</Links>
                 </main>
               </Card>
             );

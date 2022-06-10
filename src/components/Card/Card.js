@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Links } from '../../styles/styles';
 import { CardStyle } from './styles';
 
-const Card = ({ attributes }, key) => {
+const Card = ({ attributes, id }, key) => {
   return (
     <CardStyle key={key}>
       <Image
@@ -14,7 +14,7 @@ const Card = ({ attributes }, key) => {
       />
       <h3>{attributes.name}</h3>
       <p>{attributes.price}</p>
-      <Links href={`product/${attributes.name}`}>Comprar</Links>
+      <Links href={`product/${id}`}>Comprar</Links>
     </CardStyle>
   );
 };
