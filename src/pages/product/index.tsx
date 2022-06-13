@@ -1,37 +1,50 @@
-import { Main, ProdutoStyle } from './styles'
-import IntroOnPage from '../../components/IntroOnPage/IntroOnPage'
-import { Container } from '../../styles/styles';
-import { content, subtitles } from '../home/FeaturedProductSession'
-import Card from '../../components/Card/Card';
-import Sumary from '../../components/Sumary/Sumary';
+import { ProdutoStyle } from './styles';
+import IntroOnPage from '../../components/IntroOnPage/IntroOnPage';
+import { GetServerSideProps } from 'next';
+import FetchData from '../../components/Helper/FetchData';
+import transformData from '../../components/Helper/transformData';
+import { GET_ALL_PRODUCTS, GET_HOME_CONTENT } from '../../services/Api';
+import ErroMessage from '../../components/Helper/ErroMessage';
+import { IPagesProps } from '../../Types/Interfaces';
+import { ResponseData } from '..';
+import FeaturedProductSession from '../home/FeaturedProductSession';
 import CupCakeSession from '../../components/CupCakeSession/CupCakeSession';
 
-function product() {
+function product(props: IPagesProps) {
+  if (props.error) {
+    return <ErroMessage error={'Erro'} />;
+  }
   return (
-
     <ProdutoStyle>
-      <IntroOnPage text='Bolos e Salgados' Bg="/encomendas.jpg" />
-      <Container>
-        {subtitles.map(({ title, description }, i) => {
-          return (
-            <div key={i}>
-              <Sumary
-                title={title}
-                description={description}
-              />
-              <Main>
-                {content.map((item) => {
-                  return <Card key={item.id} attributes={item} />;
-                })}
-              </Main>
-            </div>
-          );
-        })}
-      </Container>
-      <CupCakeSession />
+      <IntroOnPage
+        text={props.banner.banner_title}
+        Bg={props.banner.Banner_img}
+      />
+      <FeaturedProductSession featured={props.featured} />
+      <CupCakeSession cupCakeData={props.featured.productData.cup} />
     </ProdutoStyle>
-
   );
 }
-
 export default product;
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const bannerContent = GET_HOME_CONTENT(2);
+  const productsOptions = GET_ALL_PRODUCTS();
+
+  const { data } = await FetchData(productsOptions);
+  const bannerData = await FetchData(bannerContent);
+  const produtDataJson = transformData(data);
+
+  if (data && bannerData && produtDataJson) {
+    const response = ResponseData(bannerData, produtDataJson);
+    return {
+      props: response,
+    };
+  } else {
+    return {
+      props: {
+        error: true,
+      },
+    };
+  }
+};

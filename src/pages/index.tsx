@@ -1,20 +1,17 @@
-import React from 'react';
+import { GetStaticProps } from 'next';
 import Banner from '../components/Banner/banner';
 import CupCakeSession from '../components/CupCakeSession/CupCakeSession';
 import ErroMessage from '../components/Helper/ErroMessage';
-import FeaturedProductSession from './home/FeaturedProductSession';
-import { GetStaticProps } from 'next';
-import { HomeProps } from '../Types/Interfaces';
-import { GET_ALL_PRODUCTS, GET_HOME_CONTENT } from '../services/Api';
 import FetchData from '../components/Helper/FetchData';
+import transformData from '../components/Helper/transformData';
+import { GET_ALL_PRODUCTS, GET_HOME_CONTENT } from '../services/Api';
+import { IPagesProps } from '../Types/Interfaces';
+import FeaturedProductSession from './home/FeaturedProductSession';
 import PartykitSession from './home/PartykitSession';
 
-
-
-
-const Home = (props: HomeProps) => {
+const Home = (props: IPagesProps) => {
   if (props.error) {
-    return <ErroMessage error={'Erro'} />
+    return <ErroMessage error={'Erro'} />;
   }
   return (
     <>
@@ -28,66 +25,44 @@ const Home = (props: HomeProps) => {
 
 export default Home;
 
-function transformData(produtData) {
-  return produtData.reduce((acc, item) => {
-    switch (item.attributes.category) {
-      case 'doces':
-        acc.doces.push(item)
-        break;
-      case 'salgados':
-        acc.salgados.push(item)
-        break;
-      case 'cup':
-        acc.cup.push(item)
-        break;
-      default:
-        throw new Error('Erro')
-    }
-    return acc
-  }, {
-    doces: [],
-    salgados: [],
-    cup: []
-  })
-}
-function ResponseData(json, produtDataJson) {
+export function ResponseData(json, produtDataJson) {
   return {
     banner: {
       banner_title: json.data.attributes.banner_title,
-      Banner_img: json.data.attributes.Banner_img.data.attributes.url
+      Banner_img: json.data.attributes.Banner_img.data.attributes.url || '',
     },
-    kit: {
-      title: json.data.attributes.kit.title,
-      description: json.data.attributes.kit.description,
+    kit: json.data.attributes.kit && {
+      title: json.data.attributes.kit?.title,
+      description: json.data.attributes.kit?.description,
       image: {
-        name: json.data.attributes.kit.image.data.attributes.name,
-        url: json.data.attributes.kit.image.data.attributes.url,
+        name: json.data.attributes?.kit?.image.data.attributes.name,
+        url: json.data.attributes?.kit?.image.data.attributes.url,
       },
     },
     featured: {
       featuredData: json.data.attributes.destaque,
-      productData: produtDataJson
+      productData: produtDataJson,
     },
-    error: false
-  }
+    error: false,
+  };
 }
 export const getStaticProps: GetStaticProps = async () => {
-  const homeOptions = GET_HOME_CONTENT();
-  const productsOptions = GET_ALL_PRODUCTS()
+  const homeOptions = GET_HOME_CONTENT(1);
+  const productsOptions = GET_ALL_PRODUCTS();
   const json = await FetchData(homeOptions);
   const produtData = await FetchData(productsOptions);
   const produtDataJson = transformData(produtData.data);
-  const data = ResponseData(json, produtDataJson)
 
   if (json && produtData && produtDataJson) {
+    const data = ResponseData(json, produtDataJson);
     return {
-      props: data
-    }
+      props: data,
+    };
   } else {
     return {
       props: {
-        error: true
-      }
-    }
+        error: true,
+      },
+    };
   }
-}
+};

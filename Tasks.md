@@ -1,77 +1,91 @@
 ## Objectivo
+
 [] corigir erros de typescript
 [] Mudar todos componentes para typescript
-[] Corrigir o css 
+[] Corrigir o css
 [] Autenticacao
 [] Colocar e configurar o eslint.
 
 # LISTA DE TAREFAS (PAGINAS E FUNCIONALIDADES)
+
 [] Ajustes nas paginas (content)
-## 1.  [] Home Page()
-          [] banner
-          [] produtos
-           [] kit
-          [] cupcake
-            [] Ajustar as imagens dos produtos
-            [] Fazer query dos produtos
-           [] incrimentar o ICR do nextJS
- 
-##  2.    [] About Page()
-          [] Colocar os dados no CMS
+
+## 1. [x] Home Page()
+        [x] banner
+        [x] produtos
+        [x] kit
+        [x] cupcake
+        [x] Ajustar as imagens dos produtos
+        [x] Fazer query dos produtos
+        [x] incrimentar o ICR do nextJS
+
+## 1.2. [x] product
+        [x] modificar ttodos os produtos no graphcms
+        [x] fecth da dados no serverside
+        [x] pagina de produto
+        
+
+## 1.3 [] single Page
+       [] usar serversiderendering
+       [] Fazer tratamentos de dados / erros
+       [] 
+
+
+## 2. [] About Page()
+         [] Colocar os dados no CMS
          [] Fazer query dos dados no Frontend
          [] ajustar
-         [] no banner intro colocar uma foto diferente 
-    
-## 3.  [] Contato
-        [] Mudar a pagina contacto para 
+         [] no banner intro colocar uma foto diferente
+
+## 3. [] Contato
+
+        [] Mudar a pagina contacto para
           esse design  https://www.origamid.com/projetos/bikcraft/contato.html
         [] adicionar funcionalidade de formulario a pagina de contacto.
         [] mandar tudo para o graphcms
         [] colocar um butao de contacto ao whatsap.
-          [] no banner intro colocar uma foto diferente 
+          [] no banner intro colocar uma foto diferente
 
+## 4. [] Faq
 
- ## 4.   [] Faq 
           [] update de faq no graphcms
           [] fazer query no  server side
-          [] no banner intro colocar uma foto diferente 
-    
-##   4.1. Login
+          [] no banner intro colocar uma foto diferente
+
+## 4.1. Login
+
          [] no criar e no perdeu adicionar um butao de voltar.
          [] adicionar funcionalidade de autenticao com supabase ou firebase.
-         
-         [] Header component 
+
+         [] Header component
              [] modificar o component de header
              [] modficar todos os componentes que dependem da autenticacao.
 
-         
-##   5.  [] Cart page ()
+## 5. [] Cart page ()
+
          [] Dividir a pagina cart em microComponents
          [] Mudar para typescript
-         [] no banner intro colocar uma foto diferente 
+         [] no banner intro colocar uma foto diferente
          [] cart dev estar no servidor tambem
 
-##    6. [] Checkout
+## 6. [] Checkout
+
            [] Mudar para typescript
-           [] no banner intro colocar uma foto diferente 
-##    7. product
-        [] modificar ttodos os produtos no graphcms
-        [] single Page
-        [] pagina de produto 
-        [] fecth da dados no serverside
-    
-##  8. [] user
+           [] no banner intro colocar uma foto diferente
+
+## 8. [] user
+
         [] verificar se esta autenticado primeiro
         [] buscar os dados via server side rendering
         [] funcao de modicar os dados.
         [] modificar a cor do butao
         [] modificar os components
         [] adicionar funcionalidade de pedidos no servidor
-        [] colocar a cor de cada butao no aside, activeStyle 
+        [] colocar a cor de cada butao no aside, activeStyle
         [] adicionar funcionalidade de logout
-    
-    
-## 9. Components 
+
+## 9. Components
+
        [] colocar todos os components em typescript
        [] mover a pasta helper para fora dos components
        [] apagar a pasta image
@@ -88,8 +102,8 @@
        [] remover a dependencia swr
        [] Apagar o arquivo app
        [] remover imagens desnecessarias
- 
- ### Ultmos ajustes
+
+### Ultmos ajustes
 
      [] - O colocar o acesso ao graphcms no .env
      [] - build
@@ -97,4 +111,3 @@
      [] - Fazer deploy na vercel
      [] - Colocar no readme (embelezar o readme)
      [] - mandar no grupo
-

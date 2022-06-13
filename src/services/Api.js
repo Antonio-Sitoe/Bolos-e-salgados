@@ -2,7 +2,7 @@ const url = `http://localhost:1337/api`;
 const API_KEY = process.env.REACT_APP_CHEC_PUBLIC_KEY;
 const qs = require('qs');
 
-export function GET_HOME_CONTENT() {
+export function GET_HOME_CONTENT(id) {
   const query = qs.stringify(
     {
       populate: {
@@ -20,26 +20,25 @@ export function GET_HOME_CONTENT() {
     }
   );
   return {
-    url: `${url}/home?${query}`,
+    url: `${url}/homes/${id}?${query}`,
+    options: {
+      method: 'GET',
+    },
+  };
+}
+export function GET_ALL_PRODUCTS() {
+  return {
+    url: `${url}/products?populate=*`,
     options: {
       method: 'GET',
     },
   };
 }
 
-export function GET_ALL_PRODUCTS() {
-  return {
-    url: `${url}/products?populate=*`,
-    options: {
-      method: 'GET',
-      headers: {
-        'X-Authorization': `${API_KEY}`,
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    },
-  };
-}
+
+
+
+
 export function GET_PRODUTS_FOR_ID(id) {
   http: return {
     url: `${url}/products/${id}?populate=*`,
@@ -53,6 +52,7 @@ export function GET_PRODUTS_FOR_ID(id) {
     },
   };
 }
+
 export function GET_ABOUT_CONTENT() {
   return {
     url: `${url}/merchants`,

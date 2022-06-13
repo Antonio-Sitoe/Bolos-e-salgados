@@ -1,41 +1,44 @@
 export interface IProduct {
-  id: number,
+  id: number;
   attributes: {
-    category: string
-    description: string
-    image: {}
-    name: string
-    price: 1500
-  }
+    category: string;
+    description: string;
+    image: {};
+    name: string;
+    price: 1500;
+  };
 }
 export interface Ikit {
-  title: string,
-  description: string,
+  title: string;
+  description: string;
   image: {
-    name: string,
-    url: string,
-  },
+    name: string;
+    url: string;
+  };
+}
+export interface IProductData {
+  cup: IProduct[];
+  doces: IProduct[];
+  salgados: IProduct[];
 }
 
-export interface HomeProps {
-  error: Boolean
-  banner: {
-    banner_title: string,
-    Banner_img: string
-  }
-  kit: Ikit
+export interface Banner {
+  banner_title: string;
+  Banner_img: string;
+}
+
+export interface IfeaturedData {
+  description: string;
+  id: number;
+  title: string;
+}
+
+export interface IPagesProps {
+  error: Boolean;
+  banner: Banner;
+  kit?: Ikit;
   featured: {
-    featuredData: {
-      description: string
-      id: number
-      title: string
-    }[]
-    productData: {
-      cup: IProduct[]
-      doces: IProduct[]
-      salgados: IProduct[]
-    }
-  },
+    featuredData: IfeaturedData[];
+    productData: IProductData;
+  };
 }
-
-
