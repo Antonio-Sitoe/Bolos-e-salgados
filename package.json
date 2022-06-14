@@ -8,6 +8,7 @@
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^4.3.1",
+    "react-markdown": "^8.0.3",
     "react-toastify": "^8.1.0",
     "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1"

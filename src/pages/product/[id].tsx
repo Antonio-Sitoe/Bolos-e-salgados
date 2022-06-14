@@ -1,28 +1,29 @@
-import React from 'react'
+import React from 'react';
 import { Container } from '../../styles/styles';
-import { Main, ProdutoStyle, ShowPhotos } from './styles';
+import { Main, ProdutoStyle } from './styles';
 import { GET_PRODUTS_FOR_ID } from '../../services/Api';
-
 import useFecth from '../../hooks/useFecth';
 import ErroMessage from '../../components/Helper/ErroMessage';
 import Loading from '../../components/Helper/Loading';
-import InFormation from '../../components/InFormation/InFormation';
 import Slide from '../../components/Slide/Slide';
+import { useRouter } from 'next/router';
+import ProductInformation from '../../components/ProductInformation/ProductInformation';
+import { IshowImageArray } from '../../Types/Interfaces';
 
 const SinglePage = () => {
-  const [showImage, setImage] = React.useState('');
+  const [showImage, setImage] = React.useState<IshowImageArray>([]);
   const { data, error, loading, request } = useFecth();
-  const id = 1;
+  const { query } = useRouter();
 
   React.useEffect(() => {
     (async () => {
-      const { url, options } = GET_PRODUTS_FOR_ID(id);
+      const { url, options } = GET_PRODUTS_FOR_ID(query.id);
       await request(url, options);
     })();
-  }, [request, id]);
+  }, [request, query]);
 
   React.useEffect(() => {
-    if (data) setImage(data.assets[0].url);
+    if (data) setImage(data.data.attributes.image.data);
   }, [data]);
 
   if (error) return <ErroMessage error={error} />;
@@ -32,10 +33,10 @@ const SinglePage = () => {
       <ProdutoStyle>
         <Container>
           <Main>
-            <ShowPhotos showImage={showImage}>
-              <Slide slide={data.assets} />
-            </ShowPhotos>
-            <InFormation showImage={showImage} data={data} />
+            <section>
+              <Slide slide={showImage} />
+            </section>
+            <ProductInformation data={data.data} showImage={showImage} />
           </Main>
         </Container>
       </ProdutoStyle>

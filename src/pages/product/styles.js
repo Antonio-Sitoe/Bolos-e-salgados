@@ -23,7 +23,7 @@ export const Main = styled.main`
   align-items: start;
   padding: 6rem 0;
 `;
-export const ShowPhotos = styled.section``;
+
 
 
 

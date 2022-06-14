@@ -15,7 +15,7 @@
     "index.html": true,
     // "next.config.js": true,
     "next-env.d.ts": true,
-    "src/styles": true,
+    // "src/styles": true,
     "src/pages/_document.tsx": true,
     ".next": true,
     ".eslintrc.json": true,

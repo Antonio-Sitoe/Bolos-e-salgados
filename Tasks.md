@@ -1,10 +1,3 @@
-## Objectivo
-
-[] corigir erros de typescript
-[] Mudar todos componentes para typescript
-[] Corrigir o css
-[] Autenticacao
-[] Colocar e configurar o eslint.
 
 # LISTA DE TAREFAS (PAGINAS E FUNCIONALIDADES)
 
@@ -23,58 +16,49 @@
         [x] modificar ttodos os produtos no graphcms
         [x] fecth da dados no serverside
         [x] pagina de produto
+
+## 1.3 [x] single Page
+       [X] usar SPA
+       [X] Fazer tratamentos de dados / erros
+       [x] colocar content na api
+
+## 2. [x] About Page()
+         [x] Colocar os dados no CMS
+         [x] Fazer query dos dados no Frontend
+         [x] ajustar
+         [x] no banner intro colocar uma foto diferente
+
+## 4. [x] Faq
+          [x] update de faq no graphcms
+          [x] fazer query no  server side
+          [x] no banner intro colocar uma foto diferente
         
-
-## 1.3 [] single Page
-       [] usar serversiderendering
-       [] Fazer tratamentos de dados / erros
-       [] 
-
-
-## 2. [] About Page()
-         [] Colocar os dados no CMS
-         [] Fazer query dos dados no Frontend
-         [] ajustar
-         [] no banner intro colocar uma foto diferente
-
-## 3. [] Contato
-
-        [] Mudar a pagina contacto para
+## 3. [x] Contato
+        [x] Mudar a pagina contacto para
           esse design  https://www.origamid.com/projetos/bikcraft/contato.html
-        [] adicionar funcionalidade de formulario a pagina de contacto.
-        [] mandar tudo para o graphcms
-        [] colocar um butao de contacto ao whatsap.
-          [] no banner intro colocar uma foto diferente
-
-## 4. [] Faq
-
-          [] update de faq no graphcms
-          [] fazer query no  server side
-          [] no banner intro colocar uma foto diferente
+        [x] adicionar funcionalidade de formulario a pagina de contacto.
+        [x] mandar tudo para o graphcms
+        [x] colocar um butao de contacto ao whatsap.
+        [x] no banner intro colocar uma foto diferente
 
 ## 4.1. Login
-
          [] no criar e no perdeu adicionar um butao de voltar.
          [] adicionar funcionalidade de autenticao com supabase ou firebase.
-
          [] Header component
              [] modificar o component de header
              [] modficar todos os componentes que dependem da autenticacao.
 
 ## 5. [] Cart page ()
-
          [] Dividir a pagina cart em microComponents
          [] Mudar para typescript
          [] no banner intro colocar uma foto diferente
          [] cart dev estar no servidor tambem
 
 ## 6. [] Checkout
-
-           [] Mudar para typescript
-           [] no banner intro colocar uma foto diferente
+        [] Mudar para typescript
+        [] no banner intro colocar uma foto diferente
 
 ## 8. [] user
-
         [] verificar se esta autenticado primeiro
         [] buscar os dados via server side rendering
         [] funcao de modicar os dados.
@@ -85,7 +69,6 @@
         [] adicionar funcionalidade de logout
 
 ## 9. Components
-
        [] colocar todos os components em typescript
        [] mover a pasta helper para fora dos components
        [] apagar a pasta image
@@ -111,3 +94,10 @@
      [] - Fazer deploy na vercel
      [] - Colocar no readme (embelezar o readme)
      [] - mandar no grupo
+
+## Objectivo
+[] corigir erros de typescript
+[] Mudar todos componentes para typescript
+[] Corrigir o css
+[] Autenticacao
+[] Colocar e configurar o eslint.

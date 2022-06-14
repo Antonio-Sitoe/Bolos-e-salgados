@@ -14,7 +14,10 @@ export const KitsForParty = styled.section`
   animation: 0.3s ${AnimeIntro};
 
   main {
+    max-width: 1200px;
+    margin: 0 auto;
     width: 100%;
+
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;

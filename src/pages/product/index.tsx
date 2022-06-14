@@ -6,7 +6,7 @@ import transformData from '../../components/Helper/transformData';
 import { GET_ALL_PRODUCTS, GET_HOME_CONTENT } from '../../services/Api';
 import ErroMessage from '../../components/Helper/ErroMessage';
 import { IPagesProps } from '../../Types/Interfaces';
-import { ResponseData } from '..';
+import { ResponseData } from '../../components/Helper/ResponseData';
 import FeaturedProductSession from '../home/FeaturedProductSession';
 import CupCakeSession from '../../components/CupCakeSession/CupCakeSession';
 
@@ -30,17 +30,18 @@ export default product;
 export const getServerSideProps: GetServerSideProps = async () => {
   const bannerContent = GET_HOME_CONTENT(2);
   const productsOptions = GET_ALL_PRODUCTS();
+  try {
+    const { data } = await FetchData(productsOptions);
+    const bannerData = await FetchData(bannerContent);
+    const produtDataJson = transformData(data);
 
-  const { data } = await FetchData(productsOptions);
-  const bannerData = await FetchData(bannerContent);
-  const produtDataJson = transformData(data);
-
-  if (data && bannerData && produtDataJson) {
-    const response = ResponseData(bannerData, produtDataJson);
-    return {
-      props: response,
-    };
-  } else {
+    if (data && bannerData && produtDataJson) {
+      const response = ResponseData(bannerData, produtDataJson);
+      return {
+        props: response,
+      };
+    }
+  } catch (error) {
     return {
       props: {
         error: true,

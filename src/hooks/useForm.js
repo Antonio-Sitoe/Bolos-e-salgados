@@ -40,6 +40,7 @@ const useForm = (type, initial) => {
 
   return {
     value,
+    setValue,
     onChange,
     error,
     validate: () => validate(value),

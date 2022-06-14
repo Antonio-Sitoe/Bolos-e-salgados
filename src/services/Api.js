@@ -1,5 +1,4 @@
 const url = `http://localhost:1337/api`;
-const API_KEY = process.env.REACT_APP_CHEC_PUBLIC_KEY;
 const qs = require('qs');
 
 export function GET_HOME_CONTENT(id) {
@@ -34,32 +33,53 @@ export function GET_ALL_PRODUCTS() {
     },
   };
 }
-
-
-
-
-
 export function GET_PRODUTS_FOR_ID(id) {
   http: return {
     url: `${url}/products/${id}?populate=*`,
     options: {
       method: 'GET',
-      headers: {
-        'X-Authorization': `${API_KEY}`,
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+    },
+  };
+}
+export function GET_ABOUT_CONTENT() {
+  return {
+    url: `${url}/about?populate=*`,
+    options: {
+      method: 'GET',
+    },
+  };
+}
+export function GET_FAQ() {
+  const query = qs.stringify(
+    {
+      populate: {
+        Banner: {
+          populate: '*',
+        },
+        content: {
+          populate: '*',
+        },
       },
+    },
+    {
+      encodeValuesOnly: true,
+    }
+  );
+  return {
+    url: `${url}/faq?${query}`,
+    options: {
+      method: 'GET',
     },
   };
 }
 
-export function GET_ABOUT_CONTENT() {
+export function CREATE_MESSAGE(data) {
   return {
-    url: `${url}/merchants`,
+    url: `${url}/messages`,
     options: {
-      method: 'GET',
+      method: 'POST',
+      body: JSON.stringify(data),
       headers: {
-        'X-Authorization': `${API_KEY}`,
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },

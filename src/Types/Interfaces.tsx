@@ -42,3 +42,37 @@ export interface IPagesProps {
     productData: IProductData;
   };
 }
+
+export interface IshowImage {
+  id: number;
+  attributes: {
+    alternativeText: string;
+    url: string;
+  };
+}
+
+export type IshowImageArray = IshowImage[];
+
+interface FaqContent {
+  title: string;
+  image: {
+    url: string;
+    alt: string;
+  };
+  id: number;
+  description: string;
+}
+export interface IFaqProps {
+  error: boolean;
+  message: string;
+  data: {
+    content: FaqContent[];
+    banner: {
+      banner_title: string;
+      banner_image: {
+        url: string;
+        alt: string;
+      };
+    };
+  };
+}

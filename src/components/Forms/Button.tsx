@@ -2,11 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 
-
 interface ButtonProps {
-  loading?: Boolean
-  children: string
-  onClick: () => void
+  disabled?: Boolean;
+  children: string;
+  onClick?: () => void;
 }
 
 const ButtonStyle = styled.button`
@@ -14,7 +13,7 @@ const ButtonStyle = styled.button`
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 297.08px;
+  max-width: 20rem;
   height: 49px;
   background: ${theme.colors.base};
   border-radius: 4px;
@@ -28,21 +27,20 @@ const ButtonStyle = styled.button`
 
   &:hover,
   &:focus {
-    background: ${theme.colors.blackHover};
+    /* background: ${theme.colors.baseSmooth}; */
+    /* color: ${theme.colors.black}; */
+    box-shadow: 0 0 0 3px ${theme.colors.baseSmooth},
+      0 0 0 4px ${theme.colors.base};
   }
   &:disabled {
-    background: ${theme.colors.blackHover};
+    background: ${theme.colors.grey};
     cursor: wait;
     opacity: 0.7;
   }
 `;
 
-
-
-const Button = ({ children, loading, ...rest }: ButtonProps) => (
-  <ButtonStyle {...rest}>
-    {children}
-  </ButtonStyle>
+const Button = ({ children, disabled, ...rest }: ButtonProps) => (
+  <ButtonStyle {...rest}>{children}</ButtonStyle>
 );
 
 export default Button;

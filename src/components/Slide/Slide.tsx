@@ -2,11 +2,12 @@ import React from 'react';
 import Image from '../Image/Image';
 import { ContainerSlides, Content, Nav } from './style';
 import { FcNext, FcPrevious } from 'react-icons/fc';
+import { IshowImageArray } from '../../Types/Interfaces';
 
-const Slide = ({ slide }) => {
+const Slide = ({ slide }: { slide: IshowImageArray }) => {
   const [active, setActive] = React.useState(0);
   const [position, setPosition] = React.useState(0);
-  const contentRef = React.useRef();
+  const contentRef = React.useRef<null | HTMLDivElement>(null);
 
   React.useEffect(() => {
     const { width } = contentRef.current.getBoundingClientRect();
@@ -20,15 +21,20 @@ const Slide = ({ slide }) => {
   function slideNext() {
     if (active < slide.length - 1) setActive(active + 1);
   }
+
   return (
     <ContainerSlides>
       <Content
         ref={contentRef}
         style={{ transform: `translateX(${position}px)` }}
       >
-        {slide.map((slide) => {
+        {slide.map(({ id, attributes }) => {
           return (
-            <Image key={slide.id} src={slide.url} alt={slide.alternativeText} />
+            <Image
+              alt={attributes.alternativeText}
+              src={attributes.url}
+              key={id}
+            />
           );
         })}
       </Content>

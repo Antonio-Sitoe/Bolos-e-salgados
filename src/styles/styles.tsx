@@ -143,12 +143,37 @@ ul {
     width: 100%;
     display: block;
   }
-    p {
-        line-height: 1.5;
-        font-size: 1rem;
-      }
+  p {
+    line-height: 1.5;
+    font-size: 1rem;
+   }
 
-    
+h1,h2,h3 {        font-weight: bold;
+      }
+  h1 {
+    font-size: 1.5rem;
+   } 
+  h2 {
+       font-size: 1.2rem;
+   }
+ h3 {
+    font-size: 1rem;
+  } 
+    @media (max-width: 500px) {
+    h1 {
+    font-size: 1rem;
+   } 
+  h2 {
+       font-size: 0.8rem;
+   }
+ h3 {
+    font-size: 0.8rem;
+  } 
+  }
+
+  li {
+    font-size: .9rem;
+  }
 `;
 export const Container = styled.div`
   max-width: 1200px;
@@ -157,8 +182,8 @@ export const Container = styled.div`
 `;
 
 interface ILinksProps {
-  user?: Boolean
-  point?: string
+  user?: Boolean;
+  point?: string;
 }
 export const Links = styled.a<ILinksProps>`
   position: relative;
@@ -190,15 +215,14 @@ export const Links = styled.a<ILinksProps>`
   }
 `;
 export const Title = styled.h1`
-  font-size: 1.5rem;
   margin: 0;
   padding: 0;
   font-weight: bold;
   font-family: 'Lato', sans-serif;
   text-transform: uppercase;
-  @media (max-width:500px){
-   font-size: 1rem;
- }
+  @media (max-width: 500px) {
+    font-size: 1rem;
+  }
 `;
 
 export const AnimeIntro = keyframes`
