@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 
 interface ButtonProps {
-  disabled?: Boolean;
-  children: string;
+  disabled?: Boolean | any;
+  children: string | any;
   onClick?: () => void;
 }
 
@@ -27,20 +27,18 @@ const ButtonStyle = styled.button`
 
   &:hover,
   &:focus {
-    /* background: ${theme.colors.baseSmooth}; */
-    /* color: ${theme.colors.black}; */
     box-shadow: 0 0 0 3px ${theme.colors.baseSmooth},
       0 0 0 4px ${theme.colors.base};
   }
   &:disabled {
-    background: ${theme.colors.grey};
+    background: ${theme.colors.black};
     cursor: wait;
     opacity: 0.7;
   }
 `;
 
-const Button = ({ children, disabled, ...rest }: ButtonProps) => (
-  <ButtonStyle {...rest}>{children}</ButtonStyle>
+const Button = ({ children, disabled }: ButtonProps) => (
+  <ButtonStyle disabled={disabled}>{children}</ButtonStyle>
 );
 
 export default Button;

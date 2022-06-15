@@ -1,6 +1,43 @@
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
-import { AnimeLeft } from '../about/styles';
+import { animeLeft, AnimeLeft } from '../about/styles';
+
+export const UserAcountEditStyle = styled.form`
+  display: grid;
+  gap: 1rem;
+  max-width: 450px;
+  padding: 1rem;
+  width: 100%;
+  animation: ${animeLeft} 0.3s;
+
+  select {
+    background: ${theme.colors.white};
+    border: 3px solid ${theme.colors.grey};
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 1rem;
+    width: 100%;
+    outline: none;
+    &:hover,
+    &:focus {
+      border: 3px solid ${theme.colors.blackHover};
+    }
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  a {
+    padding: 0.6rem 0;
+    color: ${theme.colors.link};
+  }
+  p {
+    a {
+      color: ${theme.colors.tomato};
+    }
+  }
+`;
 
 export const UserPage = styled.main`
   margin: 6rem 0;

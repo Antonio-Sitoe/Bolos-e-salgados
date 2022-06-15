@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "next": "latest",
+    "nookies": "^2.5.2",
     "qs": "^6.10.5",
     "react": "latest",
     "react-dom": "latest",

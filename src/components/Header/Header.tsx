@@ -1,19 +1,20 @@
+import React from 'react';
 import Link from 'next/link';
-import React, { useEffect } from 'react';
+import Image from 'next/image';
+import Search from '../Search/Search';
 import { CgClose, CgMenu } from 'react-icons/cg';
 import { HiShoppingCart } from 'react-icons/hi';
 import { Container, Links } from '../../styles/styles';
-import Search from '../Search/Search';
 import { Header as HeaderStyle, MarginTops, Nav } from './styles';
+import { UserContext } from '../../Context/UserContext';
 
 const Header = () => {
   // const {
   //   state: { cart },
   // } = React.useContext(CartContext);
-  // const { user } = React.useContext(UserContext);
+  const { user } = React.useContext(UserContext);
   const list = React.useRef();
   const [mobile, setMobile] = React.useState(false);
-
   const openMenu = ({ target }) => {
     if (list.current !== target) setMobile(!mobile);
   };
@@ -23,15 +24,19 @@ const Header = () => {
       setMobile(false);
     }
   }
-
   return (
     <>
       <MarginTops />
       <HeaderStyle mobile={mobile} onClick={handle}>
         <Container>
-          <Nav mobile={mobile ? '' : 'none'}>
+          <Nav mobile={mobile}>
             <Link href='/'>
-              <img src='/logo.svg' alt='logo do site' />
+              <Image
+                src='/logo.svg'
+                alt='logo do site'
+                width={24}
+                height={24}
+              />
             </Link>
             <Search />
             <ul ref={list}>
@@ -48,9 +53,13 @@ const Header = () => {
                 <Link href='/contact'>Contato</Link>
               </li>
               <li>
-                <Link href='/login'>
-                  <Links>Entrar | Criar</Links>
-                </Link>
+                {user ? (
+                  <Link href='/user'>
+                    <Links user={user && true}>{user.username}</Links>
+                  </Link>
+                ) : (
+                  <Links href='/login'>Entrar | Criar</Links>
+                )}
               </li>
               <li>
                 <Link href='/cart'>
@@ -59,15 +68,6 @@ const Header = () => {
                   </Links>
                 </Link>
               </li>
-              {/* <li>
-                {user ? (
-                  <Links href='acount' user={user.username}>
-                    {user.username}
-                  </Links>
-                ) : (
-                  <Links href='login'>Entrar | Criar</Links>
-                )}
-              </li> */}
               {/* <li>
                 <Links
                   href='cart'

@@ -1,31 +1,30 @@
 import React from 'react';
 import Button from '../../../components/Forms/Button';
-import Input, { Label } from '../../../components/Forms/Input';
+import Input from '../../../components/Forms/Input';
 import useForm from '../../../hooks/useForm';
+import { Label } from '../../../components/Forms/styles';
 
-import { USERDATA_UPDATE } from '../../../services/Api';
+import { GET_USERDATA, USERDATA_UPDATE } from '../../../services/Api';
 import ErrorServer from '../../../components/Helper/ErrorServer';
 import useFecth from '../../../hooks/useFecth';
-import { LoginGet } from '../../login/styles';
-import UserLayout from '../components/UserLayout';
+import router from 'next/router';
 
-const UserAccountEdit = () => {
-  const user = {
-    id: '1',
-    username: 'antonio Sitoe',
-    email: 'antoniositoehl@gmail.com',
-    empresa: 'Polana construcoes',
-    endereco: 'Fernao magalhaies',
-    cidade: 'Maputo cidade'
-  }
-  const { request, loading, error } = useFecth();
+import UserLayout from '../../../components/Usercomponents/UserLayout';
+import Loading from '../../../components/Helper/Loading';
+import { UserContext } from '../../../Context/UserContext';
 
+import { GetServerSideProps } from 'next';
+import nookies, { parseCookies } from 'nookies';
+import { UserAcountEditStyle } from '../styles';
+
+const UserAccountEdit = ({ user, errorSer }) => {
+  const { isAuthenticate } = React.useContext(UserContext);
   const nome = useForm('name', user.username);
   const email = useForm('email', user.email);
   const empresa = useForm(false, user.empresa);
   const endereco = useForm('name', user.endereco);
   const cidade = useForm('name', user.cidade);
-
+  const { request, loading, error } = useFecth();
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (
@@ -34,8 +33,7 @@ const UserAccountEdit = () => {
       endereco.validate() &&
       cidade.validate()
     ) {
-      const token = window.localStorage.getItem('token');
-
+      const { token } = parseCookies();
       const { url, options } = USERDATA_UPDATE(user.id, token, {
         cidade: cidade.value,
         email: email.value,
@@ -44,42 +42,60 @@ const UserAccountEdit = () => {
         username: nome.value,
       });
       const { response } = await request(url, options);
-      if (response.ok) window.location.reload();
+      if (response.ok) router.push('/user');
     }
   };
+
+  if (isAuthenticate === false) return <Loading />;
+  if (errorSer) return <ErrorServer error={'Erro no servidor'} />;
+
   return (
     <UserLayout>
-      <LoginGet onSubmit={handleSubmit}>
+      <UserAcountEditStyle onSubmit={handleSubmit}>
         <Input
           label='Nome'
           placeholder='Digite o seu nome'
           type='text'
           name='nome'
-          {...nome}
+          id='nome'
+          error={nome.error}
+          onBlur={nome.onBlur}
+          onChange={nome.onChange}
+          value={nome.value}
         />
         <Input
-          label='Email'
-          placeholder='Digite o seu email'
           type='email'
+          placeholder='Digite o seu email'
           name='email'
-          {...email}
+          label='Email'
+          id='email'
+          error={email.error}
+          onBlur={email.onBlur}
+          onChange={email.onChange}
+          value={email.value}
         />
         <Input
           label='Empresa / Organizacao (opcional)'
           placeholder='Digite a sua empresa'
           type='text'
           name='empresa'
-          {...empresa}
+          id='empresa'
+          error={empresa.error}
+          onBlur={empresa.onBlur}
+          onChange={empresa.onChange}
+          value={empresa.value}
         />
         <Input
           label='Endereco'
-          placeholder='Digite a sua empresa'
+          placeholder='Digite o seu endereco'
           type='text'
           name='endereco'
-          {...endereco}
+          id='endereco'
+          error={endereco.error}
+          onBlur={endereco.onBlur}
+          onChange={endereco.onChange}
+          value={endereco.value}
         />
-
-
         <Label>Cidade</Label>
         <select
           name='cidade'
@@ -94,21 +110,44 @@ const UserAccountEdit = () => {
           <option value='Magude'>Magude</option>
           <option value='Manhiça'>Manhiça</option>
           <option value='Marracuene'>Marracuene</option>
-          <option value='Matutuíne'>Matutuíne</option>
           <option value='Moamba'>Moamba</option>
           <option value='Namaacha'>Namaacha</option>
         </select>
-
         {loading ? (
-          <Button loading={loading}>...Carregando</Button>
+          <Button disabled={loading}>...Carregando</Button>
         ) : (
           <Button>Gravar</Button>
         )}
-
         <ErrorServer error={error} />
-      </LoginGet>
+      </UserAcountEditStyle>
     </UserLayout>
   );
 };
-
 export default UserAccountEdit;
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { token } = nookies.get(ctx);
+  if (!token) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/login',
+      },
+    };
+  }
+  try {
+    const { url, options } = GET_USERDATA(token);
+    const response = await fetch(url, options);
+    const json = await response.json();
+    return {
+      props: {
+        errorSer: false,
+        user: json,
+      },
+    };
+  } catch (er) {
+    return {
+      props: { error: true },
+    };
+  }
+};

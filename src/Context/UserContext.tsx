@@ -1,14 +1,30 @@
 import React from 'react';
+import router from 'next/router';
+import nookies, { parseCookies, destroyCookie } from 'nookies';
 import { GET_USERDATA, USER_GET, USER_REGISTER } from '../services/Api';
+import { IUser } from '../Types/Interfaces';
 
-export const UserContext = React.createContext(null);
+interface IUserValuesProps {
+  user: IUser | null;
+  isAuthenticate: boolean;
+  error: null | string;
+  UserLogout: () => void;
+  setError;
+  setIsAuthenticate;
+  userRegister;
+  userLogin;
+  loading;
+  productID;
+  setproductID;
+}
+
+export const UserContext = React.createContext({} as IUserValuesProps);
 
 export const UserStorage = ({ children }) => {
   const [isAuthenticate, setIsAuthenticate] = React.useState(false);
-  const [user, setUser] = React.useState(null);
+  const [user, setUser] = React.useState<IUser | null>(null);
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
-
   const [productID, setproductID] = React.useState('');
 
   const UserLogout = () => {
@@ -16,10 +32,11 @@ export const UserStorage = ({ children }) => {
     setLoading(false);
     setUser(null);
     setError(null);
-    window.localStorage.removeItem('token');
+    destroyCookie(null, 'token');
+    router.push('/login');
   };
 
-  async function getUserWithToken(token) {
+  async function getUserWithToken(token: string) {
     setLoading(true);
     let response;
     let json;
@@ -40,7 +57,7 @@ export const UserStorage = ({ children }) => {
     }
   }
 
-  const userLogin = async (identifier, password) => {
+  const userLogin = async (identifier: string, password: string) => {
     const { url, options } = USER_GET({
       identifier,
       password,
@@ -50,7 +67,9 @@ export const UserStorage = ({ children }) => {
       const response = await fetch(url, options);
       const json = await response.json();
       if (!response.ok) throw new Error(json.message[0].messages[0].message);
-      window.localStorage.setItem('token', json.jwt);
+      nookies.set(null, 'token', json.jwt, {
+        maxAge: 30 * 24 * 60 * 60,
+      });
       setUser(json.user);
       setIsAuthenticate(true);
     } catch (err) {
@@ -59,7 +78,11 @@ export const UserStorage = ({ children }) => {
     setLoading(false);
   };
 
-  const userRegister = async (username, email, password) => {
+  const userRegister = async (
+    username: string,
+    email: string,
+    password: string
+  ) => {
     setLoading(true);
     setError(null);
     const { url, options } = USER_REGISTER({
@@ -71,7 +94,9 @@ export const UserStorage = ({ children }) => {
       const response = await fetch(url, options);
       const json = await response.json();
       if (!response.ok) throw new Error(json.message[0].messages[0].message);
-      window.localStorage.setItem('token', json.jwt);
+      nookies.set(null, 'token', json.jwt, {
+        maxAge: 30 * 24 * 60 * 60,
+      });
       setUser(json.user);
       setIsAuthenticate(true);
     } catch (err) {
@@ -79,9 +104,9 @@ export const UserStorage = ({ children }) => {
     }
     setLoading(false);
   };
-  
+
   React.useEffect(() => {
-    const token = window.localStorage.getItem('token');
+    const { token } = parseCookies();
     if (token) {
       getUserWithToken(token);
     }

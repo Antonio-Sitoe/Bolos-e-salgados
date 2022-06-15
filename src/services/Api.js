@@ -87,6 +87,69 @@ export function CREATE_MESSAGE(data) {
   };
 }
 
+export function USER_REGISTER(data) {
+  return {
+    url: `${url}/auth/local/register`,
+    options: {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  };
+}
+
+export function USER_GET(data) {
+  return {
+    url: `${url}/auth/local`,
+    options: {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  };
+}
+
+export function FORGOTTEN_PASSWORD(email) {
+  return {
+    url: url + 'auth/forgot-password',
+    options: {
+      method: 'POST',
+      body: JSON.stringify(email),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  };
+}
+export function GET_USERDATA(token) {
+  return {
+    url: `${url}/users/me`,
+    options: {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  };
+}
+export function USERDATA_UPDATE(id, token, data) {
+  return {
+    url: `${url}/users/${id}`,
+    options: {
+      method: 'PUT',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  };
+}
+
 export function CREATE_CART() {
   return {
     url: url + '/carts',
@@ -111,67 +174,6 @@ export function ADD_CART(id, data) {
         'X-Authorization': `${API_KEY}`,
         Accept: 'application/json',
         'Content-Type': 'application/json',
-      },
-    },
-  };
-}
-
-export function USER_REGISTER(data) {
-  return {
-    url: url + 'auth/local/register',
-    options: {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    },
-  };
-}
-export function USER_GET(data) {
-  return {
-    url: url + 'auth/local',
-    options: {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    },
-  };
-}
-export function FORGOTTEN_PASSWORD(email) {
-  return {
-    url: url + 'auth/forgot-password',
-    options: {
-      method: 'POST',
-      body: JSON.stringify(email),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    },
-  };
-}
-export function GET_USERDATA(token) {
-  return {
-    url: url + 'users/me',
-    options: {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    },
-  };
-}
-export function USERDATA_UPDATE(id, token, data) {
-  return {
-    url: url + `users/${id}`,
-    options: {
-      method: 'PUT',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
       },
     },
   };

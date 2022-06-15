@@ -76,3 +76,16 @@ export interface IFaqProps {
     };
   };
 }
+
+export interface IUser {
+  email: string;
+  id: number;
+  username: string;
+  empresa: string;
+  endereco: string;
+  cidade: string;
+}
+
+export interface IUserProps {
+  user: IUser;
+}

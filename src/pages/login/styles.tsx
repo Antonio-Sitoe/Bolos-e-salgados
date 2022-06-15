@@ -31,6 +31,7 @@ export const LoginGet = styled.form`
   width: 100%;
   animation: ${animeLeft} 0.3s;
 
+
   select {
     background: ${theme.colors.white};
     border: 3px solid ${theme.colors.grey};

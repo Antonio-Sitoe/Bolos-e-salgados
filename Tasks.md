@@ -42,8 +42,8 @@
         [x] no banner intro colocar uma foto diferente
 
 ## 4.1. Login
-         [] no criar e no perdeu adicionar um butao de voltar.
-         [] adicionar funcionalidade de autenticao com supabase ou firebase.
+         [x] no criar e no perdeu adicionar um butao de voltar.
+         [x] adicionar funcionalidade de autenticao com supabase ou firebase.
          [] Header component
              [] modificar o component de header
              [] modficar todos os componentes que dependem da autenticacao.

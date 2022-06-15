@@ -24,7 +24,11 @@ export const MarginTops = styled.div`
     margin-bottom: 4rem;
   }
 `;
-export const Header = styled.header`
+
+interface HeaderStyleProps {
+  mobile: boolean;
+}
+export const Header = styled.header<HeaderStyleProps>`
   padding: 1rem 0;
   box-shadow: 0 3px 6px -6px #777;
   width: 100%;
@@ -37,7 +41,7 @@ export const Header = styled.header`
     background: ${(props) => (props.mobile ? 'rgba(0, 0, 0, 0.5)' : 'white')};
   }
 `;
-export const Nav = styled.nav`
+export const Nav = styled.nav<HeaderStyleProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,7 +80,7 @@ export const Nav = styled.nav`
     }
 
     @media (max-width: 900px) {
-      display: ${(props) => props.mobile};
+      display: ${(props) => (props.mobile ? '' : 'none')};
       position: fixed;
       z-index: 10;
       left: 0;
