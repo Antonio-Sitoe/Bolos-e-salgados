@@ -44,9 +44,21 @@
 ## 4.1. Login
          [x] no criar e no perdeu adicionar um butao de voltar.
          [x] adicionar funcionalidade de autenticao com supabase ou firebase.
-         [] Header component
-             [] modificar o component de header
-             [] modficar todos os componentes que dependem da autenticacao.
+         [x] Header component
+             [x] modificar o component de header
+             [x] modficar todos os componentes que dependem da autenticacao.
+        [] resetar senha atraves do email - strapi e client
+
+## 8. [] user
+        [] verificar se esta autenticado primeiro
+        [] buscar os dados via server side rendering
+        [] funcao de modicar os dados.
+        [] modificar a cor do butao
+        [] modificar os components
+        [] adicionar funcionalidade de pedidos no servidor
+        [] colocar a cor de cada butao no aside, activeStyle
+        [] adicionar funcionalidade de logout
+        [] adicionar pedidos no order (server)
 
 ## 5. [] Cart page ()
          [] Dividir a pagina cart em microComponents
@@ -58,22 +70,13 @@
         [] Mudar para typescript
         [] no banner intro colocar uma foto diferente
 
-## 8. [] user
-        [] verificar se esta autenticado primeiro
-        [] buscar os dados via server side rendering
-        [] funcao de modicar os dados.
-        [] modificar a cor do butao
-        [] modificar os components
-        [] adicionar funcionalidade de pedidos no servidor
-        [] colocar a cor de cada butao no aside, activeStyle
-        [] adicionar funcionalidade de logout
 
 ## 9. Components
        [] colocar todos os components em typescript
        [] mover a pasta helper para fora dos components
        [] apagar a pasta image
        [] cupcake session deve colocar em um contexto e fazer o fecth no client-side.
-       [] Component Search
+       [] Component Search (como no portifolionde biro)
        [] funcionalidade de pesquisa de produtos.
        [] Tratamento de erros no getStaticProps
        [] Ajustar tipografia (no mobile / tablet / desktop) deve haver consistencia em todas as paginas.

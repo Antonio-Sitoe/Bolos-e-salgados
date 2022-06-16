@@ -24,10 +24,10 @@ const EmailLogin = ({ setOpen }) => {
     setHaveAccount(!havaAccount);
   }
 
-  function handleLogin(e) {
+  async function handleLogin(e) {
     e.preventDefault();
     if (emailLogin.validate() && passwordLogin.validate()) {
-      userLogin(emailLogin.value, passwordLogin.value);
+      await userLogin(emailLogin.value, passwordLogin.value);
     }
   }
   async function handleCreateAccount(e) {
@@ -37,7 +37,7 @@ const EmailLogin = ({ setOpen }) => {
       emailCreate.validate() &&
       passwordCreate.validate()
     ) {
-      userRegister(name.value, emailCreate.value, passwordCreate.value);
+      await userRegister(name.value, emailCreate.value, passwordCreate.value);
     }
   }
   return (

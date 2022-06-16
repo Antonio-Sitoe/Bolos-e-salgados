@@ -27,8 +27,8 @@ export default User;
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { token } = nookies.get(ctx);
- 
-  if (token === undefined) {
+
+  if (!token || token === undefined || token === null) {
     return {
       redirect: {
         permanent: false,
@@ -38,6 +38,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   }
 
   return {
-    props: { error: true },
+    props: {},
   };
 };

@@ -3,7 +3,8 @@ import { Order, Subtitle } from '../styles';
 import { UserContext } from '../../../Context/UserContext';
 import Loading from '../../../components/Helper/Loading';
 import UserLayout from '../../../components/Usercomponents/UserLayout';
-
+import { GetServerSideProps } from 'next';
+import nookies from 'nookies';
 
 
 
@@ -12,7 +13,7 @@ const UserOrders = () => {
   if (isAuthenticate === false) return <Loading />;
   if (user)
     return (
-      <UserLayout user={user}>
+      <UserLayout>
         <Order>
           <Subtitle>Pedidos recentes</Subtitle>
           <div>
@@ -61,3 +62,21 @@ const UserOrders = () => {
 };
 
 export default UserOrders;
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { token } = nookies.get(ctx);
+
+  if (!token || token === undefined || token === null) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/login',
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
+

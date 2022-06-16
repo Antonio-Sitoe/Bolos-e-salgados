@@ -4,34 +4,45 @@ import Input from '../../../components/Forms/Input';
 import { Title } from '../../../styles/styles';
 import { BiUser } from 'react-icons/bi';
 import { LoginGet as Login } from '../styles';
-
-import nookies from 'nookies';
-
+import router from 'next/router';
 import ErrorServer from '../../../components/Helper/ErrorServer';
 import { UserContext } from '../../../Context/UserContext';
 import useForm from '../../../hooks/useForm';
 
-import { useRouter } from 'next/router';
 import LoginLayault from '../../../components/LoginLayault/LoginLayault';
 import Link from 'next/link';
 import { BiArrowBack } from 'react-icons/bi';
 import { GetServerSideProps } from 'next';
-import Loading from '../../../components/Helper/Loading';
+import nookies from 'nookies';
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { token } = nookies.get(ctx);
+  if (token) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/user',
+      },
+    };
+  }
+  return {
+    props: {},
+  };
+};
 
 const LoginCreate = () => {
-  const { error, userRegister, loading, setError, isAuthenticate } =
+  const { error, userRegister, loading, setError } =
     React.useContext(UserContext);
   const name = useForm('name');
   const email = useForm('email');
   const password = useForm('password');
   const passConfirm = useForm('password');
-  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (name.validate() && email.validate() && password.validate()) {
       if (password.value === passConfirm.value) {
-        userRegister(name.value, email.value, password.value);
+        await userRegister(name.value, email.value, password.value);
         router.push('/user');
         return true;
       } else {
@@ -41,10 +52,6 @@ const LoginCreate = () => {
     }
   };
 
-  if (isAuthenticate === true) {
-    router.push('/user');
-    return <Loading />;
-  }
   return (
     <LoginLayault>
       <Login onSubmit={handleSubmit}>
@@ -112,18 +119,3 @@ const LoginCreate = () => {
 };
 
 export default LoginCreate;
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { token } = nookies.get(ctx);
-  if (token) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/user',
-      },
-    };
-  }
-  return {
-    props: {},
-  };
-};

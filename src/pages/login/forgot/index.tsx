@@ -1,10 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-
 import Input from '../../../components/Forms/Input';
 import Button from '../../../components/Forms/Button';
 import LoginLayault from '../../../components/LoginLayault/LoginLayault';
-import router from 'next/router';
 
 import { Title } from '../../../styles/styles';
 import { LoginGet as Login } from '../styles';
@@ -12,11 +10,28 @@ import { BiKey } from 'react-icons/bi';
 
 import { BiArrowBack } from 'react-icons/bi';
 import { FORGOTTEN_PASSWORD } from '../../../services/Api';
-import { UserContext } from '../../../Context/UserContext';
-import Loading from '../../../components/Helper/Loading';
+import { GetServerSideProps } from 'next';
+import nookies from 'nookies';
+import useForm from '../../../hooks/useForm';
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { token } = nookies.get(ctx);
+  if (token) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/user',
+      },
+    };
+  }
+  return {
+    props: {},
+  };
+};
 
 const LoginPassoword = () => {
-  const { isAuthenticate } = React.useContext(UserContext);
+  const email = useForm('email');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { url, options } = FORGOTTEN_PASSWORD({
@@ -32,11 +47,6 @@ const LoginPassoword = () => {
         console.log('An error occurred:', error.response);
       });
   };
-
-  if (isAuthenticate === true) {
-    router.push('/user');
-    return <Loading />;
-  }
   return (
     <LoginLayault>
       <Login onSubmit={handleSubmit}>
@@ -45,7 +55,17 @@ const LoginPassoword = () => {
           Para recuperar a sua senha, digite o seu email no campo abaixo ! apos
           clicar em enviar ira receber um e-mail dentro de instantes
         </p>
-        <Input placeholder='Digite o seu Email' />
+        <Input
+          type='email'
+          placeholder='Digite o seu email'
+          name='email'
+          label='Email'
+          id='email'
+          error={email.error}
+          onBlur={email.onBlur}
+          onChange={email.onChange}
+          value={email.value}
+        />
         <Button>
           <BiKey /> Enviar
         </Button>

@@ -99,6 +99,7 @@ export const UserStorage = ({ children }) => {
       });
       setUser(json.user);
       setIsAuthenticate(true);
+     
     } catch (err) {
       setError(err.toString());
     }

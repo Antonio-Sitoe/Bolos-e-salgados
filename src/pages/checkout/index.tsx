@@ -8,19 +8,21 @@ import Payments from './components/Payments/Payments';
 import { UserContext } from '../../Context/UserContext';
 import { CartContext } from '../../Context/CartContext';
 import { Orders } from '../cart/styles';
+import Loading from '../../components/Helper/Loading';
 
 const Checkout = () => {
-  const { isAuthenticate, user } = React.useContext(UserContext);
+  const { isAuthenticate, user, loading } = React.useContext(UserContext);
   const [open, setOpen] = React.useState({ isData: false, isPayments: false });
-  const {
-    state: { cart },
-    total,
-  } = React.useContext(CartContext);
+  // const {
+  //   state: { cart },
+  //   total,
+  // } = React.useContext(CartContext);
 
+  if (loading) return <Loading />;
 
   return (
     <CheckoutStyle>
-      <IntroOnPage text='Confira os dados antes de efetuar a compra' Bg="" />
+      <IntroOnPage text='Confira os dados antes de efetuar a compra' Bg='' />
       <Container>
         <Main>
           <div>
@@ -30,20 +32,20 @@ const Checkout = () => {
               isAuthenticate={isAuthenticate}
             />
 
-            <Data
+            {/* <Data
               cart={cart}
               total={total}
               user={isAuthenticate && user}
               setOpen={setOpen}
               open={open}
-            />
+            /> */}
 
             <Payments open={open} />
           </div>
           <Orders>
             <div>
               <h1>Resumo da Encomenda</h1>
-              <ul>
+              {/* <ul>
                 {cart?.map(({ id, nome, quantidade, preco }) => {
                   return (
                     <li key={id}>
@@ -53,10 +55,8 @@ const Checkout = () => {
                     </li>
                   );
                 })}
-              </ul>
-              <main>
-                <span>Total a pagar:</span> {total},MT
-              </main>
+              </ul> */}
+              <main>{/* <span>Total a pagar:</span> {total},MT */}</main>
             </div>
           </Orders>
         </Main>
