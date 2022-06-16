@@ -11,11 +11,11 @@ import ErrorServer from '../../components/Helper/ErrorServer';
 import useForm from '../../hooks/useForm';
 import LoginLayault from '../../components/LoginLayault/LoginLayault';
 import router from 'next/router';
-import { GetServerSideProps } from 'next';
-import nookies from 'nookies';
+import Loading from '../../components/Helper/Loading';
 
 const LoginGet = () => {
-  const { userLogin, error, loading } = React.useContext(UserContext);
+  const { userLogin, error, loading, isAuthenticate, user } =
+    React.useContext(UserContext);
 
   const username = useForm('email');
   const password = useForm('password');
@@ -27,6 +27,12 @@ const LoginGet = () => {
       router.replace('/user');
     }
   };
+
+  if (user && isAuthenticate) {
+    router.replace('/user');
+    return <Loading />;
+  }
+
   return (
     <LoginLayault>
       <LoginForm onSubmit={handleSubmit}>
@@ -70,18 +76,3 @@ const LoginGet = () => {
 };
 
 export default LoginGet;
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { token } = nookies.get(ctx);
-  if (token) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/user',
-      },
-    };
-  }
-  return {
-    props: {},
-  };
-};

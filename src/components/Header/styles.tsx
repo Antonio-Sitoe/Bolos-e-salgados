@@ -19,7 +19,7 @@ to {
 }`;
 
 export const MarginTops = styled.div`
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
   @media (max-width: 900px) {
     margin-bottom: 4rem;
   }

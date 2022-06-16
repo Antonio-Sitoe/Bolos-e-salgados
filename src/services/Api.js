@@ -1,4 +1,7 @@
-const url = `http://localhost:1337/api`;
+const url =
+  'https://strapi-production-5c01.up.railway.app/api' ||
+  `http://localhost:1337/api`;
+// 'https://strapi-production-5c01.up.railway.app/api'
 const qs = require('qs');
 
 export function GET_HOME_CONTENT(id) {
@@ -115,7 +118,7 @@ export function USER_GET(data) {
 
 export function FORGOTTEN_PASSWORD(email) {
   return {
-    url: url + 'auth/forgot-password',
+    url: `${url}/auth/forgot-password`,
     options: {
       method: 'POST',
       body: JSON.stringify(email),

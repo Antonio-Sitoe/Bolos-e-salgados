@@ -76,7 +76,7 @@
        [] mover a pasta helper para fora dos components
        [] apagar a pasta image
        [] cupcake session deve colocar em um contexto e fazer o fecth no client-side.
-       [] Component Search (como no portifolionde biro)
+       [] Component Search (como no portifolionde biro  https://birobirobiro.dev/)
        [] funcionalidade de pesquisa de produtos.
        [] Tratamento de erros no getStaticProps
        [] Ajustar tipografia (no mobile / tablet / desktop) deve haver consistencia em todas as paginas.

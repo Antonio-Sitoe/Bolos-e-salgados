@@ -93,6 +93,7 @@ export const UserStorage = ({ children }) => {
     try {
       const response = await fetch(url, options);
       const json = await response.json();
+  
       if (!response.ok) throw new Error(json.message[0].messages[0].message);
       nookies.set(null, 'token', json.jwt, {
         maxAge: 30 * 24 * 60 * 60,

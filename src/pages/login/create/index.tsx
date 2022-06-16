@@ -12,26 +12,10 @@ import useForm from '../../../hooks/useForm';
 import LoginLayault from '../../../components/LoginLayault/LoginLayault';
 import Link from 'next/link';
 import { BiArrowBack } from 'react-icons/bi';
-import { GetServerSideProps } from 'next';
-import nookies from 'nookies';
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { token } = nookies.get(ctx);
-  if (token) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/user',
-      },
-    };
-  }
-  return {
-    props: {},
-  };
-};
+import Loading from '../../../components/Helper/Loading';
 
 const LoginCreate = () => {
-  const { error, userRegister, loading, setError } =
+  const { error, userRegister, loading, setError, user, isAuthenticate } =
     React.useContext(UserContext);
   const name = useForm('name');
   const email = useForm('email');
@@ -51,6 +35,11 @@ const LoginCreate = () => {
       }
     }
   };
+
+  if (user && isAuthenticate) {
+    router.replace('/user');
+    return <Loading />;
+  }
 
   return (
     <LoginLayault>

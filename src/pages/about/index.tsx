@@ -7,9 +7,9 @@ import { AboutStyle, Content } from './styles';
 import ReactMarkdown from 'react-markdown';
 import Head from 'next/head';
 
-const About = ({ error, message, data }) => {
+const About = ({ error, data }) => {
   if (error) {
-    return <ErroMessage error={message} />;
+    return <ErroMessage error={'Erro no servidor'} />;
   }
   return (
     <>
@@ -38,24 +38,24 @@ function tranformData(data) {
       title: data.attributes.title,
       content: data.attributes.content,
       banner_img: data.attributes.banner_img.data.attributes.url,
-      error: false,
     };
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const aboutData = GET_ABOUT_CONTENT();
-  try {
-    const data = await FetchData(aboutData);
+
+  const { data } = await FetchData(aboutData);
+
+  if (data) {
     return {
       props: {
-        data: tranformData(data.data),
+        data: tranformData(data),
         error: false,
       },
     };
-  } catch (error) {
+  } else {
     return {
       props: {
-        message: JSON.stringify(error.message),
         error: true,
       },
     };

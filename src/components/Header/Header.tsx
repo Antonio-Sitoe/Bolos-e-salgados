@@ -13,7 +13,7 @@ const Header = () => {
   //   state: { cart },
   // } = React.useContext(CartContext);
   const { user } = React.useContext(UserContext);
-  const list = React.useRef();
+  const list = React.useRef(null);
   const [mobile, setMobile] = React.useState(false);
   const openMenu = ({ target }) => {
     if (list.current !== target) setMobile(!mobile);
