@@ -10,12 +10,10 @@ import { BiKey } from 'react-icons/bi';
 import { BiArrowBack } from 'react-icons/bi';
 import { FORGOTTEN_PASSWORD } from '../../../services/Api';
 import useForm from '../../../hooks/useForm';
-import Loading from '../../../components/Helper/Loading';
-import { UserContext } from '../../../Context/UserContext';
-import router from 'next/router';
+
 
 const ForgotPassword = () => {
-  const { user, isAuthenticate } = React.useContext(UserContext);
+
   const email = useForm('email');
 
   const handleSubmit = async (e) => {
@@ -33,10 +31,7 @@ const ForgotPassword = () => {
         console.log('An error occurred:', error.response);
       });
   };
-  if (user && isAuthenticate) {
-    router.replace('/user');
-    return <Loading />;
-  }
+
   return (
     <LoginLayault>
       <Login onSubmit={handleSubmit}>

@@ -1,6 +1,4 @@
-const url =
-  'https://strapi-production-5c01.up.railway.app/api' ||
-  `http://localhost:1337/api`;
+const url = `http://localhost:1337/api`;
 // 'https://strapi-production-5c01.up.railway.app/api'
 const qs = require('qs');
 

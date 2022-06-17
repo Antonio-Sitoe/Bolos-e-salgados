@@ -7,10 +7,12 @@ import { UserContext } from '../../Context/UserContext';
 import Loading from '../../components/Helper/Loading';
 import { GetServerSideProps } from 'next';
 import nookies from 'nookies';
+import Router from 'next/router';
 
 const User = () => {
-  const { isAuthenticate } = React.useContext(UserContext);
+  const { isAuthenticate, error } = React.useContext(UserContext);
   if (isAuthenticate === false) return <Loading />;
+  if (error) Router.push('/login');
   return (
     <Container>
       <UserLayout>
@@ -28,7 +30,7 @@ export default User;
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { token } = nookies.get(ctx);
 
-  if (!token || token === undefined || token === null) {
+  if (!token) {
     return {
       redirect: {
         permanent: false,

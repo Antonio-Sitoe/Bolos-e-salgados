@@ -12,10 +12,9 @@ import useForm from '../../../hooks/useForm';
 import LoginLayault from '../../../components/LoginLayault/LoginLayault';
 import Link from 'next/link';
 import { BiArrowBack } from 'react-icons/bi';
-import Loading from '../../../components/Helper/Loading';
 
 const LoginCreate = () => {
-  const { error, userRegister, loading, setError, user, isAuthenticate } =
+  const { error, userRegister, loading, setError } =
     React.useContext(UserContext);
   const name = useForm('name');
   const email = useForm('email');
@@ -35,11 +34,6 @@ const LoginCreate = () => {
       }
     }
   };
-
-  if (user && isAuthenticate) {
-    router.replace('/user');
-    return <Loading />;
-  }
 
   return (
     <LoginLayault>

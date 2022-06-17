@@ -64,7 +64,10 @@ export const UserDash = styled.aside`
       border-bottom: 1px solid #fae9de;
       cursor: pointer;
       display: flex;
-      a {
+      a,
+      button {
+        text-align: left;
+        border: none;
         width: 100%;
         display: block;
         padding: 1rem;
@@ -134,7 +137,7 @@ export const Subtitle = styled.h2`
 `;
 export const Order = styled.main`
   animation: ${AnimeLeft} 0.3s;
-    padding: 0 3rem;
+  padding: 0 3rem;
   div {
     display: flex;
     position: relative;
@@ -164,7 +167,6 @@ export const Order = styled.main`
           td {
             a {
               width: 100%;
-              display: grid;
               padding: 1rem;
               display: flex;
               align-items: center;

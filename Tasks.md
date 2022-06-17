@@ -1,7 +1,6 @@
 
 # LISTA DE TAREFAS (PAGINAS E FUNCIONALIDADES)
 
-[] Ajustes nas paginas (content)
 
 ## 1. [x] Home Page()
         [x] banner
@@ -43,12 +42,13 @@
 
 ## 4.1. Login
          [x] no criar e no perdeu adicionar um butao de voltar.
-         [x] adicionar funcionalidade de autenticao com supabase ou firebase.
+         [x] adicionar funcionalidade de autenticao com strapi.
          [x] Header component
              [x] modificar o component de header
              [x] modficar todos os componentes que dependem da autenticacao.
-        [] resetar senha atraves do email - strapi e client
-
+        [x] resetar senha atraves do email - strapi e client
+ 
+    
 ## 8. [] user
         [] verificar se esta autenticado primeiro
         [] buscar os dados via server side rendering

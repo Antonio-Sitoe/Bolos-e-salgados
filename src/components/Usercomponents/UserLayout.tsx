@@ -2,7 +2,12 @@ import Link from 'next/link';
 import React from 'react';
 import { UserContext } from '../../Context/UserContext';
 import { Container, Title } from '../../styles/styles';
-import { UserDash, UserIntro, UserMain, UserPage } from '../../pages/user/styles';
+import {
+  UserDash,
+  UserIntro,
+  UserMain,
+  UserPage,
+} from '../../pages/user/styles';
 
 const UserLayout = ({ children }) => {
   const { UserLogout, user } = React.useContext(UserContext);
@@ -26,9 +31,7 @@ const UserLayout = ({ children }) => {
                 <Link href='/user/order'>Meus pedidos</Link>
               </li>
               <li>
-                <Link href='/login'>
-                  <a onClick={handleLogout}>Sair</a>
-                </Link>
+                <button onClick={handleLogout}>Sair</button>
               </li>
             </ul>
           </UserDash>

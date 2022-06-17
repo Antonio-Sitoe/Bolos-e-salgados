@@ -147,7 +147,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     };
   } catch (er) {
     return {
-      props: { error: true },
+      props: { errorSer: true },
     };
   }
 };

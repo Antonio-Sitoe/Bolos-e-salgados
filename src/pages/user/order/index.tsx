@@ -66,7 +66,7 @@ export default UserOrders;
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { token } = nookies.get(ctx);
 
-  if (!token || token === undefined || token === null) {
+  if (!token) {
     return {
       redirect: {
         permanent: false,

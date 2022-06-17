@@ -44,10 +44,11 @@ export const UserStorage = ({ children }) => {
       const { url, options } = GET_USERDATA(token);
       response = await fetch(url, options);
       json = await response.json();
-      if (!response.ok) throw new Error(json.message);
+      if (!response.ok) throw new Error(json.error.message);
     } catch (er) {
       json = null;
       setError(er);
+      UserLogout();
     } finally {
       setUser(json);
       setLoading(false);
@@ -66,7 +67,7 @@ export const UserStorage = ({ children }) => {
       setLoading(true);
       const response = await fetch(url, options);
       const json = await response.json();
-      if (!response.ok) throw new Error(json.message[0].messages[0].message);
+      if (!response.ok) throw new Error(json.error.message);
       nookies.set(null, 'token', json.jwt, {
         maxAge: 30 * 24 * 60 * 60,
       });
@@ -93,14 +94,13 @@ export const UserStorage = ({ children }) => {
     try {
       const response = await fetch(url, options);
       const json = await response.json();
-  
-      if (!response.ok) throw new Error(json.message[0].messages[0].message);
+
+      if (!response.ok) throw new Error(json.error.message);
       nookies.set(null, 'token', json.jwt, {
         maxAge: 30 * 24 * 60 * 60,
       });
       setUser(json.user);
       setIsAuthenticate(true);
-     
     } catch (err) {
       setError(err.toString());
     }

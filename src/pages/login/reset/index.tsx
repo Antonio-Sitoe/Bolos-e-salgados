@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Input from '../../../components/Forms/Input';
 import Button from '../../../components/Forms/Button';
 import LoginLayault from '../../../components/LoginLayault/LoginLayault';
-import router from 'next/router';
+
 import { Title } from '../../../styles/styles';
 import { LoginGet as Login } from '../styles';
 import { BiKey } from 'react-icons/bi';
@@ -11,11 +11,8 @@ import { BiKey } from 'react-icons/bi';
 import { BiArrowBack } from 'react-icons/bi';
 import { FORGOTTEN_PASSWORD } from '../../../services/Api';
 import useForm from '../../../hooks/useForm';
-import { UserContext } from '../../../Context/UserContext';
-import Loading from '../../../components/Helper/Loading';
-
 const ResetPassword = () => {
-   const { user, isAuthenticate } = React.useContext(UserContext);
+
   const password = useForm('password');
   const passConfirm = useForm('password');
 
@@ -35,10 +32,6 @@ const ResetPassword = () => {
       });
   };
 
-  if (user && isAuthenticate) {
-    router.replace('/user');
-    return <Loading />;
-  }
   return (
     <LoginLayault>
       <Login onSubmit={handleSubmit}>
