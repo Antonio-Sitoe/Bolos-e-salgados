@@ -34,8 +34,8 @@ const Header = () => {
               <Image
                 src='/logo.svg'
                 alt='logo do site'
-                width={24}
-                height={24}
+                width={40}
+                height={40}
               />
             </Link>
             <Search />

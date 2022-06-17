@@ -3,15 +3,12 @@ import { Order, Subtitle } from '../styles';
 import { UserContext } from '../../../Context/UserContext';
 import Loading from '../../../components/Helper/Loading';
 import UserLayout from '../../../components/Usercomponents/UserLayout';
-import { GetServerSideProps } from 'next';
-import nookies from 'nookies';
-
-
 
 const UserOrders = () => {
-  const { user, isAuthenticate } = React.useContext(UserContext);
-  if (isAuthenticate === false) return <Loading />;
-  if (user)
+ const { isAuthenticate, loading } = React.useContext(UserContext);
+
+  if (loading) return <Loading />;
+  if (isAuthenticate)
     return (
       <UserLayout>
         <Order>
@@ -62,21 +59,3 @@ const UserOrders = () => {
 };
 
 export default UserOrders;
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { token } = nookies.get(ctx);
-
-  if (!token) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/login',
-      },
-    };
-  }
-
-  return {
-    props: {},
-  };
-};
-

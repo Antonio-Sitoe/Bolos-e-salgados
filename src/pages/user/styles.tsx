@@ -113,9 +113,18 @@ export const List = styled.section`
   div {
     margin: 2rem 0;
     a {
+      background: ${theme.colors.black};
+      color: white;
+
+      padding: .8rem;
       text-align: center;
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
       max-width: 10rem;
-      padding: 1rem;
+
       border-radius: 4px;
     }
   }

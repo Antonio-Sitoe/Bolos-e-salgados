@@ -5,6 +5,7 @@ import { theme } from '../../styles/theme';
 interface ButtonProps {
   disabled?: Boolean | any;
   children: string | any;
+  style?: any;
   onClick?: () => void;
 }
 
@@ -37,8 +38,10 @@ const ButtonStyle = styled.button`
   }
 `;
 
-const Button = ({ children, disabled }: ButtonProps) => (
-  <ButtonStyle disabled={disabled}>{children}</ButtonStyle>
+const Button = ({ children, disabled, ...rest }: ButtonProps) => (
+  <ButtonStyle disabled={disabled} {...rest}>
+    {children}
+  </ButtonStyle>
 );
 
 export default Button;

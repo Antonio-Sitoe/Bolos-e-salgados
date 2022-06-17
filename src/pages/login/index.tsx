@@ -11,8 +11,7 @@ import useForm from '../../hooks/useForm';
 import LoginLayault from '../../components/LoginLayault/LoginLayault';
 import router from 'next/router';
 import Head from 'next/head';
-import { GetServerSideProps } from 'next';
-import nookies from 'nookies';
+
 const LoginGet = () => {
   const { userLogin, error, loading } = React.useContext(UserContext);
 
@@ -76,19 +75,3 @@ const LoginGet = () => {
 
 export default LoginGet;
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { token } = nookies.get(ctx);
-
-  if (token) {
-    return {
-      redirect: {
-        destination: '/user',
-        permanent: false,
-      },
-    };
-  }
-
-  return {
-    props: {},
-  };
-};

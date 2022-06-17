@@ -16,14 +16,15 @@ import { UserContext } from '../../../Context/UserContext';
 import { GetServerSideProps } from 'next';
 import nookies, { parseCookies } from 'nookies';
 import { UserAcountEditStyle } from '../styles';
+import { theme } from '../../../styles/theme';
 
 const UserAccountEdit = ({ user, errorSer }) => {
-  const { isAuthenticate } = React.useContext(UserContext);
+  const { isAuthenticate, error: ErrorSer } = React.useContext(UserContext);
   const nome = useForm('name', user.username);
   const email = useForm('email', user.email);
   const empresa = useForm(false, user.empresa);
-  const endereco = useForm('name', user.endereco);
-  const cidade = useForm('name', user.cidade);
+  const endereco = useForm(false, user.endereco);
+  const cidade = useForm(false, user.cidade);
   const { request, loading, error } = useFecth();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,21 +38,24 @@ const UserAccountEdit = ({ user, errorSer }) => {
       const { url, options } = USERDATA_UPDATE(user.id, token, {
         cidade: cidade.value,
         email: email.value,
-        empresa: empresa.value || '',
+        empresa: empresa.value || ' ',
         endereco: endereco.value,
         username: nome.value,
       });
-      const { response } = await request(url, options);
+      const response = await fetch(url, options);
+      const json = await response.json();
+      console.log(json);
       if (response.ok) router.push('/user');
     }
   };
 
-  if (isAuthenticate === false) return <Loading />;
+  if (isAuthenticate === false || loading) return <Loading />;
   if (errorSer) return <ErrorServer error={'Erro no servidor'} />;
 
   return (
     <UserLayout>
       <UserAcountEditStyle onSubmit={handleSubmit}>
+        {ErrorSer && <ErrorServer error={ErrorSer} />}
         <Input
           label='Nome'
           placeholder='Digite o seu nome'
@@ -114,9 +118,16 @@ const UserAccountEdit = ({ user, errorSer }) => {
           <option value='Namaacha'>Namaacha</option>
         </select>
         {loading ? (
-          <Button disabled={loading}>...Carregando</Button>
+          <Button
+            disabled={loading}
+            style={{ background: `${theme.colors.black} ` }}
+          >
+            ...Carregando
+          </Button>
         ) : (
-          <Button>Gravar</Button>
+          <Button style={{ background: `${theme.colors.black} ` }}>
+            Gravar
+          </Button>
         )}
         <ErrorServer error={error} />
       </UserAcountEditStyle>

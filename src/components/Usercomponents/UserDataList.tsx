@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { List } from '../../pages/user/styles';
 import { Links } from '../../styles/styles';
 import { UserContext } from '../../Context/UserContext';
+import { FiEdit } from 'react-icons/fi';
 
 const UserDataList = () => {
   const { user } = React.useContext(UserContext);
@@ -37,7 +38,9 @@ const UserDataList = () => {
       </ul>
       <div>
         <Link href='/user/edit'>
-          <Links>Editar</Links>
+          <a href=''>
+            <FiEdit /> Editar
+          </a>
         </Link>
       </div>
     </List>

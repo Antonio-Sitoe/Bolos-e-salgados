@@ -50,11 +50,10 @@
  
     
 ## 8. [] user
-        [] verificar se esta autenticado primeiro
-        [] buscar os dados via server side rendering
+        [x] verificar se esta autenticado primeiro
         [] funcao de modicar os dados.
-        [] modificar a cor do butao
-        [] modificar os components
+        [x] modificar a cor do butao
+        [x] modificar os components
         [] adicionar funcionalidade de pedidos no servidor
         [] colocar a cor de cada butao no aside, activeStyle
         [] adicionar funcionalidade de logout

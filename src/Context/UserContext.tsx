@@ -47,13 +47,15 @@ export const UserStorage = ({ children }) => {
       if (!response.ok) throw new Error(json.error.message);
     } catch (er) {
       json = null;
-      setError(er);
-      UserLogout();
+      setError(er.toString());
     } finally {
       setUser(json);
       setLoading(false);
       if (json) {
         setIsAuthenticate(true);
+        return true;
+      } else {
+        return false;
       }
     }
   }
@@ -109,9 +111,14 @@ export const UserStorage = ({ children }) => {
 
   React.useEffect(() => {
     const { token } = parseCookies();
-    if (token) {
-      getUserWithToken(token);
-    }
+    (async () => {
+      if (token) {
+        const verify = await getUserWithToken(token);
+        if (verify === false) {
+          UserLogout();
+        }
+      }
+    })();
   }, []);
 
   const value = {
