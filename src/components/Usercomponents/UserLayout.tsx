@@ -8,37 +8,53 @@ import {
   UserMain,
   UserPage,
 } from '../../pages/user/styles';
+import ModalAlert from '../ModalAlert/ModalAlert';
 
 const UserLayout = ({ children }) => {
+  const [modal, setModal] = React.useState(false);
+
   const { UserLogout, user } = React.useContext(UserContext);
   function handleLogout() {
-    const confirm = window.confirm('Deseja terminar a seccao?');
-    if (confirm) UserLogout();
+    setModal(true);
+  }
+  function handleLogoutModal() {
+    setModal(false);
+    UserLogout();
+    window.location.reload();
   }
   return (
-    <Container>
-      <UserPage>
-        <UserIntro>
-          <Title>Bem vindo, {user.username} </Title>
-        </UserIntro>
-        <UserMain>
-          <UserDash>
-            <ul>
-              <li>
-                <Link href='/user'>Dados</Link>
-              </li>
-              <li>
-                <Link href='/user/order'>Meus pedidos</Link>
-              </li>
-              <li>
-                <button onClick={handleLogout}>Sair</button>
-              </li>
-            </ul>
-          </UserDash>
-          {children}
-        </UserMain>
-      </UserPage>
-    </Container>
+    <>
+      <ModalAlert
+        title={'Tem Certeza que quer sair'}
+        modal={modal}
+        setModal={setModal}
+        handleLogoutModal={handleLogoutModal}
+      />
+
+      <Container>
+        <UserPage>
+          <UserIntro>
+            <Title>Bem vindo, {user.username} </Title>
+          </UserIntro>
+          <UserMain>
+            <UserDash>
+              <ul>
+                <li>
+                  <Link href='/user'>Dados</Link>
+                </li>
+                <li>
+                  <Link href='/user/order'>Meus pedidos</Link>
+                </li>
+                <li>
+                  <button onClick={handleLogout}>Sair</button>
+                </li>
+              </ul>
+            </UserDash>
+            {children}
+          </UserMain>
+        </UserPage>
+      </Container>
+    </>
   );
 };
 

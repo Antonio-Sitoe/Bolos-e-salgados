@@ -51,10 +51,11 @@
     
 ## 8. [] user
         [x] verificar se esta autenticado primeiro
-        [] funcao de modicar os dados.
         [x] modificar a cor do butao
         [x] modificar os components
+        [] No middleware de user remover o token
         [] adicionar funcionalidade de pedidos no servidor
+        [] funcao de modicar os dados.
         [] colocar a cor de cada butao no aside, activeStyle
         [] adicionar funcionalidade de logout
         [] adicionar pedidos no order (server)
@@ -72,6 +73,7 @@
 
 ## 9. Components
        [] colocar todos os components em typescript
+       [] component de error colocar uma (ilustracao) de bolo ali
        [] mover a pasta helper para fora dos components
        [] apagar a pasta image
        [] cupcake session deve colocar em um contexto e fazer o fecth no client-side.

@@ -3,6 +3,7 @@ import { GET_USERDATA } from '../../services/Api';
 
 export async function middleware(req: NextRequest) {
   const cookie = req.cookies['token'];
+
   const path = req.nextUrl.clone();
   path.pathname = '/login';
 
@@ -14,7 +15,13 @@ export async function middleware(req: NextRequest) {
     const response = await fetch(url, options);
     const user = await response.json();
 
-    return user.error ? NextResponse.redirect(path) : NextResponse.next();
+    if (user.error) {
+      // remover o cookie do server
+      
+      return NextResponse.redirect(path);
+    }
+
+    return NextResponse.next();
   } catch (error) {
     return NextResponse.redirect(path);
   }

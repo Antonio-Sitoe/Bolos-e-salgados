@@ -13,23 +13,21 @@ const notify = () =>
 
 const PartykitSession = ({ kit }: { kit: Ikit }) => (
   <KitsForParty>
-      <main>
-        <div>
-          <Image
-            src={kit.image.url}
-            alt={kit.image.name}
-            width={300}
-            height={300}
-          />
-        </div>
-        <section>
-          <Title>{kit.title}</Title>
-          <p>{kit.description}</p>
-          <Button loading={false} onClick={notify}>
-            Ver mais
-          </Button>
-        </section>
-      </main>
+    <main>
+      <div>
+        <Image
+          src={kit.image.url}
+          alt={kit.image.name}
+          width={300}
+          height={300}
+        />
+      </div>
+      <section>
+        <Title>{kit.title}</Title>
+        <p>{kit.description}</p>
+        <Button onClick={notify}>Ver mais</Button>
+      </section>
+    </main>
   </KitsForParty>
 );
 

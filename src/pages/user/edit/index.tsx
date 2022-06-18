@@ -44,7 +44,7 @@ const UserAccountEdit = ({ user, errorSer }) => {
       });
       const response = await fetch(url, options);
       const json = await response.json();
-      console.log(json);
+      console.log(response);
       if (response.ok) router.push('/user');
     }
   };

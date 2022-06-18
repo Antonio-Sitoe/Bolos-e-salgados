@@ -74,4 +74,3 @@ const LoginGet = () => {
 };
 
 export default LoginGet;
-

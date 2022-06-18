@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next';
+import React from 'react';
 import Banner from '../components/Banner/banner';
 import CupCakeSession from '../components/CupCakeSession/CupCakeSession';
 import ErroMessage from '../components/Helper/ErroMessage';
@@ -11,6 +12,7 @@ import FeaturedProductSession from './home/FeaturedProductSession';
 import PartykitSession from './home/PartykitSession';
 
 const Home = (props: IPagesProps) => {
+
   if (props.error) {
     return <ErroMessage error={'Erro'} />;
   }
@@ -25,7 +27,6 @@ const Home = (props: IPagesProps) => {
 };
 
 export default Home;
-
 
 export const getStaticProps: GetStaticProps = async () => {
   const homeOptions = GET_HOME_CONTENT(1);
