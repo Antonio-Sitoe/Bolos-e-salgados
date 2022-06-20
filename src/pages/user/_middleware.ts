@@ -16,11 +16,8 @@ export async function middleware(req: NextRequest) {
     const user = await response.json();
 
     if (user.error) {
-      // remover o cookie do server
-      
       return NextResponse.redirect(path);
     }
-
     return NextResponse.next();
   } catch (error) {
     return NextResponse.redirect(path);

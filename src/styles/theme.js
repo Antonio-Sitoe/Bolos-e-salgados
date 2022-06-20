@@ -11,7 +11,8 @@ export const theme = {
     tomato: '#EC2626',
     buyBtn: '#ff385c',
   },
-  fonts:{
-    Lobster:`'Lobster', cursive`
-  }
+  fonts: {
+    Lobster: `'Lobster', cursive`,
+    Lato: `'Lato', sans-serif`,
+  },
 };

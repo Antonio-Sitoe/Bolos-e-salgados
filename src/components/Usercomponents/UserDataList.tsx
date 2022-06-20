@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { List } from '../../pages/user/styles';
-import { Links } from '../../styles/styles';
+import { List } from './styles';
 import { UserContext } from '../../Context/UserContext';
 import { FiEdit } from 'react-icons/fi';
 

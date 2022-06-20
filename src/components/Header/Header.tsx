@@ -13,7 +13,7 @@ const Header = () => {
   //   state: { cart },
   // } = React.useContext(CartContext);
   const { user } = React.useContext(UserContext);
-  const list = React.useRef(null);
+  const list = React.useRef<HTMLUListElement | null>(null);
   const [mobile, setMobile] = React.useState(false);
   const openMenu = ({ target }) => {
     if (list.current !== target) setMobile(!mobile);
@@ -31,26 +31,36 @@ const Header = () => {
         <Container>
           <Nav mobile={mobile}>
             <Link href='/'>
-              <Image
-                src='/logo.svg'
-                alt='logo do site'
-                width={40}
-                height={40}
-              />
+              <a>
+                <Image
+                  src='/logo.svg'
+                  alt='logo do site'
+                  width={40}
+                  height={40}
+                />
+              </a>
             </Link>
             <Search />
             <ul ref={list}>
               <li>
-                <Link href='/'>Pagina Inicial</Link>
+                <Link href='/'>
+                  <a>Pagina Inicial</a>
+                </Link>
               </li>
               <li>
-                <Link href='/product'>Produtos</Link>
+                <Link href='/product'>
+                  <a>Produtos</a>
+                </Link>
               </li>
               <li>
-                <Link href='/about'>Quem Somos</Link>
+                <Link href='/about'>
+                  <a>Quem Somos</a>
+                </Link>
               </li>
               <li>
-                <Link href='/contact'>Contato</Link>
+                <Link href='/contact'>
+                  <a>Contato</a>
+                </Link>
               </li>
               <li>
                 {user ? (
@@ -58,7 +68,9 @@ const Header = () => {
                     <Links user={user && true}>{user.username}</Links>
                   </Link>
                 ) : (
-                  <Links href='/login'>Entrar | Criar</Links>
+                  <Link href='/login'>
+                    <Links>Entrar | Criar</Links>
+                  </Link>
                 )}
               </li>
               <li>

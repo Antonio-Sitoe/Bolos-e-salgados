@@ -3,17 +3,16 @@ import Link from 'next/link';
 import Input from '../../../components/Forms/Input';
 import Button from '../../../components/Forms/Button';
 import LoginLayault from '../../../components/LoginLayault/LoginLayault';
-
 import { Title } from '../../../styles/styles';
 import { LoginGet as Login } from '../styles';
 import { BiKey } from 'react-icons/bi';
 import { BiArrowBack } from 'react-icons/bi';
 import { FORGOTTEN_PASSWORD } from '../../../services/Api';
 import useForm from '../../../hooks/useForm';
-
+import useVerifyToken from '../../../hooks/useVerifyToken';
 
 const ForgotPassword = () => {
-
+  const { verifyToken } = useVerifyToken();
   const email = useForm('email');
 
   const handleSubmit = async (e) => {
@@ -31,6 +30,9 @@ const ForgotPassword = () => {
         console.log('An error occurred:', error.response);
       });
   };
+  React.useEffect(() => {
+    verifyToken();
+  }, [verifyToken]);
 
   return (
     <LoginLayault>

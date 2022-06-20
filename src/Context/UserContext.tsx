@@ -8,7 +8,6 @@ interface IUserValuesProps {
   user: IUser | null;
   isAuthenticate: boolean;
   error: null | string;
-  UserLogout: () => void;
   setError;
   setIsAuthenticate;
   userRegister;
@@ -16,6 +15,8 @@ interface IUserValuesProps {
   loading;
   productID;
   setproductID;
+  getUserWithToken;
+  UserLogout: () => void;
 }
 
 export const UserContext = React.createContext({} as IUserValuesProps);
@@ -123,6 +124,7 @@ export const UserStorage = ({ children }) => {
 
   const value = {
     setError,
+    getUserWithToken,
     isAuthenticate,
     setIsAuthenticate,
     userRegister,

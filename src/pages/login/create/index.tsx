@@ -8,18 +8,23 @@ import router from 'next/router';
 import ErrorServer from '../../../components/Helper/ErrorServer';
 import { UserContext } from '../../../Context/UserContext';
 import useForm from '../../../hooks/useForm';
-
 import LoginLayault from '../../../components/LoginLayault/LoginLayault';
 import Link from 'next/link';
 import { BiArrowBack } from 'react-icons/bi';
+import useVerifyToken from '../../../hooks/useVerifyToken';
 
 const LoginCreate = () => {
   const { error, userRegister, loading, setError } =
     React.useContext(UserContext);
+  const { verifyToken } = useVerifyToken();
   const name = useForm('name');
   const email = useForm('email');
   const password = useForm('password');
   const passConfirm = useForm('password');
+
+  React.useEffect(() => {
+    verifyToken();
+  }, [verifyToken]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

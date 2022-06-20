@@ -8,13 +8,13 @@ import { ResponseData } from '../components/Helper/ResponseData';
 import transformData from '../components/Helper/transformData';
 import { GET_ALL_PRODUCTS, GET_HOME_CONTENT } from '../services/Api';
 import { IPagesProps } from '../Types/Interfaces';
-import FeaturedProductSession from './home/FeaturedProductSession';
-import PartykitSession from './home/PartykitSession';
+import FeaturedProductSession from '../components/homeComponents/FeaturedProductSession';
+import PartykitSession from '../components/homeComponents/PartykitSession';
 
 const Home = (props: IPagesProps) => {
 
   if (props.error) {
-    return <ErroMessage error={'Erro'} />;
+    return <ErroMessage error={'Erro no Servidor'} />;
   }
   return (
     <>

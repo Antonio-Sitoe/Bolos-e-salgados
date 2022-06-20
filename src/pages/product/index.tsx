@@ -7,7 +7,7 @@ import { GET_ALL_PRODUCTS, GET_HOME_CONTENT } from '../../services/Api';
 import ErroMessage from '../../components/Helper/ErroMessage';
 import { IPagesProps } from '../../Types/Interfaces';
 import { ResponseData } from '../../components/Helper/ResponseData';
-import FeaturedProductSession from '../home/FeaturedProductSession';
+import FeaturedProductSession from '../../components/homeComponents/FeaturedProductSession';
 import CupCakeSession from '../../components/CupCakeSession/CupCakeSession';
 
 function product(props: IPagesProps) {

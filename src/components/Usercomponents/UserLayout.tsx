@@ -1,14 +1,20 @@
-import Link from 'next/link';
 import React from 'react';
 import { UserContext } from '../../Context/UserContext';
 import { Container, Title } from '../../styles/styles';
-import {
-  UserDash,
-  UserIntro,
-  UserMain,
-  UserPage,
-} from '../../pages/user/styles';
+import { UserDash, UserIntro, UserMain, UserPage } from './styles';
 import ModalAlert from '../ModalAlert/ModalAlert';
+import ActiveLink from '../NavLink/ActiveLink';
+
+const routes = [
+  {
+    href: '/user',
+    name: 'Dados',
+  },
+  {
+    href: '/user/order',
+    name: 'Meus pedidos',
+  },
+];
 
 const UserLayout = ({ children }) => {
   const [modal, setModal] = React.useState(false);
@@ -22,15 +28,15 @@ const UserLayout = ({ children }) => {
     UserLogout();
     window.location.reload();
   }
+
   return (
     <>
       <ModalAlert
-        title={'Tem Certeza que quer sair'}
+        title={'Tem Certeza que quer sair ?'}
         modal={modal}
         setModal={setModal}
         handleLogoutModal={handleLogoutModal}
       />
-
       <Container>
         <UserPage>
           <UserIntro>
@@ -39,12 +45,15 @@ const UserLayout = ({ children }) => {
           <UserMain>
             <UserDash>
               <ul>
-                <li>
-                  <Link href='/user'>Dados</Link>
-                </li>
-                <li>
-                  <Link href='/user/order'>Meus pedidos</Link>
-                </li>
+                {routes.map(({ name, href }, index) => {
+                  return (
+                    <li key={index}>
+                      <ActiveLink href={href} activeClassName='active'>
+                        <a className='nav-link'>{name}</a>
+                      </ActiveLink>
+                    </li>
+                  );
+                })}
                 <li>
                   <button onClick={handleLogout}>Sair</button>
                 </li>

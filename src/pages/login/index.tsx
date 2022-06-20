@@ -11,12 +11,14 @@ import useForm from '../../hooks/useForm';
 import LoginLayault from '../../components/LoginLayault/LoginLayault';
 import router from 'next/router';
 import Head from 'next/head';
+import { parseCookies } from 'nookies';
+import useVerifyToken from '../../hooks/useVerifyToken';
 
 const LoginGet = () => {
   const { userLogin, error, loading } = React.useContext(UserContext);
-
   const username = useForm('email');
   const password = useForm('password');
+  const { verifyToken } = useVerifyToken();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,6 +27,9 @@ const LoginGet = () => {
       router.replace('/user');
     }
   };
+  React.useEffect(() => {
+    verifyToken();
+  }, [verifyToken]);
 
   return (
     <>

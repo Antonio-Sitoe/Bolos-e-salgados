@@ -21,7 +21,7 @@ const User = () => {
         </UserLayout>
       </Container>
     );
-  else null;
+  else return null;
 };
 
 export default User;

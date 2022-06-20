@@ -17,6 +17,7 @@ import { GetServerSideProps } from 'next';
 import nookies, { parseCookies } from 'nookies';
 import { UserAcountEditStyle } from '../styles';
 import { theme } from '../../../styles/theme';
+import { toast } from 'react-toastify';
 
 const UserAccountEdit = ({ user, errorSer }) => {
   const { isAuthenticate, error: ErrorSer } = React.useContext(UserContext);
@@ -42,10 +43,12 @@ const UserAccountEdit = ({ user, errorSer }) => {
         endereco: endereco.value,
         username: nome.value,
       });
-      const response = await fetch(url, options);
-      const json = await response.json();
-      console.log(response);
-      if (response.ok) router.push('/user');
+      const { response } = await request(url, options);
+      if (response && response.ok) {
+        router.push('/user');
+      } else {
+        toast.warn('Falha ao atualizar os dados');
+      }
     }
   };
 

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 import { animeLeft, AnimeLeft } from '../about/styles';
 
+
 export const UserAcountEditStyle = styled.form`
   display: grid;
   gap: 1rem;
@@ -38,95 +39,11 @@ export const UserAcountEditStyle = styled.form`
     }
   }
 `;
-
-export const UserPage = styled.main`
-  margin: 6rem 0;
-`;
-export const UserIntro = styled.section`
-  padding: 2rem 0;
-  text-align: center;
-`;
-export const UserMain = styled.section`
-  display: grid;
-  grid-template-columns: 20rem 1fr;
-  gap: 1rem;
-  padding: 1rem 0;
-
-  @media (max-width: 800px) {
-    grid-template-columns: 1fr;
-  }
-`;
-export const UserDash = styled.aside`
-  border-radius: 4px;
-  ul {
-    display: grid;
-    li {
-      border-bottom: 1px solid #fae9de;
-      cursor: pointer;
-      display: flex;
-      a,
-      button {
-        text-align: left;
-        border: none;
-        width: 100%;
-        display: block;
-        padding: 1rem;
-        font-family: Lato;
-        font-weight: bold;
-        color: ${theme.colors.white};
-        background: ${theme.colors.base};
-        &:hover,
-        &:focus {
-          color: ${theme.colors.black};
-          background: ${theme.colors.baseSmooth};
-        }
-        &.active {
-          color: ${theme.colors.black};
-          background: ${theme.colors.baseSmooth};
-        }
-      }
-    }
-
-    @media (max-width: 800px) {
-      grid-template-columns: 1fr 1fr 1fr;
-      li {
-        a {
-        }
-      }
-    }
-  }
-`;
 export const UserContent = styled.section`
   padding: 0 3rem;
 
   @media (max-width: 800px) {
     padding: 0;
-  }
-`;
-export const List = styled.section`
-  animation: ${AnimeLeft} 0.3s;
-  ul {
-    display: grid;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  div {
-    margin: 2rem 0;
-    a {
-      background: ${theme.colors.black};
-      color: white;
-
-      padding: .8rem;
-      text-align: center;
-      width: 100%;
-
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      max-width: 10rem;
-
-      border-radius: 4px;
-    }
   }
 `;
 export const Subtitle = styled.h2`

@@ -180,7 +180,6 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 0 0.6rem;
 `;
-
 interface ILinksProps {
   user?: Boolean;
   point?: string;
@@ -224,7 +223,6 @@ export const Title = styled.h1`
     font-size: 1rem;
   }
 `;
-
 export const AnimeIntro = keyframes`
   from {
     opacity: 0;

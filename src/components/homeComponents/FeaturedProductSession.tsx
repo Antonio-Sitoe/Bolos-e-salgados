@@ -1,9 +1,7 @@
-import React from 'react';
-import { Main } from './styles';
-import Card from '../../components/Card/Card';
-import Sumary from '../../components/Sumary/Sumary';
+import Card from '../Card/Card';
+import Sumary from '../Sumary/Sumary';
 import { Container, Links } from '../../styles/styles';
-import { DivConfir } from './styles';
+import { DivConfir, Main } from './styles';
 import { useRouter } from 'next/router';
 
 const FeaturedProductSession = ({ featured }) => {

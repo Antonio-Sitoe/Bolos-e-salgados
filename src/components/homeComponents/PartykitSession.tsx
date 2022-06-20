@@ -3,7 +3,7 @@ import { Title } from '../../styles/styles';
 import { KitsForParty } from './styles';
 import { toast } from 'react-toastify';
 import Image from 'next/image';
-import Button from '../../components/Forms/Button';
+import Button from '../Forms/Button';
 import { Ikit } from '../../Types/Interfaces';
 
 const notify = () =>
