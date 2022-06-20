@@ -69,6 +69,10 @@ export const Nav = styled.nav<HeaderStyleProps>`
         padding: 0.6rem 1rem;
         border-radius: 4px;
 
+        &.active {
+          background: ${theme.colors.grey};
+        }
+
         &:hover {
           background: ${theme.colors.grey};
         }

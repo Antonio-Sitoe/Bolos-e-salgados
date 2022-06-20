@@ -7,6 +7,7 @@ import { HiShoppingCart } from 'react-icons/hi';
 import { Container, Links } from '../../styles/styles';
 import { Header as HeaderStyle, MarginTops, Nav } from './styles';
 import { UserContext } from '../../Context/UserContext';
+import ActiveLink from '../NavLink/ActiveLink';
 
 const Header = () => {
   // const {
@@ -43,24 +44,24 @@ const Header = () => {
             <Search />
             <ul ref={list}>
               <li>
-                <Link href='/'>
-                  <a>Pagina Inicial</a>
-                </Link>
+                <ActiveLink href='/' activeClassName='active'>
+                  <a className='nav-link'>Pagina Inicial</a>
+                </ActiveLink>
               </li>
               <li>
-                <Link href='/product'>
-                  <a>Produtos</a>
-                </Link>
+                <ActiveLink href='/product' activeClassName='active'>
+                  <a className='nav-link'>Produtos</a>
+                </ActiveLink>
               </li>
               <li>
-                <Link href='/about'>
-                  <a>Quem Somos</a>
-                </Link>
+                <ActiveLink href='/about' activeClassName='active'>
+                  <a className='nav-link'>Quem Somos</a>
+                </ActiveLink>
               </li>
               <li>
-                <Link href='/contact'>
-                  <a>Contato</a>
-                </Link>
+                <ActiveLink href='/contact' activeClassName='active'>
+                  <a className='nav-link'>Contato</a>
+                </ActiveLink>
               </li>
               <li>
                 {user ? (

@@ -1,6 +1,21 @@
 
 # LISTA DE TAREFAS (PAGINAS E FUNCIONALIDADES)
 
+
+## 1. [x] Home Page()
+        [x] banner
+        [x] produtos
+        [x] kit
+        [x] cupcake
+        [x] Ajustar as imagens dos produtos
+        [x] Fazer query dos produtos
+        [x] incrimentar o ICR do nextJS
+
+## 1.2. [x] product
+        [x] modificar ttodos os produtos no graphcms
+        [x] fecth da dados no serverside
+        [x] pagina de produto
+
 ## 1.3 [x] single Page
        [X] usar SPA
        [X] Fazer tratamentos de dados / erros
@@ -32,7 +47,6 @@
              [x] modificar o component de header
              [x] modficar todos os componentes que dependem da autenticacao.
         [x] resetar senha atraves do email - strapi e client
- 
 
 ## 8. [] user
         [x] verificar se esta autenticado primeiro
@@ -45,20 +59,6 @@
 
         [] adicionar pedidos no order (server)
         [] adicionar funcionalidade de pedidos no servidor
-
-## 1. [] Home Page()
-        [] banner
-        [] produtos
-        [] kit
-        [] cupcake
-        [] Ajustar as imagens dos produtos
-        [] Fazer query dos produtos
-        [] incrimentar o ICR do nextJS
-
-## 1.2. [] product
-        [] modificar ttodos os produtos no graphcms
-        [] fecth da dados no serverside
-        [] pagina de produto
 
         
 ## 5. [] Cart page ()

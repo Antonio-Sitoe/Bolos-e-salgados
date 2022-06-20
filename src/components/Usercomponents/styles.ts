@@ -65,8 +65,8 @@ export const List = styled.section`
   div {
     margin: 2rem 0;
     a {
-      background: ${theme.colors.black};
-      color: white;
+      background: ${theme.colors.baseSmooth};
+      color: black;
 
       padding: 0.8rem;
       text-align: center;
