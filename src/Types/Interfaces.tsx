@@ -1,3 +1,19 @@
+export interface ICard {
+  id: number;
+  attributes: {
+    name: string;
+    price: number;
+    image: {
+      data: {
+        attributes: {
+          url: string;
+          name: string;
+        };
+      }[];
+    };
+  };
+}
+
 export interface IProduct {
   id: number;
   attributes: {

@@ -9,6 +9,7 @@ import Slide from '../../components/Slide/Slide';
 import { useRouter } from 'next/router';
 import ProductInformation from '../../components/ProductInformation/ProductInformation';
 import { IshowImageArray } from '../../Types/Interfaces';
+import Head from 'next/head';
 
 const SinglePage = () => {
   const [showImage, setImage] = React.useState<IshowImageArray>([]);
@@ -30,16 +31,22 @@ const SinglePage = () => {
   if (loading) return <Loading />;
   if (data) {
     return (
-      <ProdutoStyle>
-        <Container>
-          <Main>
-            <section>
-              <Slide slide={showImage} />
-            </section>
-            <ProductInformation data={data.data} showImage={showImage} />
-          </Main>
-        </Container>
-      </ProdutoStyle>
+      <>
+        <Head>
+          <title>{data.data.attributes.name}</title>
+          <meta name='description' content='Minha conta' />
+        </Head>
+        <ProdutoStyle>
+          <Container>
+            <Main>
+              <section>
+                <Slide slide={showImage} />
+              </section>
+              <ProductInformation data={data.data} showImage={showImage} />
+            </Main>
+          </Container>
+        </ProdutoStyle>
+      </>
     );
   }
   return null;

@@ -2,8 +2,9 @@ import React from 'react';
 import Image from 'next/image';
 import { Links } from '../../styles/styles';
 import { CardStyle } from './styles';
+import { ICard } from '../../Types/Interfaces';
 
-const Card = ({ attributes, id }, key) => {
+const Card = ({ attributes, id }: ICard, key) => {
   return (
     <CardStyle key={key}>
       <Image

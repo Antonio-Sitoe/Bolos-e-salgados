@@ -18,6 +18,7 @@ const Faq = ({ data, error, message }: IFaqProps) => {
     <>
       <Head>
         <title>Perguntas Frequentes | Mila Delicious</title>
+        <meta name='description' content={data.banner.banner_title} />
       </Head>
       <IntroOnPage
         text={data.banner.banner_title}

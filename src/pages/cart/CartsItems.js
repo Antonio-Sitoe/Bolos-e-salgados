@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaTrashRestore } from 'react-icons/fa';
 import { Carts, CartsContainer, CartsFooter, CartsHeader } from './styles';
-import Image from '../../components/Image/Image';
+import Image from 'next/image';
 import QuantiContainer from './QuantiContainer';
 
 const CartsItems = ({ cart }) => {
@@ -16,7 +16,7 @@ const CartsItems = ({ cart }) => {
         {cart.map((item) => {
           return (
             <li key={item.id}>
-              <Image src={item.foto} alt='imagem do produto' />
+              <Image src={item.foto} alt='imagem do produto' width={24} height={24} />
               <CartsContainer>
                 <CartsHeader>
                   <div>

@@ -12,6 +12,7 @@ import { FORGOTTEN_PASSWORD } from '../../../services/Api';
 import useForm from '../../../hooks/useForm';
 
 import useVerifyToken from '../../../hooks/useVerifyToken';
+import Head from 'next/head';
 const ResetPassword = () => {
   const { verifyToken } = useVerifyToken();
   const password = useForm('password');
@@ -37,42 +38,48 @@ const ResetPassword = () => {
   }, [verifyToken]);
 
   return (
-    <LoginLayault>
-      <Login onSubmit={handleSubmit}>
-        <Title>Redifinir a senha</Title>
-        <Input
-          label='Senha'
-          name='senha'
-          type='password'
-          placeholder='Digite o sua senha'
-          id='senha'
-          error={password.error}
-          onBlur={password.onBlur}
-          onChange={password.onChange}
-          value={password.value}
-        />
-        <Input
-          name='confirme'
-          label='Confirme a senha'
-          type='password'
-          placeholder='Confirme a sua senha'
-          {...passConfirm}
-          id='confirme'
-          error={passConfirm.error}
-          onBlur={passConfirm.onBlur}
-          onChange={passConfirm.onChange}
-          value={passConfirm.value}
-        />
-        <Button>
-          <BiKey /> Enviar
-        </Button>
-        <Link href={'/login'}>
-          <a>
-            <BiArrowBack /> Voltar para Login
-          </a>
-        </Link>
-      </Login>
-    </LoginLayault>
+    <>
+      <Head>
+        <title>Mila Delicious | Recuperar a senha</title>
+        <meta name='description' content='Faca o Login' />
+      </Head>
+      <LoginLayault>
+        <Login onSubmit={handleSubmit}>
+          <Title>Redifinir a senha</Title>
+          <Input
+            label='Senha'
+            name='senha'
+            type='password'
+            placeholder='Digite o sua senha'
+            id='senha'
+            error={password.error}
+            onBlur={password.onBlur}
+            onChange={password.onChange}
+            value={password.value}
+          />
+          <Input
+            name='confirme'
+            label='Confirme a senha'
+            type='password'
+            placeholder='Confirme a sua senha'
+            {...passConfirm}
+            id='confirme'
+            error={passConfirm.error}
+            onBlur={passConfirm.onBlur}
+            onChange={passConfirm.onChange}
+            value={passConfirm.value}
+          />
+          <Button>
+            <BiKey /> Enviar
+          </Button>
+          <Link href={'/login'}>
+            <a>
+              <BiArrowBack /> Voltar para Login
+            </a>
+          </Link>
+        </Login>
+      </LoginLayault>
+    </>
   );
 };
 

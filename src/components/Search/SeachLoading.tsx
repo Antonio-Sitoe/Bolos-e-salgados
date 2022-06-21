@@ -4,9 +4,9 @@ export const SeachLoading = () => {
   return (
     <SeachLoadingStyle>
       <section>
-        <div></div>
-        <div></div>
-        <div></div>
+        {[1, 2, 3].map((i) => (
+          <div key={i}></div>
+        ))}
       </section>
     </SeachLoadingStyle>
   );

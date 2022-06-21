@@ -5,23 +5,29 @@ import UserLayout from '../../components/Usercomponents/UserLayout';
 import UserDataList from '../../components/Usercomponents/UserDataList';
 import { UserContext } from '../../Context/UserContext';
 import Loading from '../../Helper/Loading';
+import Head from 'next/head';
 
 const User = () => {
-  const { isAuthenticate, loading } = React.useContext(UserContext);
+  const { isAuthenticate, user } = React.useContext(UserContext);
 
-  if (loading) return <Loading />;
   if (isAuthenticate)
     return (
-      <Container>
-        <UserLayout>
-          <UserContent>
-            <Subtitle>Dados pessoas</Subtitle>
-            <UserDataList />
-          </UserContent>
-        </UserLayout>
-      </Container>
+      <>
+        <Head>
+          <title>Conta de {user.username}</title>
+          <meta name='description' content='Minha conta' />
+        </Head>
+        <Container>
+          <UserLayout>
+            <UserContent>
+              <Subtitle>Dados pessoas</Subtitle>
+              <UserDataList />
+            </UserContent>
+          </UserLayout>
+        </Container>
+      </>
     );
-  else return null;
+  return <Loading />;
 };
 
 export default User;

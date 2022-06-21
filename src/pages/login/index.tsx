@@ -11,7 +11,6 @@ import useForm from '../../hooks/useForm';
 import LoginLayault from '../../components/LoginLayault/LoginLayault';
 import router from 'next/router';
 import Head from 'next/head';
-import { parseCookies } from 'nookies';
 import useVerifyToken from '../../hooks/useVerifyToken';
 
 const LoginGet = () => {
@@ -35,6 +34,7 @@ const LoginGet = () => {
     <>
       <Head>
         <title>Mila Delicious | Faca o login</title>
+        <meta name="description" content="Faca o Login" />
       </Head>
       <LoginLayault>
         <LoginForm onSubmit={handleSubmit}>

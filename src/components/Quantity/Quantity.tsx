@@ -1,7 +1,12 @@
 import React from 'react';
 import { QuantityStyle } from './styles';
 
-export const Quantity = ({ count, setCount }) => {
+interface IQuantity {
+  count: number;
+  setCount: (count: number) => number;
+}
+
+export const Quantity = ({ count, setCount }: IQuantity) => {
   const handleChange = ({ target }) => {
     switch (target.id) {
       case 'increment':
@@ -19,7 +24,7 @@ export const Quantity = ({ count, setCount }) => {
   return (
     <QuantityStyle>
       <span>{count}</span>
-      <button id='decrement' onClick={handleChange} >
+      <button id='decrement' onClick={handleChange}>
         -
       </button>
       <button id='increment' onClick={handleChange}>

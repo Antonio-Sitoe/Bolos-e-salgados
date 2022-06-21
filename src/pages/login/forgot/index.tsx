@@ -10,6 +10,7 @@ import { BiArrowBack } from 'react-icons/bi';
 import { FORGOTTEN_PASSWORD } from '../../../services/Api';
 import useForm from '../../../hooks/useForm';
 import useVerifyToken from '../../../hooks/useVerifyToken';
+import Head from 'next/head';
 
 const ForgotPassword = () => {
   const { verifyToken } = useVerifyToken();
@@ -35,34 +36,40 @@ const ForgotPassword = () => {
   }, [verifyToken]);
 
   return (
-    <LoginLayault>
-      <Login onSubmit={handleSubmit}>
-        <Title>Recuperar senha</Title>
-        <p>
-          Para recuperar a sua senha, digite o seu email no campo abaixo ! apos
-          clicar em enviar ira receber um e-mail dentro de instantes
-        </p>
-        <Input
-          type='email'
-          placeholder='Digite o seu email'
-          name='email'
-          label='Email'
-          id='email'
-          error={email.error}
-          onBlur={email.onBlur}
-          onChange={email.onChange}
-          value={email.value}
-        />
-        <Button>
-          <BiKey /> Enviar
-        </Button>
-        <Link href={'/login'}>
-          <a>
-            <BiArrowBack /> Voltar para Login
-          </a>
-        </Link>
-      </Login>
-    </LoginLayault>
+    <>
+      <Head>
+        <title>Mila Delicious | Esqueceu a senha</title>
+        <meta name='description' content='Esqueceu a senha' />
+      </Head>
+      <LoginLayault>
+        <Login onSubmit={handleSubmit}>
+          <Title>Recuperar senha</Title>
+          <p>
+            Para recuperar a sua senha, digite o seu email no campo abaixo !
+            apos clicar em enviar ira receber um e-mail dentro de instantes
+          </p>
+          <Input
+            type='email'
+            placeholder='Digite o seu email'
+            name='email'
+            label='Email'
+            id='email'
+            error={email.error}
+            onBlur={email.onBlur}
+            onChange={email.onChange}
+            value={email.value}
+          />
+          <Button>
+            <BiKey /> Enviar
+          </Button>
+          <Link href={'/login'}>
+            <a>
+              <BiArrowBack /> Voltar para Login
+            </a>
+          </Link>
+        </Login>
+      </LoginLayault>
+    </>
   );
 };
 

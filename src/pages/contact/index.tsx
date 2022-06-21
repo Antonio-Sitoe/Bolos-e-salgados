@@ -9,6 +9,7 @@ const Contact = () => (
   <>
     <Head>
       <title>Entre em Contato | Mila Delicious</title>
+      <meta name='description' content='Entre em contato conosco' />
     </Head>
     <IntroOnPage text='Entre em contato conosco' Bg='' />
     <Container>

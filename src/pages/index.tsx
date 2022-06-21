@@ -10,14 +10,18 @@ import { GET_ALL_PRODUCTS, GET_HOME_CONTENT } from '../services/Api';
 import { IPagesProps } from '../Types/Interfaces';
 import FeaturedProductSession from '../components/homeComponents/FeaturedProductSession';
 import PartykitSession from '../components/homeComponents/PartykitSession';
+import Head from 'next/head';
 
 const Home = (props: IPagesProps) => {
-
   if (props.error) {
     return <ErroMessage error={'Erro no Servidor'} />;
   }
   return (
     <>
+      <Head>
+        <title>Pagina Inicial | Mila Delicious </title>
+        <meta name='description' content='Pagina inicial' />
+      </Head>
       <Banner bannerProprietes={props.banner} />
       <FeaturedProductSession featured={props.featured} />
       <PartykitSession kit={props.kit} />

@@ -15,6 +15,10 @@ const About = ({ error, data }) => {
     <>
       <Head>
         <title>Sobre | Mila Delicious</title>
+        <meta
+          name='description'
+          content={`Pagina sobre, saiba tudo sobre ${data.title}`}
+        />
       </Head>
       <IntroOnPage text={data.title} Bg={data.banner_img} />
       <AboutStyle>
@@ -53,7 +57,7 @@ export const getStaticProps: GetStaticProps = async () => {
       },
     };
   } catch (error) {
-    console.log(error.message)
+    console.log(error.message);
     return {
       props: {
         error: true,

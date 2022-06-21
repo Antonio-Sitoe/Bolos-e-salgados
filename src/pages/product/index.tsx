@@ -9,20 +9,27 @@ import { IPagesProps } from '../../Types/Interfaces';
 import { ResponseData } from '../../Helper/ResponseData';
 import FeaturedProductSession from '../../components/homeComponents/FeaturedProductSession';
 import CupCakeSession from '../../components/CupCakeSession/CupCakeSession';
+import Head from 'next/head';
 
 function product(props: IPagesProps) {
   if (props.error) {
     return <ErroMessage error={'Erro'} />;
   }
   return (
-    <ProdutoStyle>
-      <IntroOnPage
-        text={props.banner.banner_title}
-        Bg={props.banner.Banner_img}
-      />
-      <FeaturedProductSession featured={props.featured} />
-      <CupCakeSession cupCakeData={props.featured.productData.cup} />
-    </ProdutoStyle>
+    <>
+      <Head>
+        <title>Todos os produtos</title>
+        <meta name='description' content='Minha conta' />
+      </Head>
+      <ProdutoStyle>
+        <IntroOnPage
+          text={props.banner.banner_title}
+          Bg={props.banner.Banner_img}
+        />
+        <FeaturedProductSession featured={props.featured} />
+        <CupCakeSession cupCakeData={props.featured.productData.cup} />
+      </ProdutoStyle>
+    </>
   );
 }
 export default product;
