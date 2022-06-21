@@ -1,6 +1,6 @@
 import React from 'react';
-import { ImExit } from '../Helper/ImExit';
-import { MdOutlineClose } from '../Helper/MdOutlineClose';
+import { ImExit } from '../../Helper/ImExit';
+import { MdOutlineClose } from '../../Helper/MdOutlineClose';
 import { LogoutButton, Modal, ModalBackground } from './styles';
 
 const ModalAlert = ({ title, modal, setModal, handleLogoutModal }) => {
@@ -13,8 +13,6 @@ const ModalAlert = ({ title, modal, setModal, handleLogoutModal }) => {
       setModal(false);
     }
   }
-
-  React.useEffect(() => {}, []);
 
   if (modal)
     return (

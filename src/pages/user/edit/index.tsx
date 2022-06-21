@@ -5,12 +5,12 @@ import useForm from '../../../hooks/useForm';
 import { Label } from '../../../components/Forms/styles';
 
 import { GET_USERDATA, USERDATA_UPDATE } from '../../../services/Api';
-import ErrorServer from '../../../components/Helper/ErrorServer';
+import ErrorServer from '../../../Helper/ErrorServer';
 import useFecth from '../../../hooks/useFecth';
 import router from 'next/router';
 
 import UserLayout from '../../../components/Usercomponents/UserLayout';
-import Loading from '../../../components/Helper/Loading';
+import Loading from '../../../Helper/Loading';
 import { UserContext } from '../../../Context/UserContext';
 
 import { GetServerSideProps } from 'next';

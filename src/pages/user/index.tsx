@@ -4,7 +4,7 @@ import { Container } from '../../styles/styles';
 import UserLayout from '../../components/Usercomponents/UserLayout';
 import UserDataList from '../../components/Usercomponents/UserDataList';
 import { UserContext } from '../../Context/UserContext';
-import Loading from '../../components/Helper/Loading';
+import Loading from '../../Helper/Loading';
 
 const User = () => {
   const { isAuthenticate, loading } = React.useContext(UserContext);

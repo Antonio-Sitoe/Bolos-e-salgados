@@ -5,7 +5,7 @@ import { Title } from '../../../styles/styles';
 import { BiUser } from 'react-icons/bi';
 import { LoginGet as Login } from '../styles';
 import router from 'next/router';
-import ErrorServer from '../../../components/Helper/ErrorServer';
+import ErrorServer from '../../../Helper/ErrorServer';
 import { UserContext } from '../../../Context/UserContext';
 import useForm from '../../../hooks/useForm';
 import LoginLayault from '../../../components/LoginLayault/LoginLayault';

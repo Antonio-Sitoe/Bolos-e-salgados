@@ -1,7 +1,7 @@
-import styled, { keyframes } from "styled-components";
-import { theme } from "../../styles/theme";
+import styled, { keyframes } from 'styled-components';
+import { theme } from '../styles/theme';
 
-const Left = keyframes` 
+export const Left = keyframes` 
 from {
     transform: translateY(-100%);
   }
@@ -45,10 +45,24 @@ export const Balls = styled.div`
 
 export const ErrorStyle = styled.div`
   padding: 5rem 0;
+  width: 100%;
   line-height: 1.5;
 
   font-size: 1rem;
   color: ${theme.colors.tomato};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    svg {
+      margin: 1rem auto;
+      width: 100%;
+      max-width: 5rem;
+      height: 5rem;
+    }
+  }
 `;
 
 export const ErrorServer = styled.p`

@@ -8,7 +8,7 @@ import { theme } from '../../styles/theme';
 import Button from '../Forms/Button';
 import Input from '../Forms/Input';
 import Textearea from '../Forms/Textearea';
-import ErrorServer from '../Helper/ErrorServer';
+import ErrorServer from '../../Helper/ErrorServer';
 
 const Form = styled.form`
   display: grid;

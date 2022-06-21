@@ -1,7 +1,7 @@
 import React from 'react';
 import { Order, Subtitle } from '../styles';
 import { UserContext } from '../../../Context/UserContext';
-import Loading from '../../../components/Helper/Loading';
+import Loading from '../../../Helper/Loading';
 import UserLayout from '../../../components/Usercomponents/UserLayout';
 
 const UserOrders = () => {

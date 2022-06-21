@@ -63,7 +63,7 @@ const ProductInformation = ({ data, showImage }) => {
         <h2>Preco: {dataInfo.price} MZN</h2>
       </div>
       <Count count={count} setCount={setCount} />
-      <Button onClick={handleCart} loading={loading}>
+      <Button onClick={handleCart} disabled={loading}>
         Adicionar ao carrinho
       </Button>
     </ShowInformation>

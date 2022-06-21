@@ -15,7 +15,7 @@ export const ShowInformation = styled.section`
   h2,
   h3 {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1rem;
     width: 100%;
     margin: 1rem 0;
   }

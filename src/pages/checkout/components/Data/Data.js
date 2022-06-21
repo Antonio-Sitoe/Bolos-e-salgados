@@ -5,7 +5,7 @@ import { ButtonEdit, DataStyle } from '../../styles';
 import Shipping from '../Shipping/Shipping';
 import useForm from '../../../../hooks/useForm';
 import useFecth from '../../../../hooks/useFecth';
-import ErrorServer from '../../../../components/Helper/ErrorServer';
+import ErrorServer from '../../../../Helper/ErrorServer';
 import { USERDATA_UPDATE } from '../../../../services/Api';
 
 const Data = ({ user, open, setOpen, cart, total }) => {

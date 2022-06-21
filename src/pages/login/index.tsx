@@ -6,7 +6,7 @@ import { Title } from '../../styles/styles';
 import { LoginGet as LoginForm } from './styles';
 import Button from '../../components/Forms/Button';
 import Input from '../../components/Forms/Input';
-import ErrorServer from '../../components/Helper/ErrorServer';
+import ErrorServer from '../../Helper/ErrorServer';
 import useForm from '../../hooks/useForm';
 import LoginLayault from '../../components/LoginLayault/LoginLayault';
 import router from 'next/router';

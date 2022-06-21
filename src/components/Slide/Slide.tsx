@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from '../Image/Image';
 import { ContainerSlides, Content, Nav } from './style';
 import { FcNext, FcPrevious } from 'react-icons/fc';
 import { IshowImageArray } from '../../Types/Interfaces';
@@ -30,7 +29,7 @@ const Slide = ({ slide }: { slide: IshowImageArray }) => {
       >
         {slide.map(({ id, attributes }) => {
           return (
-            <Image
+            <img
               alt={attributes.alternativeText}
               src={attributes.url}
               key={id}

@@ -48,7 +48,7 @@
              [x] modficar todos os componentes que dependem da autenticacao.
         [x] resetar senha atraves do email - strapi e client
 
-## 8. [] user
+## 8. [x] user
         [x] verificar se esta autenticado primeiro
         [x] modificar a cor do butao
         [x] modificar os components
@@ -57,11 +57,31 @@
         [x] colocar a cor de cada butao no aside, activeStyle
         [X] adicionar funcionalidade de logout
 
-        [] adicionar pedidos no order (server)
-        [] adicionar funcionalidade de pedidos no servidor
 
-        
+## 9. Components
+       [x] component de error colocar uma (ilustracao) de bolo ali
+       [x] mover a pasta helper para fora dos components
+       [x] apagar a pasta image
+       [] Component Search (como no portifolionde biro  https://birobirobiro.dev/)
+       [] funcionalidade de pesquisa de produtos.
+       
+       [] colocar todos os components em typescript
+       [] Tratamento de erros no getStaticProps
+       [] Ajustar tipografia (no mobile / tablet / desktop) deve haver consistencia em todas as paginas.
+       [] ajustar as cores tambem dos buttoes (deve haver consistencia)
+
+       [] Seo com next
+       [] colocar em cada pagina o component HEAD. do nextjs
+       [] remover dependencias que nao uso no projecto
+       [] remover a dependencia swr
+       [] Apagar o arquivo app
+       [] remover imagens desnecessarias
+
 ## 5. [] Cart page ()
+        ### user
+         [] adicionar pedidos no order (server)
+         [] adicionar funcionalidade de pedidos no servidor
+
          [] Dividir a pagina cart em microComponents
          [] Mudar para typescript
          [] no banner intro colocar uma foto diferente
@@ -72,27 +92,8 @@
         [] no banner intro colocar uma foto diferente
 
 
-## 9. Components
-       [] colocar todos os components em typescript
-       [] component de error colocar uma (ilustracao) de bolo ali
-       [] mover a pasta helper para fora dos components
-       [] apagar a pasta image
-       [] cupcake session deve colocar em um contexto e fazer o fecth no client-side.
-       [] Component Search (como no portifolionde biro  https://birobirobiro.dev/)
-       [] funcionalidade de pesquisa de produtos.
-       [] Tratamento de erros no getStaticProps
-       [] Ajustar tipografia (no mobile / tablet / desktop) deve haver consistencia em todas as paginas.
-       [] ajustar as cores tambem dos buttoes (deve haver consistencia)
-       [] Acessibilidade
-       [] Seo com next
-       [] colocar em cada pagina o component HEAD. do nextjs
-       [] remover dependencias que nao uso no projecto
-       [] remover a dependencia swr
-       [] Apagar o arquivo app
-       [] remover imagens desnecessarias
 
 ### Ultmos ajustes
-
      [] - O colocar o acesso ao graphcms no .env
      [] - build
      [] - colocar as variaveis de ambiente na vercel
@@ -103,6 +104,6 @@
 ## Objectivo
 [] corigir erros de typescript
 [] Mudar todos componentes para typescript
-[] Corrigir o css
-[] Autenticacao
+[x] Corrigir o css
+[x] Autenticacao
 [] Colocar e configurar o eslint.

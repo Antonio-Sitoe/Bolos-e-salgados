@@ -1,5 +1,5 @@
 import React from 'react'
-import ErroMessage from '../components/Helper/ErroMessage'
+import ErroMessage from '../Helper/ErroMessage'
 
 
 export default function Custom404() {

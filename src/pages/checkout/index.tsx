@@ -8,7 +8,7 @@ import Payments from './components/Payments/Payments';
 import { UserContext } from '../../Context/UserContext';
 import { CartContext } from '../../Context/CartContext';
 import { Orders } from '../cart/styles';
-import Loading from '../../components/Helper/Loading';
+import Loading from '../../Helper/Loading';
 
 const Checkout = () => {
   const { isAuthenticate, user, loading } = React.useContext(UserContext);

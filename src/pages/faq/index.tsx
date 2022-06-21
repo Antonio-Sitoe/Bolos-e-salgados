@@ -6,9 +6,9 @@ import { Faqs, Faq as FaqStyle, FaqImage, FaqContent } from './style';
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import { GET_FAQ } from '../../services/Api';
-import FetchData from '../../components/Helper/FetchData';
+import FetchData from '../../Helper/FetchData';
 import { IFaqProps } from '../../Types/Interfaces';
-import ErroMessage from '../../components/Helper/ErroMessage';
+import ErroMessage from '../../Helper/ErroMessage';
 
 const Faq = ({ data, error, message }: IFaqProps) => {
   if (error) {

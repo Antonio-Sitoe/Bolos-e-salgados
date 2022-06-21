@@ -5,7 +5,7 @@ import Input from '../../../../components/Forms/Input';
 import { EmailStyle } from '../../styles';
 import useForm from '../../../../hooks/useForm';
 import { UserContext } from '../../../../Context/UserContext';
-import { ErrorServer } from '../../../../components/Helper/styles';
+import { ErrorServer } from '../../../../Helper/styles';
 
 const EmailLogin = ({ setOpen }) => {
   const [havaAccount, setHaveAccount] = React.useState(false);

@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next';
-import ErroMessage from '../../components/Helper/ErroMessage';
-import FetchData from '../../components/Helper/FetchData';
+import ErroMessage from '../../Helper/ErroMessage';
+import FetchData from '../../Helper/FetchData';
 import IntroOnPage from '../../components/IntroOnPage/IntroOnPage';
 import { GET_ABOUT_CONTENT } from '../../services/Api';
 import { AboutStyle, Content } from './styles';
@@ -9,7 +9,7 @@ import Head from 'next/head';
 
 const About = ({ error, data }) => {
   if (error) {
-    return <ErroMessage error={'Erro no servidor'} />;
+    return <ErroMessage error={'Falha na conexao'} />;
   }
   return (
     <>
@@ -44,16 +44,16 @@ function tranformData(data) {
 export const getStaticProps: GetStaticProps = async () => {
   const aboutData = GET_ABOUT_CONTENT();
 
-  const { data } = await FetchData(aboutData);
-
-  if (data) {
+  try {
+    const { data } = await FetchData(aboutData);
     return {
       props: {
         data: tranformData(data),
         error: false,
       },
     };
-  } else {
+  } catch (error) {
+    console.log(error.message)
     return {
       props: {
         error: true,

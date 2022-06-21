@@ -1,12 +1,12 @@
 import { ProdutoStyle } from './styles';
 import IntroOnPage from '../../components/IntroOnPage/IntroOnPage';
 import { GetServerSideProps } from 'next';
-import FetchData from '../../components/Helper/FetchData';
-import transformData from '../../components/Helper/transformData';
+import FetchData from '../../Helper/FetchData';
+import transformData from '../../Helper/transformData';
 import { GET_ALL_PRODUCTS, GET_HOME_CONTENT } from '../../services/Api';
-import ErroMessage from '../../components/Helper/ErroMessage';
+import ErroMessage from '../../Helper/ErroMessage';
 import { IPagesProps } from '../../Types/Interfaces';
-import { ResponseData } from '../../components/Helper/ResponseData';
+import { ResponseData } from '../../Helper/ResponseData';
 import FeaturedProductSession from '../../components/homeComponents/FeaturedProductSession';
 import CupCakeSession from '../../components/CupCakeSession/CupCakeSession';
 
