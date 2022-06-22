@@ -1,8 +1,19 @@
 import React from 'react';
+import {
+  ActionType,
+  IACTIONS,
+  IState,
+  reducer,
+} from '../Cart/reducers/reducers';
 
-import { reducer } from './reducers';
+interface ICart {
+  state: IState;
+  total: number;
+  dispatch: (state: IACTIONS) => void;
+  setTotal: (total: number) => void;
+}
 
-export const CartContext = React.createContext();
+export const CartContext = React.createContext({} as ICart);
 
 export const CartStorage = ({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, {
@@ -26,14 +37,12 @@ export const CartStorage = ({ children }) => {
     const local = JSON.parse(window.localStorage.getItem('cart'));
     if (local !== null && local.cart.length > 0) {
       dispatch({
-        type: 'INITIAL_STATE',
+        type: ActionType.INITIAL_STATE,
         content: local,
       });
     }
   }, []);
 
-
   const value = { state, dispatch, total, setTotal };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
-

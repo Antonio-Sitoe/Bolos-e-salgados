@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'next';
+import Link from 'next/link';
 import { Orders } from './styles';
 
 const OrdersItems = ({ cart, total }) => {
@@ -10,12 +10,12 @@ const OrdersItems = ({ cart, total }) => {
           <div>
             <h1>Resumo da Encomenda</h1>
             <ul>
-              {cart?.map(({ id, nome, quantidade, preco }) => {
+              {cart?.map(({ id, name, quantity, price }) => {
                 return (
                   <li key={id}>
-                    <span>{nome}</span>
-                    <span>{quantidade} x</span>
-                    <span>{preco}, MT</span>
+                    <span>{name}</span>
+                    <span>{quantity}x</span>
+                    <span>{price},MT</span>
                   </li>
                 );
               })}
@@ -26,7 +26,9 @@ const OrdersItems = ({ cart, total }) => {
               Total <span>{total},MT</span>
             </h2>
             <p>Incluindo taxas de entregas de produtos</p>
-            <Link href='/checkout'>Finalizar a compra</Link>
+            <Link href='/checkout'>
+              <a>Finalizar a compra</a>
+            </Link>
           </div>
         </Orders>
       </>

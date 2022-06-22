@@ -10,17 +10,18 @@ const CartsItems = ({ cart }) => {
     const confirm = window.confirm('Deseja apagar esses items do carrinho ?');
   
   }
+  
   if (cart.length)
     return (
       <Carts>
         {cart.map((item) => {
           return (
             <li key={item.id}>
-              <Image src={item.foto} alt='imagem do produto' width={24} height={24} />
+              {/* <Image src={item.image} alt='imagem do produto' width={24} height={24} /> */}
               <CartsContainer>
                 <CartsHeader>
                   <div>
-                    <h2>{item.nome}</h2>
+                    <h2>{item.name}</h2>
                   </div>
                   <aside onClick={() => handleDelete(item.id)}>
                     <FaTrashRestore />
@@ -28,7 +29,7 @@ const CartsItems = ({ cart }) => {
                 </CartsHeader>
                 <CartsFooter>
                   <QuantiContainer item={item} />
-                  <p>{item.preco},MT</p>
+                  <p>{item.price},MT</p>
                 </CartsFooter>
               </CartsContainer>
             </li>

@@ -5,11 +5,9 @@ import { CartContext } from '../../Context/CartContext';
 import { CartStyle, Main, MessageContainer } from './styles';
 import { Container } from '../../styles/styles';
 import Head from 'next/head';
+
 const Cart = () => {
-  const {
-    state: { cart },
-    total,
-  } = React.useContext(CartContext);
+  const { state, total } = React.useContext(CartContext);
 
   return (
     <>
@@ -23,10 +21,10 @@ const Cart = () => {
 
       <CartStyle>
         <Container>
-          {cart.length > 0 ? (
+          {state.cart.length > 0 ? (
             <Main>
-              <CartsItems cart={cart} />
-              <OrdersItems cart={cart} total={total} />
+              <CartsItems cart={state.cart} />
+              <OrdersItems cart={state.cart} total={total} />
             </Main>
           ) : (
             <MessageContainer>

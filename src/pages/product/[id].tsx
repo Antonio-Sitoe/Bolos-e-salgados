@@ -27,6 +27,7 @@ const SinglePage = () => {
     if (data) setImage(data.data.attributes.image.data);
   }, [data]);
 
+
   if (error) return <ErroMessage error={error} />;
   if (loading) return <Loading />;
   if (data) {

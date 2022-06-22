@@ -8,11 +8,13 @@ import { Container, Links } from '../../styles/styles';
 import { Header as HeaderStyle, MarginTops, Nav } from './styles';
 import { UserContext } from '../../Context/UserContext';
 import ActiveLink from '../NavLink/ActiveLink';
+import { CartContext } from '../../Context/CartContext';
+import { theme } from '../../styles/theme';
 
 const Header = () => {
-  // const {
-  //   state: { cart },
-  // } = React.useContext(CartContext);
+  const {
+    state: { cart },
+  } = React.useContext(CartContext);
   const { user } = React.useContext(UserContext);
   const list = React.useRef<HTMLUListElement | null>(null);
   const [mobile, setMobile] = React.useState(false);
@@ -75,21 +77,23 @@ const Header = () => {
                 )}
               </li>
               <li>
-                <Link href='/cart'>
-                  <Links>
-                    <HiShoppingCart />
-                  </Links>
-                </Link>
+                {cart.length ? (
+                  <Link href='/cart'>
+                    <Links
+                      user={cart.length ? true : false}
+                      point={cart.length ? theme.colors.buyBtn : 'none'}
+                    >
+                      <HiShoppingCart />
+                    </Links>
+                  </Link>
+                ) : (
+                  <Link href='/cart'>
+                    <Links>
+                      <HiShoppingCart />
+                    </Links>
+                  </Link>
+                )}
               </li>
-              {/* <li>
-                <Links
-                  href='cart'
-                  user={cart.length}
-                  point={cart.length ? theme.colors.buyBtn : 'none'}
-                >
-                  <HiShoppingCart />
-                </Links>
-              </li> */}
             </ul>
             <button onClick={openMenu}>
               {mobile ? <CgClose /> : <CgMenu />}

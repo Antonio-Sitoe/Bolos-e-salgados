@@ -5,6 +5,7 @@ import { parseCookies } from 'nookies';
 
 const useVerifyToken = () => {
   const { user } = React.useContext(UserContext);
+
   const verifyToken = React.useCallback(() => {
     const { token } = parseCookies();
     if (token && user) {

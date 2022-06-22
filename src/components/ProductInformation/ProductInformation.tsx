@@ -23,6 +23,7 @@ const ProductInformation = ({ data, showImage }) => {
   const [loading, setLoading] = React.useState(false);
   const navigate = useRouter();
 
+
   async function handleSubmit() {
     setLoading(true);
     toast.success(`${dataInfo.name} adicionado ao carrinho`, {
@@ -33,11 +34,10 @@ const ProductInformation = ({ data, showImage }) => {
       type: 'ADD_CART',
       content: {
         id: data.id,
-        foto: showImage,
-        nome: data.nome,
-        precoUnitario: data.price.raw,
-        preco: data.price.raw * count,
-        quantidade: +count,
+        image: showImage[0].attributes.url,
+        name: dataInfo.name,
+        price: dataInfo.price,
+        quantity: count,
       },
     });
     await new Promise((resolve) => {
@@ -46,9 +46,8 @@ const ProductInformation = ({ data, showImage }) => {
       }, 3000);
     });
     setLoading(false);
-    navigate.push('/cart');
+    // navigate.push('/cart');
   }
-
   async function handleCart() {
     handleSubmit();
   }

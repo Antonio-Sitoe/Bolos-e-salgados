@@ -30,11 +30,12 @@ const LoginGet = () => {
     verifyToken();
   }, [verifyToken]);
 
+
   return (
     <>
       <Head>
         <title>Mila Delicious | Faca o login</title>
-        <meta name="description" content="Faca o Login" />
+        <meta name='description' content='Faca o Login' />
       </Head>
       <LoginLayault>
         <LoginForm onSubmit={handleSubmit}>
