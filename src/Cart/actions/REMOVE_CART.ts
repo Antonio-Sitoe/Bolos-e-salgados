@@ -1,4 +1,6 @@
-export function REMOVE_CART(state, content) {
+import { ICartContent, IState } from "../types/Types";
+
+export function REMOVE_CART(state: IState, content: ICartContent) {
   const updatedCart = [...state.cart];
   const updatedItemIndex = updatedCart.findIndex(
     (item) => item.id === content.id
@@ -7,10 +9,10 @@ export function REMOVE_CART(state, content) {
   const updatedItem = {
     ...updatedCart[updatedItemIndex],
   };
-  updatedItem.quantidade = content.quantidade - 1;
-  updatedItem.preco = updatedItem.preco - content.precoUnitario;
+  updatedItem.quantity = content.quantity - 1;
+  updatedItem.price = updatedItem.price - content.priceUnit;
 
-  if (updatedItem.quantidade <= 0) {
+  if (updatedItem.quantity <= 0) {
     updatedCart.splice(updatedItemIndex, 1);
   } else {
     updatedCart[updatedItemIndex] = updatedItem;
@@ -21,4 +23,3 @@ export function REMOVE_CART(state, content) {
   );
   return { ...state, cart: updatedCart };
 }
-

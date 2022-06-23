@@ -72,15 +72,14 @@
         [x] colocar todos os components em typescript
 
 
-## 5. [] Cart page ()
-         [] adicionar pedidos no order (server)
-         [] adicionar funcionalidade de pedidos no servidor
-         [] Dividir a pagina cart em microComponents
-         [] Mudar para typescript
-         [] no banner intro colocar uma foto diferente
-         [] cart dev estar no servidor tambem
+## 5. [x] Cart page ()
+         [x] adicionar pedidos no order (server)
+         [x] cart dev estar no servidor tambem
+         [x] Dividir a pagina cart em microComponents
+         [x] Mudar para typescript
 
 ## 6. [] Checkout
+        [] adicionar funcionalidade de pedidos no servidor
         [] Mudar para typescript
         [] no banner intro colocar uma foto diferente
 

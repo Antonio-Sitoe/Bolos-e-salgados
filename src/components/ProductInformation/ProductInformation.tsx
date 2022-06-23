@@ -1,11 +1,15 @@
 import React from 'react';
 import Button from '../Forms/Button';
-import Count from '../Count/Count';
 import { CartContext } from '../../Context/CartContext';
 import { Title } from '../../styles/styles';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
-import { ShowInformation } from './styles';
+import {
+  QuantityContainerStyle,
+  QuantityStyle,
+  ShowInformation,
+} from './styles';
+import { ActionType } from '../../Cart/types/Types';
 
 function transform(data) {
   return {
@@ -23,33 +27,46 @@ const ProductInformation = ({ data, showImage }) => {
   const [loading, setLoading] = React.useState(false);
   const navigate = useRouter();
 
-
   async function handleSubmit() {
     setLoading(true);
-    toast.success(`${dataInfo.name} adicionado ao carrinho`, {
-      position: toast.POSITION.TOP_CENTER,
-    });
-
     dispatch({
-      type: 'ADD_CART',
+      type: ActionType.ADD_CART,
       content: {
         id: data.id,
         image: showImage[0].attributes.url,
         name: dataInfo.name,
         price: dataInfo.price,
         quantity: count,
+        priceUnit: dataInfo.price,
       },
     });
-    await new Promise((resolve) => {
-      return setTimeout(() => {
-        resolve('');
-      }, 3000);
-    });
-    setLoading(false);
-    // navigate.push('/cart');
+    const functionThatReturnPromise = () =>
+      new Promise((resolve) =>
+        setTimeout(() => {
+          setLoading(false);
+          navigate.push('/cart');
+          resolve(true);
+        }, 2000)
+      );
+    toast.promise(
+      functionThatReturnPromise,
+      {
+        pending: 'Aguardando a resposta',
+        success: `${dataInfo.name} adicionado ao carrinho 👌`,
+        error: 'Falha ao adicionar o produto 🤯',
+      },
+      { position: toast.POSITION.TOP_CENTER }
+    );
   }
   async function handleCart() {
     handleSubmit();
+  }
+  function Incrimental() {
+    setCount(count + 1);
+  }
+  function decremental() {
+    if (count <= 1) return false;
+    setCount(count - 1);
   }
 
   return (
@@ -61,7 +78,14 @@ const ProductInformation = ({ data, showImage }) => {
         <p>{dataInfo.description}</p>
         <h2>Preco: {dataInfo.price} MZN</h2>
       </div>
-      <Count count={count} setCount={setCount} />
+      <QuantityContainerStyle>
+        <p>Quantidade</p>
+        <QuantityStyle>
+          <span>{count}</span>
+          <button onClick={decremental}>-</button>
+          <button onClick={Incrimental}>+</button>
+        </QuantityStyle>
+      </QuantityContainerStyle>
       <Button onClick={handleCart} disabled={loading}>
         Adicionar ao carrinho
       </Button>

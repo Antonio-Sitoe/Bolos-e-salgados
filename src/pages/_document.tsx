@@ -15,6 +15,11 @@ export default function Document() {
           rel='stylesheet'
         ></link>
         <link rel='icon' href='logo.svg'></link>
+        <script
+          type='text/javascript'
+          src='http://localhost:1337/plugins/strapi-stripe/static/stripe.js'
+          async
+        />
       </Head>
       <body>
         <Main />

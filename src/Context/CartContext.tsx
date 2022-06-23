@@ -1,10 +1,7 @@
 import React from 'react';
-import {
-  ActionType,
-  IACTIONS,
-  IState,
-  reducer,
-} from '../Cart/reducers/reducers';
+import { reducer } from '../Cart/reducers/reducers';
+import { ActionType, IACTIONS, IState } from '../Cart/types/Types';
+import { UserContext } from './UserContext';
 
 interface ICart {
   state: IState;
@@ -15,23 +12,30 @@ interface ICart {
 
 export const CartContext = React.createContext({} as ICart);
 
+const initialState: IState = {
+  cart: [],
+};
+
 export const CartStorage = ({ children }) => {
-  const [state, dispatch] = React.useReducer(reducer, {
-    cart: [],
-  });
+  const [state, dispatch] = React.useReducer(reducer, initialState);
   const [total, setTotal] = React.useState(0);
+  const { isAuthenticate } = React.useContext(UserContext);
+
+  React.useEffect(()=>{
+
+  },[])
 
   React.useEffect(() => {
     if (state.cart.length > 0) {
       const total = state.cart.reduce((acumulador, itemActual) => {
-        return (acumulador += itemActual.preco);
+        return (acumulador += itemActual.price);
       }, 0);
       setTotal(total);
     }
     if (state.cart.length === 0) {
       setTotal(0);
     }
-  }, [state]);
+  }, [state.cart]);
 
   React.useEffect(() => {
     const local = JSON.parse(window.localStorage.getItem('cart'));

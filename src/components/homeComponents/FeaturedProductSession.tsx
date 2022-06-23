@@ -3,6 +3,7 @@ import Sumary from '../Sumary/Sumary';
 import { Container, Links } from '../../styles/styles';
 import { DivConfir, Main } from './styles';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const FeaturedProductSession = ({ featured }) => {
   const router = useRouter();
@@ -21,7 +22,9 @@ const FeaturedProductSession = ({ featured }) => {
             </Main>
             {router.pathname === '/product' ? null : (
               <DivConfir>
-                <Links href='/product'>Confira Todos</Links>
+                <Link href='/product'>
+                  <Links>Confira Todos</Links>
+                </Link>
               </DivConfir>
             )}
           </div>

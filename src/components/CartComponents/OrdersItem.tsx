@@ -10,7 +10,7 @@ const OrdersItems = ({ cart, total }) => {
           <div>
             <h1>Resumo da Encomenda</h1>
             <ul>
-              {cart?.map(({ id, name, quantity, price }) => {
+              {cart.map(({ id, name, quantity, price }) => {
                 return (
                   <li key={id}>
                     <span>{name}</span>
@@ -26,6 +26,7 @@ const OrdersItems = ({ cart, total }) => {
               Total <span>{total},MT</span>
             </h2>
             <p>Incluindo taxas de entregas de produtos</p>
+
             <Link href='/checkout'>
               <a>Finalizar a compra</a>
             </Link>

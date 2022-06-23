@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Links } from '../../styles/styles';
 import { CardStyle } from './styles';
 import { ICard } from '../../Types/Interfaces';
+import Link from 'next/link';
 
 const Card = ({ attributes, id }: ICard, key) => {
   return (
@@ -15,7 +16,9 @@ const Card = ({ attributes, id }: ICard, key) => {
       />
       <h3>{attributes.name}</h3>
       <p>{attributes.price}</p>
-      <Links href={`product/${id}`}>Comprar</Links>
+      <Link href={`product/${id}`}>
+        <Links>Comprar</Links>
+      </Link>
     </CardStyle>
   );
 };

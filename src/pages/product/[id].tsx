@@ -15,6 +15,7 @@ const SinglePage = () => {
   const [showImage, setImage] = React.useState<IshowImageArray>([]);
   const { data, error, loading, request } = useFecth();
   const { query } = useRouter();
+    
 
   React.useEffect(() => {
     (async () => {
@@ -50,7 +51,7 @@ const SinglePage = () => {
       </>
     );
   }
-  return null;
+  return <Loading />;
 };
 
 export default SinglePage;
