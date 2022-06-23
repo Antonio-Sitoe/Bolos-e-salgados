@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { AnimeIntro } from '../../styles/styles';
 import { theme } from '../../styles/theme';
 
 export const Contato = styled.section`

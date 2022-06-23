@@ -49,7 +49,7 @@ const UserLayout = ({ children }) => {
                   return (
                     <li key={index}>
                       <ActiveLink href={href} activeClassName='active'>
-                        <a className='nav-link'>{name}</a>
+                        <a className='nav-link' href={href}>{name}</a>
                       </ActiveLink>
                     </li>
                   );

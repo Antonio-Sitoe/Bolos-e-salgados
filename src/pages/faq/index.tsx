@@ -1,14 +1,13 @@
-import React from 'react';
-import IntroOnPage from '../../components/IntroOnPage/IntroOnPage';
-import Image from 'next/image';
-import { Container, Title } from '../../styles/styles';
-import { Faqs, Faq as FaqStyle, FaqImage, FaqContent } from './style';
-import Head from 'next/head';
-import { GetStaticProps } from 'next';
-import { GET_FAQ } from '../../services/Api';
-import FetchData from '../../Helper/FetchData';
-import { IFaqProps } from '../../Types/Interfaces';
-import ErroMessage from '../../Helper/ErroMessage';
+import { GetStaticProps } from "next";
+import Head from "next/head";
+import Image from "next/image";
+import IntroOnPage from "../../components/IntroOnPage/IntroOnPage";
+import ErroMessage from "../../Helper/ErroMessage";
+import FetchData from "../../Helper/FetchData";
+import { GET_FAQ } from "../../services/Api";
+import { Container, Title } from "../../styles/styles";
+import { IFaqProps } from "../../Types/Interfaces";
+import { Faq as FaqStyle, FaqContent, FaqImage, Faqs } from "./style";
 
 const Faq = ({ data, error, message }: IFaqProps) => {
   if (error) {
@@ -18,7 +17,7 @@ const Faq = ({ data, error, message }: IFaqProps) => {
     <>
       <Head>
         <title>Perguntas Frequentes | Mila Delicious</title>
-        <meta name='description' content={data.banner.banner_title} />
+        <meta name="description" content={data.banner.banner_title} />
       </Head>
       <IntroOnPage
         text={data.banner.banner_title}

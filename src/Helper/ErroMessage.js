@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container } from '../styles/styles';
 import { ErrorStyle } from './styles';
 import { RiCake3Line } from 'react-icons/ri';

@@ -37,7 +37,7 @@ const UserDataList = () => {
       </ul>
       <div>
         <Link href='/user/edit'>
-          <a href=''>
+          <a href={'/user/edit'}>
             <FiEdit /> Editar
           </a>
         </Link>

@@ -1,22 +1,22 @@
-import { GetStaticProps } from 'next';
-import ErroMessage from '../../Helper/ErroMessage';
-import FetchData from '../../Helper/FetchData';
-import IntroOnPage from '../../components/IntroOnPage/IntroOnPage';
-import { GET_ABOUT_CONTENT } from '../../services/Api';
-import { AboutStyle, Content } from './styles';
-import ReactMarkdown from 'react-markdown';
-import Head from 'next/head';
+import { GetStaticProps } from "next";
+import Head from "next/head";
+import ReactMarkdown from "react-markdown";
+import IntroOnPage from "../../components/IntroOnPage/IntroOnPage";
+import ErroMessage from "../../Helper/ErroMessage";
+import FetchData from "../../Helper/FetchData";
+import { GET_ABOUT_CONTENT } from "../../services/Api";
+import { AboutStyle, Content } from "./styles";
 
 const About = ({ error, data }) => {
   if (error) {
-    return <ErroMessage error={'Falha na conexao'} />;
+    return <ErroMessage error={"Falha na conexao"} />;
   }
   return (
     <>
       <Head>
         <title>Sobre | Mila Delicious</title>
         <meta
-          name='description'
+          name="description"
           content={`Pagina sobre, saiba tudo sobre ${data.title}`}
         />
       </Head>

@@ -69,8 +69,7 @@
        [x] Apagar o arquivo app
        [x] remover a dependencia swr
        [x] remover imagens desnecessarias
-        [x] colocar todos os components em typescript
-
+      [x] colocar todos os components em typescript
 
 ## 5. [x] Cart page ()
          [x] adicionar pedidos no order (server)
@@ -78,13 +77,15 @@
          [x] Dividir a pagina cart em microComponents
          [x] Mudar para typescript
 
-## 6. [] Checkout
-        [] adicionar funcionalidade de pedidos no servidor
-        [] Mudar para typescript
-        [] no banner intro colocar uma foto diferente
+## 6. [x] Checkout
+        [x] adicionar funcionalidade de pedidos no servidor
+        [x] Mudar para typescript
+        [x] no banner intro colocar uma foto diferente
 
 ### Ultmos ajustes
-     [] - O colocar o acesso ao graphcms no .env
+     [] Fazer pedidos e ver os seus pedidos
+     [] pagina de sucesso
+     [x] - O colocar o acesso ao graphcms no .env
      [] - build
      [] - colocar as variaveis de ambiente na vercel
      [] - Fazer deploy na vercel

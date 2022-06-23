@@ -1,6 +1,6 @@
 import React from 'react';
-import Input from '../../../../components/Forms/Input';
-import { PaymentsStyle } from '../../styles';
+import Input from '../Forms/Input';
+import { PaymentsStyle } from './styles';
 import Shipping from '../Shipping/Shipping';
 
 const Payments = ({ open }) => {

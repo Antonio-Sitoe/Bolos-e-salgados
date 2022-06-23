@@ -1,7 +1,7 @@
-import React from 'react';
-import Shipping from '../Shipping/Shipping';
-import { EmailStyle } from '../../styles';
-import EmailLogin from './EmailLogin';
+import React from "react";
+import Shipping from "../Shipping/Shipping";
+import { EmailStyle } from "./style";
+import EmailWrapper from "./EmailWrapper";
 
 const Email = ({ setOpen, isAuthenticate, user }) => {
   React.useEffect(() => {
@@ -12,14 +12,16 @@ const Email = ({ setOpen, isAuthenticate, user }) => {
     }
   }, [isAuthenticate, setOpen]);
   return (
-    <Shipping title='Dados do cliente'>
+    <Shipping title="Dados do cliente">
       {isAuthenticate ? (
         <EmailStyle>
           <p>Nome: {user.username}</p>
           <p>Email: {user.email}</p>
         </EmailStyle>
       ) : (
-        <EmailLogin setOpen={setOpen} />
+        <>
+          <EmailWrapper setOpen={setOpen} />
+        </>
       )}
     </Shipping>
   );

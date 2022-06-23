@@ -105,3 +105,22 @@ export interface IUser {
 export interface IUserProps {
   user: IUser;
 }
+
+export interface TexteareaProps {
+  name: string;
+  error: string;
+  id: string;
+  value: string;
+  onChange: ({ target }: { target: HTMLTextAreaElement }) => void;
+}
+
+export interface IOpen {
+  isData: boolean;
+  isPayments: boolean;
+}
+export interface IDataProps {
+  open: IOpen;
+  setOpen: (IOpen) => IOpen;
+  message: TexteareaProps;
+  user: IUser;
+}

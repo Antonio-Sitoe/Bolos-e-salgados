@@ -5,7 +5,7 @@ export const SeachLoading = () => {
     <SeachLoadingStyle>
       <section>
         {[1, 2, 3].map((i) => (
-          <div key={i}></div>
+          <div key={i}/>
         ))}
       </section>
     </SeachLoadingStyle>

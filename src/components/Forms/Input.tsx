@@ -1,4 +1,5 @@
-import { Label, Wrapper } from './styles';
+import { Label, Wrapper } from "./styles";
+
 
 interface InputProps {
   label: string;
@@ -8,8 +9,8 @@ interface InputProps {
   type: string;
   error: null | string;
   placeholder?: string;
-  onBlur: ({ target }: { target: HTMLInputElement }) => void;
-  onChange: ({ target }: { target: HTMLInputElement }) => void;
+  onBlur: () => void;
+  onChange: () => void;
 }
 
 const Input = (

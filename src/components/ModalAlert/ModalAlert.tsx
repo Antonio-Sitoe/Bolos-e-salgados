@@ -1,12 +1,12 @@
-import React from 'react';
-import { ImExit } from '../../Helper/ImExit';
-import { MdOutlineClose } from '../../Helper/MdOutlineClose';
-import { LogoutButton, Modal, ModalBackground } from './styles';
+import React from "react";
+import { ImExit } from "../../Helper/ImExit";
+import { MdOutlineClose } from "../../Helper/MdOutlineClose";
+import { LogoutButton, Modal, ModalBackground } from "./styles";
 
 const ModalAlert = ({ title, modal, setModal, handleLogoutModal }) => {
   React.useEffect(() => {
-    if (modal) document.body.style.overflow = 'hidden';
-    else document.body.style.overflow = 'initial';
+    if (modal) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "initial";
   }, [modal]);
   function handleClose({ target, currentTarget }) {
     if (target === currentTarget) {
@@ -36,7 +36,7 @@ const ModalAlert = ({ title, modal, setModal, handleLogoutModal }) => {
         </Modal>
       </ModalBackground>
     );
-  return <p></p>;
+  return <div />;
 };
 
 export default ModalAlert;

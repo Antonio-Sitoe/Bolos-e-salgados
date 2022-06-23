@@ -13,7 +13,7 @@
     "vite.config.ts": true,
     // "package.json": true,
     "index.html": true,
-    "next.config.js": true,
+    // "next.config.js": true,
     "next-env.d.ts": true,
     // "src/styles": true,
     // "src/pages/_document.tsx": true,

@@ -1,13 +1,8 @@
 import React from 'react';
+import { TexteareaProps } from '../../Types/Interfaces';
 import { Label, Wrapper } from './styles';
 
-interface TexteareaProps {
-  name: string;
-  error: string;
-  id: string;
-  value: string;
-  onChange: ({ target }: { target: HTMLTextAreaElement }) => void;
-}
+
 
 const Textearea = ({ name, id, error, onChange, value }: TexteareaProps) => {
   return (

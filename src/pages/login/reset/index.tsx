@@ -1,27 +1,27 @@
-import React from 'react';
-import Link from 'next/link';
-import Input from '../../../components/Forms/Input';
-import Button from '../../../components/Forms/Button';
-import LoginLayault from '../../../components/LoginLayault/LoginLayault';
-import { Title } from '../../../styles/styles';
-import { LoginGet as Login } from '../styles';
-import { BiKey } from 'react-icons/bi';
+import Link from "next/link";
+import React from "react";
+import { BiKey } from "react-icons/bi";
+import Button from "../../../components/Forms/Button";
+import Input from "../../../components/Forms/Input";
+import LoginLayault from "../../../components/LoginLayault/LoginLayault";
+import { Title } from "../../../styles/styles";
+import { LoginGet as Login } from "../styles";
 
-import { BiArrowBack } from 'react-icons/bi';
-import { FORGOTTEN_PASSWORD } from '../../../services/Api';
-import useForm from '../../../hooks/useForm';
+import { BiArrowBack } from "react-icons/bi";
+import useForm from "../../../hooks/useForm";
+import { FORGOTTEN_PASSWORD } from "../../../services/Api";
 
-import useVerifyToken from '../../../hooks/useVerifyToken';
-import Head from 'next/head';
+import Head from "next/head";
+import useVerifyToken from "../../../hooks/useVerifyToken";
 const ResetPassword = () => {
   const { verifyToken } = useVerifyToken();
-  const password = useForm('password');
-  const passConfirm = useForm('password');
+  const password = useForm("password");
+  const passConfirm = useForm("password");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { url, options } = FORGOTTEN_PASSWORD({
-      email: 'antoniositoehl@gmail.com',
+      email: "antoniositoehl@gmail.com",
     });
     fetch(url, options)
       .then((response) => {
@@ -30,7 +30,7 @@ const ResetPassword = () => {
       .then((json) => console.log(json))
 
       .catch((error) => {
-        console.log('An error occurred:', error.response);
+        console.log("An error occurred:", error.response);
       });
   };
   React.useEffect(() => {
@@ -41,29 +41,29 @@ const ResetPassword = () => {
     <>
       <Head>
         <title>Mila Delicious | Recuperar a senha</title>
-        <meta name='description' content='Faca o Login' />
+        <meta name="description" content="Faca o Login" />
       </Head>
       <LoginLayault>
         <Login onSubmit={handleSubmit}>
           <Title>Redifinir a senha</Title>
           <Input
-            label='Senha'
-            name='senha'
-            type='password'
-            placeholder='Digite o sua senha'
-            id='senha'
+            label="Senha"
+            name="senha"
+            type="password"
+            placeholder="Digite o sua senha"
+            id="senha"
             error={password.error}
             onBlur={password.onBlur}
             onChange={password.onChange}
             value={password.value}
           />
           <Input
-            name='confirme'
-            label='Confirme a senha'
-            type='password'
-            placeholder='Confirme a sua senha'
+            name="confirme"
+            label="Confirme a senha"
+            type="password"
+            placeholder="Confirme a sua senha"
             {...passConfirm}
-            id='confirme'
+            id="confirme"
             error={passConfirm.error}
             onBlur={passConfirm.onBlur}
             onChange={passConfirm.onChange}
@@ -72,8 +72,8 @@ const ResetPassword = () => {
           <Button>
             <BiKey /> Enviar
           </Button>
-          <Link href={'/login'}>
-            <a>
+          <Link href={"/login"}>
+            <a href={"/login"}>
               <BiArrowBack /> Voltar para Login
             </a>
           </Link>

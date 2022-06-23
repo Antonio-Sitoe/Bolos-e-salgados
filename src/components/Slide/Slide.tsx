@@ -1,7 +1,7 @@
-import React from 'react';
-import { ContainerSlides, Content, Nav } from './style';
-import { FcNext, FcPrevious } from 'react-icons/fc';
-import { IshowImageArray } from '../../Types/Interfaces';
+import React from "react";
+import { ContainerSlides, Content, Nav } from "./style";
+import { FcNext, FcPrevious } from "react-icons/fc";
+import { IshowImageArray } from "../../Types/Interfaces";
 
 const Slide = ({ slide }: { slide: IshowImageArray }) => {
   const [active, setActive] = React.useState(0);

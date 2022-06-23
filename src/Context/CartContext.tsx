@@ -1,7 +1,6 @@
 import React from 'react';
 import { reducer } from '../Cart/reducers/reducers';
 import { ActionType, IACTIONS, IState } from '../Cart/types/Types';
-import { UserContext } from './UserContext';
 
 interface ICart {
   state: IState;
@@ -19,11 +18,8 @@ const initialState: IState = {
 export const CartStorage = ({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const [total, setTotal] = React.useState(0);
-  const { isAuthenticate } = React.useContext(UserContext);
 
-  React.useEffect(()=>{
 
-  },[])
 
   React.useEffect(() => {
     if (state.cart.length > 0) {

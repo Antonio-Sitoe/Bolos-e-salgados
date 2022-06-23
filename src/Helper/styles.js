@@ -65,6 +65,6 @@ export const ErrorStyle = styled.div`
   }
 `;
 
-export const ErrorServer = styled.p`
+export const Errror = styled.p`
   color: ${theme.colors.tomato};
 `;

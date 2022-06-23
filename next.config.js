@@ -5,9 +5,12 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-    images: {
-    domains: ['media.graphassets.com', 'res.cloudinary.com'],
+  images: {
+    domains: ["media.graphassets.com", "res.cloudinary.com"],
   },
-}
+  env: {
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -1,25 +1,24 @@
-import React from 'react';
-import Link from 'next/link';
-import Input from '../../../components/Forms/Input';
-import Button from '../../../components/Forms/Button';
-import LoginLayault from '../../../components/LoginLayault/LoginLayault';
-import { Title } from '../../../styles/styles';
-import { LoginGet as Login } from '../styles';
-import { BiKey } from 'react-icons/bi';
-import { BiArrowBack } from 'react-icons/bi';
-import { FORGOTTEN_PASSWORD } from '../../../services/Api';
-import useForm from '../../../hooks/useForm';
-import useVerifyToken from '../../../hooks/useVerifyToken';
-import Head from 'next/head';
+import Head from "next/head";
+import Link from "next/link";
+import React from "react";
+import { BiArrowBack, BiKey } from "react-icons/bi";
+import Button from "../../../components/Forms/Button";
+import Input from "../../../components/Forms/Input";
+import LoginLayault from "../../../components/LoginLayault/LoginLayault";
+import useForm from "../../../hooks/useForm";
+import useVerifyToken from "../../../hooks/useVerifyToken";
+import { FORGOTTEN_PASSWORD } from "../../../services/Api";
+import { Title } from "../../../styles/styles";
+import { LoginGet as Login } from "../styles";
 
 const ForgotPassword = () => {
   const { verifyToken } = useVerifyToken();
-  const email = useForm('email');
+  const email = useForm("email");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { url, options } = FORGOTTEN_PASSWORD({
-      email: 'devtalksmz@gmail.com',
+      email: "devtalksmz@gmail.com",
     });
     fetch(url, options)
       .then((response) => {
@@ -28,7 +27,7 @@ const ForgotPassword = () => {
       .then((json) => console.log(json))
 
       .catch((error) => {
-        console.log('An error occurred:', error.response);
+        console.log("An error occurred:", error.response);
       });
   };
   React.useEffect(() => {
@@ -39,7 +38,7 @@ const ForgotPassword = () => {
     <>
       <Head>
         <title>Mila Delicious | Esqueceu a senha</title>
-        <meta name='description' content='Esqueceu a senha' />
+        <meta name="description" content="Esqueceu a senha" />
       </Head>
       <LoginLayault>
         <Login onSubmit={handleSubmit}>
@@ -49,11 +48,11 @@ const ForgotPassword = () => {
             apos clicar em enviar ira receber um e-mail dentro de instantes
           </p>
           <Input
-            type='email'
-            placeholder='Digite o seu email'
-            name='email'
-            label='Email'
-            id='email'
+            type="email"
+            placeholder="Digite o seu email"
+            name="email"
+            label="Email"
+            id="email"
             error={email.error}
             onBlur={email.onBlur}
             onChange={email.onChange}
@@ -62,8 +61,8 @@ const ForgotPassword = () => {
           <Button>
             <BiKey /> Enviar
           </Button>
-          <Link href={'/login'}>
-            <a>
+          <Link href={"/login"}>
+            <a href={"/login"}>
               <BiArrowBack /> Voltar para Login
             </a>
           </Link>

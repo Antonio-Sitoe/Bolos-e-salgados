@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shypings } from '../../styles';
+import { Shypings } from './style';
 import { AiFillCheckCircle } from 'react-icons/ai';
 
 const Shipping = ({ children, title }) => {

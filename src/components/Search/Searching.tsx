@@ -84,7 +84,7 @@ export const Searching = ({ setSearch }) => {
               data.map(({ id, image, name, category, price }) => {
                 return (
                   <Link href={`/product/${id}`} key={id}>
-                    <a onClick={() => setSearch(false)}>
+                    <a  href={`/product/${id}`} onClick={() => setSearch(false)}>
                       <section>
                         <span>
                           <Image src={image} alt='' height={60} width={60} />

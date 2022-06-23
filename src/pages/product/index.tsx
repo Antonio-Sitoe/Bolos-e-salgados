@@ -1,25 +1,25 @@
-import { ProdutoStyle } from './styles';
-import IntroOnPage from '../../components/IntroOnPage/IntroOnPage';
-import { GetServerSideProps } from 'next';
-import FetchData from '../../Helper/FetchData';
-import transformData from '../../Helper/transformData';
-import { GET_ALL_PRODUCTS, GET_HOME_CONTENT } from '../../services/Api';
-import ErroMessage from '../../Helper/ErroMessage';
-import { IPagesProps } from '../../Types/Interfaces';
-import { ResponseData } from '../../Helper/ResponseData';
-import FeaturedProductSession from '../../components/homeComponents/FeaturedProductSession';
-import CupCakeSession from '../../components/CupCakeSession/CupCakeSession';
-import Head from 'next/head';
+import { GetServerSideProps } from "next";
+import Head from "next/head";
+import CupCakeSession from "../../components/CupCakeSession/CupCakeSession";
+import FeaturedProductSession from "../../components/homeComponents/FeaturedProductSession";
+import IntroOnPage from "../../components/IntroOnPage/IntroOnPage";
+import ErroMessage from "../../Helper/ErroMessage";
+import FetchData from "../../Helper/FetchData";
+import { ResponseData } from "../../Helper/ResponseData";
+import transformData from "../../Helper/transformData";
+import { GET_ALL_PRODUCTS, GET_HOME_CONTENT } from "../../services/Api";
+import { IPagesProps } from "../../Types/Interfaces";
+import { ProdutoStyle } from "./styles";
 
 function product(props: IPagesProps) {
   if (props.error) {
-    return <ErroMessage error={'Erro'} />;
+    return <ErroMessage error={"Erro"} />;
   }
   return (
     <>
       <Head>
         <title>Todos os produtos</title>
-        <meta name='description' content='Minha conta' />
+        <meta name="description" content="Minha conta" />
       </Head>
       <ProdutoStyle>
         <IntroOnPage

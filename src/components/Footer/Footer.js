@@ -35,7 +35,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link href='/faq'>
-                  <a href=''>Como Encomendar</a>
+                  <a>Como Encomendar</a>
                 </Link>
               </li>
             </ul>
