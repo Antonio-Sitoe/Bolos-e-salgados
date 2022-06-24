@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import styled from 'styled-components';
 import useFetch from '../../hooks/useFecth';
 import useForm from '../../hooks/useForm';
-import { CREATE_MESSAGE } from '../../services/Api.ts';
+import { CREATE_MESSAGE } from '../../services/Api';
 import { theme } from '../../styles/theme';
 import Button from '../Forms/Button';
 import Input from '../Forms/Input';

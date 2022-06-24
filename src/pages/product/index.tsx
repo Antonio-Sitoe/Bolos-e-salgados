@@ -9,7 +9,7 @@ import { ResponseData } from "../../Helper/ResponseData";
 import transformData from "../../Helper/transformData";
 import { GET_ALL_PRODUCTS, GET_HOME_CONTENT } from "../../services/Api";
 import { IPagesProps } from "../../Types/Interfaces";
-import { ProdutoStyle } from "./styles";
+import { ProdutoStyle } from "../../styles/Productstyles";
 
 function product(props: IPagesProps) {
   if (props.error) {

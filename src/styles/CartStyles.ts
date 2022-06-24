@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { theme } from '../../styles/theme';
-import { animeLeft } from '../about/styles';
+import { theme } from './theme'
+import { animeLeft } from './Aboutstyles';
 
 
 export const Main = styled.div`

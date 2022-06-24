@@ -83,11 +83,11 @@
         [x] no banner intro colocar uma foto diferente
 
 ### Ultmos ajustes
-     [] Fazer pedidos e ver os seus pedidos
-     [] pagina de sucesso
-     [x] - O colocar o acesso ao graphcms no .env
-     [] - build
-     [] - colocar as variaveis de ambiente na vercel
-     [] - Fazer deploy na vercel
-     [] - Colocar no readme (embelezar o readme)
-     [] - mandar no grupo
+      [x] - O colocar o acesso ao graphcms no .env
+      [x] - build
+      [] Fazer pedidos e ver os seus pedidos
+      [] pagina de sucesso
+      [] - colocar as variaveis de ambiente na vercel
+      [] - Fazer deploy na vercel
+      [] - Colocar no readme (embelezar o readme)
+      [] - mandar no grupo

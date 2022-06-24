@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { theme } from '../../styles/theme';
-import { animeLeft, AnimeLeft } from '../about/styles';
+import { theme } from './theme';
+import { animeLeft, AnimeLeft } from './Aboutstyles';
 
 
 export const UserAcountEditStyle = styled.form`

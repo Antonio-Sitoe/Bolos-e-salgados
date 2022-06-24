@@ -13,7 +13,7 @@ export function ImExit() {
         fill='#252525'
         stroke='rgba(0,0,0,0)'
         strokeWidth='1'
-      ></path>
+      />
     </svg>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import IntroOnPage from "../../components/IntroOnPage/IntroOnPage";
 import { Container } from "../../styles/styles";
-import { CheckoutStyle, Main } from "./styles";
+import { CheckoutStyle, Main } from "../../styles/CheckoutStyles";
 import Email from "../../components/Email/Email";
 import Data from "../../components/Data/Data";
 import Payments from "../../components/Payments/Payments";
@@ -41,8 +41,8 @@ const Checkout = () => {
 
               <Data
                 message={message}
-                user={user}
                 setOpen={setOpen}
+                user={user}
                 open={open}
               />
               <Payments open={open} />

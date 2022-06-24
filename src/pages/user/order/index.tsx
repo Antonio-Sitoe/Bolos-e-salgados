@@ -1,5 +1,5 @@
 import React from 'react';
-import { Order, Subtitle } from '../styles';
+import { Order, Subtitle } from '../../../styles/UserStyles';
 import { UserContext } from '../../../Context/UserContext';
 import Loading from '../../../Helper/Loading';
 import UserLayout from '../../../components/Usercomponents/UserLayout';

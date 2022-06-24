@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GET_USERDATA } from '../../services/Api.ts';
+import { GET_USERDATA } from '../../services/Api';
 
 export async function middleware(req: NextRequest) {
   const cookie = req.cookies['token'];

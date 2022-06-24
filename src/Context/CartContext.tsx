@@ -1,12 +1,12 @@
 import React from 'react';
 import { reducer } from '../Cart/reducers/reducers';
-import { ActionType, IACTIONS, IState } from '../Cart/types/Types';
+import { ActionType,  IState } from '../Cart/types/Types';
 
 interface ICart {
   state: IState;
   total: number;
-  dispatch: (state: IACTIONS) => void;
-  setTotal: (total: number) => void;
+  dispatch;
+  setTotal;
 }
 
 export const CartContext = React.createContext({} as ICart);

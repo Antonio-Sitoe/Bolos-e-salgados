@@ -18,7 +18,7 @@ import Head from "next/head";
 import nookies, { parseCookies } from "nookies";
 import { toast } from "react-toastify";
 import { theme } from "../../../styles/theme";
-import { UserAcountEditStyle } from "../styles";
+import { UserAcountEditStyle } from "../../../styles/UserStyles";
 
 const UserAccountEdit = ({ user, errorSer }) => {
   const { isAuthenticate, error: ErrorSer } = React.useContext(UserContext);

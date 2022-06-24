@@ -1,5 +1,5 @@
 import React from 'react';
-import { Subtitle, UserContent } from './styles';
+import { Subtitle, UserContent } from '../../styles/UserStyles';
 import { Container } from '../../styles/styles';
 import UserLayout from '../../components/Usercomponents/UserLayout';
 import UserDataList from '../../components/Usercomponents/UserDataList';

@@ -3,7 +3,7 @@ import Button from "../../../components/Forms/Button";
 import Input from "../../../components/Forms/Input";
 import { Title } from "../../../styles/styles";
 import { BiUser } from "react-icons/bi";
-import { LoginGet as Login } from "../styles";
+import { LoginGet as Login } from "../../../styles/Loginstyles";
 import router from "next/router";
 import ErrorServer from "../../../Helper/ErrorServer";
 import { UserContext } from "../../../Context/UserContext";

@@ -4,11 +4,10 @@ import { ButtonEdit, DataStyle, SectionFlex } from "./styles";
 import Shipping from "../Shipping/Shipping";
 import Textearea from "../Forms/Textearea";
 import ErrorServer from "../../Helper/ErrorServer";
-import { IDataProps } from "../../Types/Interfaces";
 
 
 
-const Data = ({ user, open, setOpen, message }: IDataProps) => {
+const Data = ({ user, open, setOpen, message }: any) => {
   const [showError, setShowError] = React.useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();

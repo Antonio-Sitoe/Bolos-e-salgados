@@ -111,16 +111,10 @@ export interface TexteareaProps {
   error: string;
   id: string;
   value: string;
-  onChange: ({ target }: { target: HTMLTextAreaElement }) => void;
+  onChange: () => void;
 }
 
 export interface IOpen {
   isData: boolean;
   isPayments: boolean;
-}
-export interface IDataProps {
-  open: IOpen;
-  setOpen: (IOpen) => IOpen;
-  message: TexteareaProps;
-  user: IUser;
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
-import { AnimeLeft } from '../../pages/about/styles';
+import { AnimeLeft } from '../../styles/Aboutstyles';
 
 export const UserPage = styled.main`
   margin: 6rem 0;

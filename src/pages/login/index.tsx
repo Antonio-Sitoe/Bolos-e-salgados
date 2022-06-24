@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { BiUser } from 'react-icons/bi';
 import { UserContext } from '../../Context/UserContext';
 import { Title } from '../../styles/styles';
-import { LoginGet as LoginForm } from './styles';
+import { LoginGet as LoginForm } from '../../styles/Loginstyles';
 import Button from '../../components/Forms/Button';
 import Input from '../../components/Forms/Input';
 import ErrorServer from '../../Helper/ErrorServer';

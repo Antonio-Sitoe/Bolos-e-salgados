@@ -5,7 +5,7 @@ import IntroOnPage from "../../components/IntroOnPage/IntroOnPage";
 import ErroMessage from "../../Helper/ErroMessage";
 import FetchData from "../../Helper/FetchData";
 import { GET_ABOUT_CONTENT } from "../../services/Api";
-import { AboutStyle, Content } from "./styles";
+import { AboutStyle, Content } from "../../styles/Aboutstyles";
 
 const About = ({ error, data }) => {
   if (error) {

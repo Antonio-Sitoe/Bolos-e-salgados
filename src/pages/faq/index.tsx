@@ -7,7 +7,7 @@ import FetchData from "../../Helper/FetchData";
 import { GET_FAQ } from "../../services/Api";
 import { Container, Title } from "../../styles/styles";
 import { IFaqProps } from "../../Types/Interfaces";
-import { Faq as FaqStyle, FaqContent, FaqImage, Faqs } from "./style";
+import { Faq as FaqStyle, FaqContent, FaqImage, Faqs } from "../../styles/faqstyle";
 
 const Faq = ({ data, error, message }: IFaqProps) => {
   if (error) {

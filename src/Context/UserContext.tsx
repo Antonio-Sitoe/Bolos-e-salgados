@@ -1,7 +1,7 @@
 import React from 'react';
 import router from 'next/router';
 import nookies, { parseCookies, destroyCookie } from 'nookies';
-import { GET_USERDATA, USER_GET, USER_REGISTER } from '../services/Api.ts';
+import { GET_USERDATA, USER_GET, USER_REGISTER } from '../services/Api';
 import { IUser } from '../Types/Interfaces';
 
 interface IUserValuesProps {

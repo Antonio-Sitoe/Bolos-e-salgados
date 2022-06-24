@@ -5,7 +5,7 @@ import Button from "../../../components/Forms/Button";
 import Input from "../../../components/Forms/Input";
 import LoginLayault from "../../../components/LoginLayault/LoginLayault";
 import { Title } from "../../../styles/styles";
-import { LoginGet as Login } from "../styles";
+import { LoginGet as Login } from "../../../styles/Loginstyles";
 
 import { BiArrowBack } from "react-icons/bi";
 import useForm from "../../../hooks/useForm";

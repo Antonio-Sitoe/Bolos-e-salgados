@@ -1,4 +1,3 @@
-import React from "react";
 import { Errror } from "./styles";
 
 const ErrorServer = ({ error }) => {

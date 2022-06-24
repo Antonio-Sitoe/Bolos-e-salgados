@@ -9,7 +9,7 @@ import useForm from "../../../hooks/useForm";
 import useVerifyToken from "../../../hooks/useVerifyToken";
 import { FORGOTTEN_PASSWORD } from "../../../services/Api";
 import { Title } from "../../../styles/styles";
-import { LoginGet as Login } from "../styles";
+import { LoginGet as Login } from "../../../styles/Loginstyles";
 
 const ForgotPassword = () => {
   const { verifyToken } = useVerifyToken();

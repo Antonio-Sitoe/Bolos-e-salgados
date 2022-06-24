@@ -9,7 +9,7 @@ import useFecth from "../../hooks/useFecth";
 import { GET_PRODUTS_FOR_ID } from "../../services/Api";
 import { Container } from "../../styles/styles";
 import { IshowImageArray } from "../../Types/Interfaces";
-import { Main, ProdutoStyle } from "./styles";
+import { Main, ProdutoStyle } from "../../styles/Productstyles";
 
 const SinglePage = () => {
   const [showImage, setImage] = React.useState<IshowImageArray>([]);

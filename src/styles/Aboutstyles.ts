@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
-import { AnimeIntro } from '../../styles/styles';
-import { theme } from '../../styles/theme';
+import { AnimeIntro } from './styles';
+import { theme } from './theme';
 
 export const AboutStyle = styled.section`
   animation: 0.3s ${AnimeIntro};

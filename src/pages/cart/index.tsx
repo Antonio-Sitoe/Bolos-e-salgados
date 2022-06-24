@@ -2,7 +2,7 @@ import React from 'react';
 import CartsItems from '../../components/CartComponents/CartsItems';
 import OrdersItems from '../../components/CartComponents/OrdersItem';
 import { CartContext } from '../../Context/CartContext';
-import { CartStyle, Main, MessageContainer } from './styles';
+import { CartStyle, Main, MessageContainer } from '../../styles/CartStyles';
 import { Container } from '../../styles/styles';
 import Head from 'next/head';
 

@@ -1,6 +1,6 @@
 import { Container } from '../../styles/styles';
 import IntroOnPage from '../../components/IntroOnPage/IntroOnPage';
-import { Contato } from './styles';
+import { Contato } from '../../styles/Contatostyles';
 import Head from 'next/head';
 import ContactInfo from '../../components/ContactInfo/ContactInfo';
 import ContactForm from '../../components/ContactForm/ContactForm';

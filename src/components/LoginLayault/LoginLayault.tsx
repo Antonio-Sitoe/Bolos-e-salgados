@@ -1,5 +1,5 @@
 import React from 'react'
-import { Login } from '../../pages/login/styles'
+import { Login } from '../../styles/Loginstyles'
 
 const LoginLayault = ({ children }) => {
   return (

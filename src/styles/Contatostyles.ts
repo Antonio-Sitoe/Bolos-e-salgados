@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from '../../styles/theme';
+import { theme } from './theme';
 
 export const Contato = styled.section`
   margin: 4rem 0;
