@@ -1,6 +1,6 @@
-const url = process.env.NEXT_PUBLIC_API_URL ;
-
+const url = process.env.NEXT_PUBLIC_API_URL;
 const qs = require("qs");
+
 export function GET_HOME_CONTENT(id) {
   const query = qs.stringify(
     {
@@ -72,7 +72,6 @@ export function GET_FAQ() {
     },
   };
 }
-
 export function CREATE_MESSAGE(data) {
   return {
     url: `${url}/messages`,
@@ -86,7 +85,6 @@ export function CREATE_MESSAGE(data) {
     },
   };
 }
-
 export function USER_REGISTER(data) {
   return {
     url: `${url}/auth/local/register`,
@@ -99,7 +97,6 @@ export function USER_REGISTER(data) {
     },
   };
 }
-
 export function USER_GET(data) {
   return {
     url: `${url}/auth/local`,
@@ -112,7 +109,6 @@ export function USER_GET(data) {
     },
   };
 }
-
 export function FORGOTTEN_PASSWORD(email) {
   return {
     url: `${url}/auth/forgot-password`,
@@ -143,6 +139,21 @@ export function USERDATA_UPDATE(id, token, data) {
       method: "PUT",
       body: JSON.stringify(data),
       headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  };
+}
+
+export function CREATE_ORDER(data, token) {
+  return {
+    url: `${url}/orders`,
+    options: {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },

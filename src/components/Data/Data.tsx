@@ -4,11 +4,13 @@ import { ButtonEdit, DataStyle, SectionFlex } from "./styles";
 import Shipping from "../Shipping/Shipping";
 import Textearea from "../Forms/Textearea";
 import ErrorServer from "../../Helper/ErrorServer";
-
-
+import { OrderContext } from "../../Context/OrderContext";
 
 const Data = ({ user, open, setOpen, message }: any) => {
+  const { setOrderData } = React.useContext(OrderContext);
   const [showError, setShowError] = React.useState("");
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (message.value) {
@@ -16,6 +18,7 @@ const Data = ({ user, open, setOpen, message }: any) => {
         return { ...anterior, isPayments: true, isData: false };
       });
       setShowError("");
+      setOrderData((preview) => ({ ...preview, message: message.value }));
     } else {
       setShowError("Digite qualquer coisa");
     }

@@ -7,16 +7,23 @@ export const PaymentsStyle = styled.section`
   display: grid;
   margin-top: 0.6rem;
   gap: 0.6rem;
-  a {
+  button {
+    border: none;
     display: block;
+    width: 100%;
     padding: 1rem;
     background: #2ab562;
     font-style: normal;
     font-weight: bold;
     font-size: 1rem;
-    font-family: 'Lato';
+    font-family: "Lato";
     color: ${theme.colors.white};
     text-align: center;
     border-radius: 4px;
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: wait;
+    }
   }
 `;

@@ -19,8 +19,6 @@ export const CartStorage = ({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const [total, setTotal] = React.useState(0);
 
-
-
   React.useEffect(() => {
     if (state.cart.length > 0) {
       const total = state.cart.reduce((acumulador, itemActual) => {
@@ -32,6 +30,7 @@ export const CartStorage = ({ children }) => {
       setTotal(0);
     }
   }, [state.cart]);
+
 
   React.useEffect(() => {
     const local = JSON.parse(window.localStorage.getItem('cart'));

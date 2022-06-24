@@ -12,9 +12,11 @@ import Loading from "../../Helper/Loading";
 import Head from "next/head";
 import useForm from "../../hooks/useForm";
 import { IOpen } from "../../Types/Interfaces";
-
+import { OrderContext } from "../../Context/OrderContext";
+import router from "next/router";
 const Checkout = () => {
   const message = useForm(false);
+  const { setOrderData } = React.useContext(OrderContext);
   const { isAuthenticate, user, loading } = React.useContext(UserContext);
   const [open, setOpen] = React.useState<IOpen>({
     isData: false,
@@ -24,6 +26,27 @@ const Checkout = () => {
     state: { cart },
     total,
   } = React.useContext(CartContext);
+
+  React.useEffect(() => {
+    if (cart.length === 0) {
+      router.push("/cart");
+    }
+  }, [cart.length]);
+
+  React.useEffect(() => {
+    const order = cart?.map(({ image, name, price, quantity, priceUnit }) => ({
+      image,
+      name,
+      price,
+      quantity,
+      priceUnit,
+    }));
+    if (isAuthenticate) {
+      setOrderData((preview) => {
+        return { ...preview, order, total, client_id: user.id };
+      });
+    }
+  }, [isAuthenticate, cart, setOrderData, user, total]);
 
   if (loading) return <Loading />;
   return (
