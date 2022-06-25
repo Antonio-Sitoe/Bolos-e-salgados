@@ -2,7 +2,7 @@ export function ResponseData(json, produtDataJson) {
   return {
     banner: {
       banner_title: json.data.attributes.banner_title,
-      Banner_img: json.data.attributes.Banner_img.data.attributes.url || '',
+      Banner_img: json.data.attributes.Banner_img.data.attributes.url || "",
     },
     kit: json.data.attributes.kit && {
       title: json.data.attributes.kit?.title,
@@ -16,6 +16,7 @@ export function ResponseData(json, produtDataJson) {
       featuredData: json.data.attributes.destaque,
       productData: produtDataJson,
     },
+
     error: false,
   };
 }

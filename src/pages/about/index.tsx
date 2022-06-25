@@ -37,7 +37,7 @@ const About = ({ error, data }) => {
 export default About;
 
 function tranformData(data) {
-  if (data)
+
     return {
       title: data.attributes.title,
       content: data.attributes.content,
@@ -49,10 +49,10 @@ export const getStaticProps: GetStaticProps = async () => {
   const aboutData = GET_ABOUT_CONTENT();
 
   try {
-    const { data } = await FetchData(aboutData);
+    const data = await FetchData(aboutData);
     return {
       props: {
-        data: tranformData(data),
+        data: tranformData(data?.data),
         error: false,
       },
     };

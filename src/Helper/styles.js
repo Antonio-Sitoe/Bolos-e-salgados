@@ -51,9 +51,7 @@ export const ErrorStyle = styled.div`
   font-size: 1rem;
   color: ${theme.colors.tomato};
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
 
   div {
     svg {

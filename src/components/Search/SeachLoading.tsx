@@ -3,11 +3,11 @@ import { SeachLoadingStyle } from './styles';
 export const SeachLoading = () => {
   return (
     <SeachLoadingStyle>
-      <section>
+      <div>
         {[1, 2, 3].map((i) => (
           <div key={i}/>
         ))}
-      </section>
+      </div>
     </SeachLoadingStyle>
   );
 };

@@ -8,8 +8,10 @@ export const SeachLoadingStyle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  section {
-    width: 3.5em;
+  div {
+    height: 6rem;
+    background: transparent;
+    width: 3rem;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
