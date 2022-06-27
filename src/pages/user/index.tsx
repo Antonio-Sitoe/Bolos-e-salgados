@@ -1,11 +1,14 @@
-import React from 'react';
-import { Subtitle, UserContent } from '../../styles/UserStyles';
-import { Container } from '../../styles/styles';
-import UserLayout from '../../components/Usercomponents/UserLayout';
-import UserDataList from '../../components/Usercomponents/UserDataList';
-import { UserContext } from '../../Context/UserContext';
-import Loading from '../../Helper/Loading';
-import Head from 'next/head';
+import { GetServerSideProps } from "next";
+import Head from "next/head";
+import nookies from "nookies";
+import React from "react";
+import UserDataList from "../../components/Usercomponents/UserDataList";
+import UserLayout from "../../components/Usercomponents/UserLayout";
+import { UserContext } from "../../Context/UserContext";
+import checkValidateToken from "../../Helper/checkValidateToken";
+import Loading from "../../Helper/Loading";
+import { Container } from "../../styles/styles";
+import { Subtitle, UserContent } from "../../styles/UserStyles";
 
 const User = () => {
   const { isAuthenticate, user } = React.useContext(UserContext);
@@ -15,7 +18,7 @@ const User = () => {
       <>
         <Head>
           <title>Conta de {user.username}</title>
-          <meta name='description' content='Minha conta' />
+          <meta name="description" content="Minha conta" />
         </Head>
         <Container>
           <UserLayout>
@@ -31,3 +34,8 @@ const User = () => {
 };
 
 export default User;
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { token } = nookies.get(ctx);
+  return checkValidateToken(token);
+};

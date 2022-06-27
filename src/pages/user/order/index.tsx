@@ -1,9 +1,12 @@
-import React from 'react';
-import { Order, Subtitle } from '../../../styles/UserStyles';
-import { UserContext } from '../../../Context/UserContext';
-import Loading from '../../../Helper/Loading';
-import UserLayout from '../../../components/Usercomponents/UserLayout';
-import Head from 'next/head';
+import { GetServerSideProps } from "next";
+import Head from "next/head";
+import React from "react";
+import UserLayout from "../../../components/Usercomponents/UserLayout";
+import { UserContext } from "../../../Context/UserContext";
+import checkValidateToken from "../../../Helper/checkValidateToken";
+import Loading from "../../../Helper/Loading";
+import { Order, Subtitle } from "../../../styles/UserStyles";
+import nookies from "nookies";
 
 const UserOrders = () => {
   const { isAuthenticate, loading, user } = React.useContext(UserContext);
@@ -14,7 +17,7 @@ const UserOrders = () => {
       <>
         <Head>
           <title>Pedidos de {user.username}</title>
-          <meta name='description' content='Minha conta' />
+          <meta name="description" content="Minha conta" />
         </Head>
         <UserLayout>
           <Order>
@@ -66,3 +69,8 @@ const UserOrders = () => {
 };
 
 export default UserOrders;
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { token } = nookies.get(ctx);
+  return checkValidateToken(token);
+};
