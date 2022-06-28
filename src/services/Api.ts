@@ -160,3 +160,16 @@ export function CREATE_ORDER(data, token) {
     },
   };
 }
+export function GET_ORDER(token) {
+  return {
+    url: `${url}/orders?`,
+    options: {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  };
+}

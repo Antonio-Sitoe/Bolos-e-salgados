@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { theme } from '../../styles/theme';
-import { AnimeLeft } from '../../styles/Aboutstyles';
+import styled from "styled-components";
+import { theme } from "../../styles/theme";
+import { AnimeLeft } from "../../styles/Aboutstyles";
 
 export const UserPage = styled.main`
   margin: 6rem 0;
@@ -8,6 +8,7 @@ export const UserPage = styled.main`
 export const UserIntro = styled.section`
   padding: 2rem 0;
   text-align: center;
+
 `;
 export const UserMain = styled.section`
   display: grid;
@@ -26,7 +27,6 @@ export const UserDash = styled.aside`
     li {
       border-bottom: 2px solid white;
       display: flex;
-
       a,
       button {
         cursor: pointer;
@@ -37,7 +37,7 @@ export const UserDash = styled.aside`
         padding: 1rem;
         font-family: Lato;
         font-weight: bold;
-             background: ${theme.colors.base};
+        background: ${theme.colors.base};
         color: ${theme.colors.white};
         &:hover,
         &:focus {
@@ -45,9 +45,9 @@ export const UserDash = styled.aside`
           background: ${theme.colors.baseSmooth};
         }
         &.active {
-        background: ${theme.colors.baseSmooth};
-        color: ${theme.colors.black};
-      }
+          background: ${theme.colors.baseSmooth};
+          color: ${theme.colors.black};
+        }
       }
     }
     @media (max-width: 800px) {

@@ -1,7 +1,6 @@
-import styled from 'styled-components';
-import { theme } from './theme';
-import { animeLeft, AnimeLeft } from './Aboutstyles';
-
+import styled from "styled-components";
+import { theme } from "./theme";
+import { animeLeft, AnimeLeft } from "./Aboutstyles";
 
 export const UserAcountEditStyle = styled.form`
   display: grid;
@@ -40,7 +39,7 @@ export const UserAcountEditStyle = styled.form`
   }
 `;
 export const UserContent = styled.section`
-  padding: 0 3rem;
+  /* padding: 0 3rem; */
 
   @media (max-width: 800px) {
     padding: 0;
@@ -53,7 +52,7 @@ export const Subtitle = styled.h2`
   margin-bottom: 1rem;
 
   &::after {
-    content: '';
+    content: "";
     width: 2rem;
     height: 2px;
     display: block;
@@ -63,8 +62,8 @@ export const Subtitle = styled.h2`
 `;
 export const Order = styled.main`
   animation: ${AnimeLeft} 0.3s;
-  padding: 0 3rem;
   div {
+    width: 100%;
     display: flex;
     position: relative;
     overflow-x: auto;
@@ -117,7 +116,7 @@ export const Order = styled.main`
         flex: 1 0 700px;
         th,
         td {
-          padding: 1rem 0.3rem;
+          padding: 1rem 0;
           border: 1px solid whitesmoke;
           text-align: center;
         }
@@ -125,7 +124,7 @@ export const Order = styled.main`
           tr {
             td {
               a {
-                padding: 1rem 0.3rem;
+                padding: 1rem 0;
               }
             }
           }

@@ -2,11 +2,11 @@
 # LISTA DE TAREFAS (PAGINAS E FUNCIONALIDADES)
 
 ## Objectivo
-[x] corigir erros de typescript
-[x] Mudar todos componentes para typescript
-[x] Corrigir o css
-[x] Autenticacao
-[x] Colocar e configurar o eslint.
+    - [x] corigir erros de typescript
+    - [x] -Mudar todos componentes para typescript
+    - [x] Corrigir o css
+    - [x] Autenticacao
+    - [x] Colocar e configurar o eslint.
 
 ## 1. [x] Home Page()
         [x] banner

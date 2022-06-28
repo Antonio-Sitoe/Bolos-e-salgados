@@ -9,9 +9,9 @@ import { Container, Title } from "../../styles/styles";
 import { IFaqProps } from "../../Types/Interfaces";
 import { Faq as FaqStyle, FaqContent, FaqImage, Faqs } from "../../styles/faqstyle";
 
-const Faq = ({ data, error, message }: IFaqProps) => {
+const Faq = ({ data, error }: IFaqProps) => {
   if (error) {
-    return <ErroMessage error={message} />;
+    return <ErroMessage error={'Falha ao buscar os dados'} />;
   }
   return (
     <>
@@ -86,7 +86,6 @@ export const getStaticProps: GetStaticProps = async () => {
   } catch (error) {
     return {
       props: {
-        message: JSON.stringify(error.message),
         error: true,
       },
     };
