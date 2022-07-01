@@ -160,6 +160,9 @@ h1,h2,h3 {        font-weight: bold;
     font-size: 1rem;
   } 
     @media (max-width: 500px) {
+      p {
+    font-size: .6rem;
+   }
     h1 {
     font-size: 1rem;
    } 
