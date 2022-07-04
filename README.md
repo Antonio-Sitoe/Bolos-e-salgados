@@ -1,8 +1,33 @@
 # Ecommerce  de Vendas de Bolos e salgados.
+### Estrutura
 
-
-### Paginas 
- - []
+```
+  src
+     - Cart
+     - components
+     - Context
+     - Helpers
+     - Hooks
+     - Pages
+     - Services
+     - Types
+     - Styles
+     
+```
+### Components: 24
+### Paginas: 11
+ - [x] Home
+ - [x] About
+ - [x] Cart
+ - [x] Checkout
+ - [x] Contact
+ - [x] Faq
+ - [x] Login / create / forgot / reset
+ - [x] Product / single Page / All products
+ - [x] Sucess
+ - [x] User / edit / order
+ - [x] 404
+ 
 
 ### Feactures
 - [x] Autenticacao de usuarios com Strapi API (CMS).
