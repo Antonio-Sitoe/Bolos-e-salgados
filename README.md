@@ -62,8 +62,7 @@ Demo do site: <a href="https://bolos-e-salgados.vercel.app/">bolos-e-salgados.ve
 ### Captura de ecra.
 ![Screenshot from 2022-07-04 19-16-48](https://user-images.githubusercontent.com/72309855/177197518-a4801049-206a-4ec1-a569-e1a2cdd5a82e.png)
 ![Screenshot from 2022-07-04 19-17-28](https://user-images.githubusercontent.com/72309855/177197582-02a58748-44de-4aaa-9950-42b1c0f8e449.png)
-![Screenshot from 2022-07-04 19-17-41](https://user-images.githubusercontent.com/72309855/177197590-d77d8a90-baed-409c-814c-3f5f4409bd01.png)
-![Screenshot from 2022-07-04 19-17-59](https://user-images.githubusercontent.com/72309855/177197609-d0131335-0520-4342-ab26-f2316d41ac32.png)
+![Screenshot from 2022-07-04 19-37-13](https://user-images.githubusercontent.com/72309855/177199359-339adb65-368b-433f-9a09-7d83cfd7cbf0.png)
 
 ### Clonar o repositorio
 
