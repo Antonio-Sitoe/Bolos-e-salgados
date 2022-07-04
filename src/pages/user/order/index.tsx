@@ -50,17 +50,23 @@ const UserOrders = ({ data }: IUserOrderProps) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.map(({ id, attributes }) => {
-                    const date = new Date(attributes.createdAt);
-                    return (
-                      <tr key={id}>
-                        <td>#{id}</td>
-                        <td>{date.toLocaleDateString()} </td>
-                        <td>${attributes.status}</td>
-                        <td>{attributes.total}MT</td>
-                      </tr>
-                    );
-                  })}
+                  {data.length ? (
+                    <>
+                      {data.map(({ id, attributes }) => {
+                        const date = new Date(attributes.createdAt);
+                        return (
+                          <tr key={id}>
+                            <td>#{id}</td>
+                            <td>{date.toLocaleDateString()} </td>
+                            <td>${attributes.status}</td>
+                            <td>{attributes.total}MT</td>
+                          </tr>
+                        );
+                      })}
+                    </>
+                  ) : (
+                    <p>Faca um pedido</p>
+                  )}
                 </tbody>
               </table>
             </div>

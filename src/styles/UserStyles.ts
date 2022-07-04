@@ -88,6 +88,10 @@ export const Order = styled.main`
         text-align: center;
       }
       tbody {
+        p {
+          padding: 0.6rem;
+          text-align: center;
+        }
         tr {
           td {
             a {
