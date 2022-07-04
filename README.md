@@ -61,8 +61,19 @@
 ![Screenshot from 2022-07-04 19-17-41](https://user-images.githubusercontent.com/72309855/177197590-d77d8a90-baed-409c-814c-3f5f4409bd01.png)
 ![Screenshot from 2022-07-04 19-17-59](https://user-images.githubusercontent.com/72309855/177197609-d0131335-0520-4342-ab26-f2316d41ac32.png)
 
-### Instalacao
+### Clonar o repositorio
 
 ```
-   git clone 
+   git clone https://github.com/Antonio-Sitoe/Bolos-e-salgados.git
+```
+### Instalar os pacotes
+
+```
+   yarn install
+```
+
+### Rodar
+
+```
+   yarn dev
 ```
