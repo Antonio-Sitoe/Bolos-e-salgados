@@ -19,7 +19,7 @@ const Social = () => {
           </li>
           <li>
             <a
-              href="https://www.facebook.com/"
+              href="https://web.facebook.com/antonio.sitoe.372019"
               target="_blank"
               rel="noreferrer"
             >
@@ -27,7 +27,7 @@ const Social = () => {
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/" target="_blank" rel="noreferrer">
+            <a href="https://twitter.com/AntonioSitoe533" target="_blank" rel="noreferrer">
               <BsTwitter />{" "}
             </a>
           </li>

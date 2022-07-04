@@ -161,16 +161,15 @@ h1,h2,h3 {        font-weight: bold;
   } 
     @media (max-width: 500px) {
       p {
-    font-size: .6rem;
+    font-size: .8rem;
    }
     h1 {
     font-size: 1rem;
    } 
   h2 {
-       font-size: 0.8rem;
-   }
+  font-size: 1rem;   }
  h3 {
-    font-size: 0.8rem;
+  font-size: 1rem;
   } 
   }
 

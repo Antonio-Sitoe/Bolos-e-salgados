@@ -6,8 +6,8 @@ export const AboutStyle = styled.section`
   animation: 0.3s ${AnimeIntro};
   display: grid;
   gap: 2rem;
-  max-width: 800px;
-  margin: 3rem auto;
+  max-width: 600px;
+  margin: 2rem auto;
   padding: 1rem;
   
 

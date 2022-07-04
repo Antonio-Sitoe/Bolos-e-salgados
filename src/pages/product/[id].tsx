@@ -49,7 +49,7 @@ const SinglePage = () => {
       </>
     );
   }
-  return <Loading />;
+  return <ErroMessage error={error} />;
 };
 
 export default SinglePage;

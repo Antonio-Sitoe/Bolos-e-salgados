@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { AnimeIntro } from '../../styles/styles';
-import { theme } from '../../styles/theme';
+import styled from "styled-components";
+import { AnimeIntro } from "../../styles/styles";
+import { theme } from "../../styles/theme";
 
 export const Card = styled.div`
   animation: 0.3s ${AnimeIntro};
@@ -11,15 +11,13 @@ export const Card = styled.div`
   gap: 1rem;
   border-radius: 4px;
 
-
-
   main {
     display: grid;
     text-align: center;
     padding: 1.5rem;
     grid-template-rows: 1fr 1fr 2.5rem;
 
-    h1 {
+    h2 {
       text-transform: uppercase;
       line-height: 1.5;
     }
@@ -56,10 +54,15 @@ export const MainCard = styled.div`
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
-`;export const CupCakeStyle = styled.section`
+`;
+export const CupCakeStyle = styled.section`
   margin: 6rem 0;
   animation: 0.3s ${AnimeIntro};
   h1 {
     text-align: center;
+  }
+
+  @media (max-width: 40rem) {
+    margin: 0;
   }
 `;

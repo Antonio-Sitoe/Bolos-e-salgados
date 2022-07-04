@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { AnimeIntro } from '../../styles/styles';
-import { theme } from '../../styles/theme';
+import styled from "styled-components";
+import { AnimeIntro } from "../../styles/styles";
+import { theme } from "../../styles/theme";
 
 export const KitsForParty = styled.section`
-  background: url('/kitBg.svg') no-repeat;
+  background: url("/kitBg.svg") no-repeat;
   background-size: cover;
   background-position: center;
   margin: 0 0 2rem 0;
@@ -44,7 +44,7 @@ export const KitsForParty = styled.section`
 
       h1 {
         &::after {
-          content: '';
+          content: "";
           width: 2rem;
           height: 2px;
           background: #252525;
@@ -65,13 +65,14 @@ export const KitsForParty = styled.section`
 
       @media (max-width: 600px) {
         text-align: center;
+        margin: 0;
         h1,
         p {
           margin: 1rem 0;
         }
         h1 {
           &::after {
-            content: '';
+            content: "";
             width: 2rem;
             height: 2px;
             background: #252525;
@@ -92,6 +93,9 @@ export const Main = styled.main`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
+  @media (max-width: 40rem) {
+    margin: 1rem 0;
+  }
 `;
 export const DivConfir = styled.div`
   margin: 6rem 0;
@@ -100,5 +104,9 @@ export const DivConfir = styled.div`
     margin: 0 auto;
     padding: 1rem;
     border-radius: 3rem;
+  }
+
+  @media (max-width: 40rem) {
+    margin: 2rem 0;
   }
 `;

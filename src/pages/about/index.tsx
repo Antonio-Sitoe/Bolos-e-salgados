@@ -37,12 +37,11 @@ const About = ({ error, data }) => {
 export default About;
 
 function tranformData(data) {
-
-    return {
-      title: data.attributes.title,
-      content: data.attributes.content,
-      banner_img: data.attributes.banner_img.data.attributes.url,
-    };
+  return {
+    title: data.attributes.title,
+    content: data.attributes.content,
+    banner_img: data.attributes.banner_img.data.attributes.url,
+  };
 }
 
 export const getStaticProps: GetStaticProps = async () => {

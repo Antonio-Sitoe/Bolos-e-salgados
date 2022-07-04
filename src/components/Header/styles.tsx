@@ -29,7 +29,7 @@ interface HeaderStyleProps {
   mobile: boolean;
 }
 export const Header = styled.header<HeaderStyleProps>`
-  padding: 1rem 0;
+  padding: .6rem 0;
   box-shadow: 0 3px 6px -6px #777;
   width: 100%;
   position: fixed;
@@ -52,7 +52,7 @@ export const Nav = styled.nav<HeaderStyleProps>`
     height: 50px;
 
     @media (max-width: 900px) {
-      height: 40px;
+      height: 30px;
     }
   }
 

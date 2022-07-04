@@ -7,12 +7,26 @@ import Loading from "../../../Helper/Loading";
 import { Order, Subtitle } from "../../../styles/UserStyles";
 import nookies from "nookies";
 import FetchData from "../../../Helper/FetchData";
-import { GET_ORDER } from "../../../services/Api";
+import { GET_ORDER, GET_USERDATA } from "../../../services/Api";
 
-const UserOrders = ({ data }) => {
+interface Idata {
+  client_id: number;
+  message: string;
+  createdAt: string;
+  number: number;
+  status: string;
+  total: string;
+}
+
+interface IUserOrderProps {
+  data: {
+    id: number;
+    attributes: Idata;
+  }[];
+}
+
+const UserOrders = ({ data }: IUserOrderProps) => {
   const { isAuthenticate, loading, user } = React.useContext(UserContext);
-
-  console.log(data);
 
   if (loading) return <Loading />;
   if (isAuthenticate)
@@ -36,31 +50,17 @@ const UserOrders = ({ data }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>#11486</td>
-                    <td>$ 26/11/2021 </td>
-                    <td>$Cancelado</td>
-                    <td>$R$384,00 de 1 item</td>
-                  </tr>
-                  <tr>
-                    <td>#11486</td>
-                    <td> 26/11/2021 </td>
-                    <td>$Cancelado</td>
-                    <td>$R$384,00 de 1 item</td>
-                  </tr>
-                  <tr>
-                    <td>#11486</td>
-                    <td>$ 26/11/2021 </td>
-                    <td>$Cancelado</td>
-                    <td>$R$384,00 de 1 item</td>
-                  </tr>
-
-                  <tr>
-                    <td>#11486</td>
-                    <td> 26/11/2021 </td>
-                    <td>$Cancelado</td>
-                    <td>$R$384,00 de 1 item</td>
-                  </tr>
+                  {data.map(({ id, attributes }) => {
+                    const date = new Date(attributes.createdAt);
+                    return (
+                      <tr key={id}>
+                        <td>#{id}</td>
+                        <td>{date.toLocaleDateString()} </td>
+                        <td>${attributes.status}</td>
+                        <td>{attributes.total}MT</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -77,8 +77,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { token } = nookies.get(ctx);
 
   const ORDEROPTIONS = GET_ORDER(token);
+  const getUser = GET_USERDATA(token);
   const response = await FetchData(ORDEROPTIONS);
-
+  const user = await FetchData(getUser);
 
   if (!response) {
     return {
@@ -88,11 +89,12 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       },
     };
   }
-    console.log(response);
-
+  const data = response.data.filter(({ attributes }) => {
+    return attributes.client_id === user.id;
+  });
   return {
     props: {
-      data: response,
+      data,
     },
   };
 };

@@ -78,6 +78,9 @@ export const SearchingStyle = styled.div`
       flex-direction: column;
     }
   }
+  @media (max-width:40rem){
+    padding: 0.6rem;
+  }
 `;
 export const Wrapper = styled.div`
   display: flex;

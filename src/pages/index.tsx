@@ -39,7 +39,6 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     const json = await FetchData(homeOptions);
     const produtData = await FetchData(productsOptions);
-    console.log(json)
     const produtDataJson = transformData(produtData.data);
 
     const data = ResponseData(json, produtDataJson);

@@ -13,7 +13,7 @@ const CupCakeSession = ({ cupCakeData }) => {
               <Card key={id}>
                 <Image alt={attributes.name} src={attributes.image.data[0].attributes.url} height={280} width={320} />
                 <main>
-                  <h1>{attributes.name}</h1>
+                  <h2>{attributes.name}</h2>
                   <h4>{attributes.price}</h4>
                   <Links href={`product/${id}`}>Comprar</Links>
                 </main>
