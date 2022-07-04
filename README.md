@@ -1,5 +1,9 @@
 # Ecommerce  de Vendas de Bolos e salgados.
 
+Este e um site/ecommerce feiticio feito com objectivo de estudos pessoas e aprendizado do ecossistema Javascript, React, NextJs, aplicando as demais praticas do mercado, como Server-Side-Rendering, e outros, imitando as funcionalidades basicas de um ecomerce, como carrinho de compra, mostrar produtos, compra de produto, autenticacao de usuarios. etc
+
+Demo do site: <a href="https://bolos-e-salgados.vercel.app/">bolos-e-salgados.vercel.app<a/>
+
 ![Screenshot from 2022-07-04 19-16-35](https://user-images.githubusercontent.com/72309855/177197914-a5013155-f4be-420c-9161-c4f400fd8e5a.png)
 
 ### Tecnologias (Libs)
